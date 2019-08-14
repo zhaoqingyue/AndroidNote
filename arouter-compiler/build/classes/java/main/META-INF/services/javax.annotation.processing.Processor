@@ -1,3 +1,0 @@
-com.alibaba.android.arouter.compiler.processor.AutowiredProcessor
-com.alibaba.android.arouter.compiler.processor.InterceptorProcessor
-com.alibaba.android.arouter.compiler.processor.RouteProcessor
