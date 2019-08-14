@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+    defaultConfig {
+        applicationId "com.study.androidnote"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.versionCode
+        versionName build_versions.versionName
+
+        // 解决methods: > 65536
+        multiDexEnabled true
+
+        // 只加在app
+        flavorDimensions "default"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // 显式声明支持注解
+                includeCompileClasspath true
+                arguments = [ AROUTER_MODULE_NAME : project.getName() ]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    annotationProcessor project(':arouter-compiler')
+    compile project(':lib-biz-common')
+
+    if (!isModule.toBoolean()) {
+        compile project(':module-welcome')
+        compile project(':module-account')
+        compile project(':module-main')
+        compile project(':module-me')
+
+//        compile project(':module-feedback')
+//        compile project(':module-search')
+//        compile project(':module-smartsteward')
+//        compile project(':module-usercenter')
+//        compile project(':module-carhealth')
+//        compile project(':module-voice')
+    }
+}

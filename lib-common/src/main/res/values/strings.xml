@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">lib-common</string>
+
+
+
+    <string name="default_empty_value">_ _</string>
+    <string name="plate_new_energy">新能源</string>
+    <string name="tmp_plate">临牌</string>
+
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+
+    <string name="str_net_exception">连接异常</string>
+    <string name="str_net_connect_time_out">连接超时</string>
+    <string name="str_net_server_exception">服务器异常</string>
+    <string name="str_net_parse_error">解析错误</string>
+    <string name="str_net_unknow_error">未知错误</string>
+
+    <string name="btn_confirm">确定</string>
+    <string name="btn_sure">确认</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_yes">是</string>
+    <string name="btn_no">否</string>
+
+    <string name="brvah_loading">正在加载中...</string>
+    <string name="brvah_load_failed">加载失败，请点我重试</string>
+    <string name="brvah_load_end">没有更多数据</string>
+
+    <string name="loading">正在加载&#8230;</string>
+    <string name="try_loading">正在努力加载中&#8230;</string>
+    <string name="load_data_fail">数据加载失败</string>
+
+    <string name="toast_network_unavailable">当前网络不佳，请稍后重试</string>
+    <string name="toast_network_is_unavailable">网络连接不可用，请稍候再试</string>
+    <string name="toast_server_exception">当前服务器繁忙，请稍后再试</string>
+    <string name="toast_app_not_install">该应用未安装</string>
+
+</resources>

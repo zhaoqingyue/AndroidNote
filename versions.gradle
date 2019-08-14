@@ -1,0 +1,34 @@
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+
+ext.deps = [:]
+def versions = [:]
+versions.support = "25.0.0"
+versions.support_annotations = "25.1.0"
+versions.multidex = "1.0.2"
+versions.constraint_layout = "1.0.2"
+
+def support = [:]
+support.annotations = "com.android.support:support-annotations:$versions.support_annotations"
+support.appcompat = "com.android.support:appcompat-v7:$versions.support"
+support.v13 = "com.android.support:support-v13:$versions.support"
+support.percent = "com.android.support:percent:$versions.support"
+support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
+support.cardview = "com.android.support:cardview-v7:$versions.support"
+support.design = "com.android.support:design:$versions.support"
+support.v4 = "com.android.support:support-v4:$versions.support"
+support.multidex = "com.android.support:multidex:$versions.multidex"
+support.multidex_instrumentation = "com.android.support:multidex-instrumentation:$versions.multidex"
+support.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+ext.support = support
+
+def build_versions = [:]
+build_versions.compile_sdk = 25
+build_versions.min_sdk = 25
+build_versions.target_sdk = 25
+build_versions.build_tools = "25.0.0"
+build_versions.versionCode = 1
+build_versions.versionName = "1.0.0"
+ext.build_versions = build_versions
