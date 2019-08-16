@@ -23,40 +23,19 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state) {
         View view = inflater.inflate(getLayoutResID(), container, false);
-        initView(view);
+        ButterKnife.bind(this, view);
         return view;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
         initData();
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-
-    /**
-     * 绑定presenter
-     */
     protected abstract void initPresenter();
 
     protected abstract int getLayoutResID();
 
-    /**
-     * 初始化布局
-     */
-    protected abstract void initView(View root);
-
     protected abstract void initData();
-
-
 }

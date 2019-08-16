@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.study.androidnote.main.MainActivity">
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
 
-</android.support.constraint.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/id_mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lineHeight"
+        android:background="@color/colorDivider"
+        android:orientation="horizontal" />
+
+    <com.study.commonlib.ui.view.BottomBar
+        android:id="@+id/bb_bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+        android:layout_gravity="bottom"/>
+
+</LinearLayout>

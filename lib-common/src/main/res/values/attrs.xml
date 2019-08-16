@@ -248,6 +248,36 @@
         <attr name="mc_dividerMarginRight" format="dimension"/>    <!-- 分割线右margin -->
     </declare-styleable>
 
+    <!-- 顶部标题栏 -->
+    <declare-styleable name="TopBar">
+        <!-- 背景色 -->
+        <attr name="tb_bgColor" format="color"/>                  <!-- 顶部栏背景色 -->
+        <!-- 左图标 -->
+        <attr name="tb_leftIcon" format="reference"/>             <!-- 左icon图标 -->
+        <attr name="tb_leftIconVisible" format="boolean"/>        <!-- 左icon图标是否显示 -->
+        <!-- 左文本 -->
+        <attr name="tb_leftText" format="string"/>                <!-- 左文本内容 -->
+        <attr name="tb_leftTextColor" format="color"/>            <!-- 左文本颜色值 -->
+        <attr name="tb_leftTextSize" format="dimension"/>         <!-- 左文本字体大小 -->
+        <attr name="tb_leftTextVisible" format="boolean"/>        <!-- 左文本是否显示 -->
+        <!-- 标题 -->
+        <attr name="tb_title" format="string"/>                    <!-- 标题 -->
+        <attr name="tb_titleTextColor" format="color"/>            <!-- 标题颜色值 -->
+        <attr name="tb_titleTextSize" format="dimension"/>         <!-- 标题文本字体大小 -->
+        <!-- 右文本 -->
+        <attr name="tb_rightText" format="string"/>                <!-- 右文本内容 -->
+        <attr name="tb_rightTextColor" format="color"/>            <!-- 右文本颜色值 -->
+        <attr name="tb_rightTextSize" format="dimension"/>         <!-- 右文本字体大小 -->
+        <attr name="tb_rightTextVisible" format="boolean"/>        <!-- 右文本是否显示 -->
+        <!-- 右图标 -->
+        <attr name="tb_rightIcon" format="reference"/>             <!-- 右icon图标 -->
+        <attr name="tb_rightIconVisible" format="boolean"/>        <!-- 右icon图标是否显示 -->
+        <!-- 分割线 -->
+        <attr name="tb_bottomDividerVisible" format="boolean"/>    <!-- 底部间隔线是否显示 -->
+        <attr name="tb_bottomDividerColor" format="color"/>        <!-- 底部间隔线背景色 -->
+    </declare-styleable>
+
+
     <!-- 加载动画样式 -->
     <declare-styleable name="AVLoadingIndicatorView">
         <attr name="minWidth" format="dimension" />
