@@ -51,6 +51,7 @@ public class BottomBarTab extends FrameLayout {
         paramsContainer.gravity = Gravity.CENTER;
         lLContainer.setLayoutParams(paramsContainer);
 
+        // 图片icon
         int fontSize = (int) (getResources().getDisplayMetrics().heightPixels * 0.09 * 0.21);
         int iconSize = (int) (getResources().getDisplayMetrics().heightPixels * 0.09 * 0.53);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(iconSize, iconSize);
@@ -59,6 +60,7 @@ public class BottomBarTab extends FrameLayout {
         mIcon.setLayoutParams(params);
         lLContainer.addView(mIcon);
 
+        // 文本
         mTvTitle = new TextView(context);
         mTvTitle.setText(title);
         LinearLayout.LayoutParams paramsTv = new LinearLayout.LayoutParams(
@@ -70,6 +72,7 @@ public class BottomBarTab extends FrameLayout {
         lLContainer.addView(mTvTitle);
         addView(lLContainer);
 
+        // 未读文本
         int min = (int) ScreenUtils.dp2px(18);
         int padding = (int) ScreenUtils.dp2px(4);
         mTvUnreadCount = new TextView(context);
@@ -87,7 +90,6 @@ public class BottomBarTab extends FrameLayout {
         tvUnReadParams.bottomMargin = (int) ScreenUtils.dp2px(20);
         mTvUnreadCount.setLayoutParams(tvUnReadParams);
         mTvUnreadCount.setVisibility(GONE);
-
         addView(mTvUnreadCount);
     }
 
