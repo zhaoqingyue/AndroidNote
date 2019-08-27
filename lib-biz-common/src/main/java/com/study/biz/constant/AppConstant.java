@@ -10,7 +10,11 @@ public class AppConstant {
 
     public static final String FIRST_OPEN = "FirstOpen"; // 第一次打开
 
+    public static final String OPEN_GESTURE_PWD = "OpenGesturePwd"; // 开启手势密码
+
     public static final String ALREADY_LOGIN = "AlreadyLogin"; // 已经登录
+
+    public static final String GESTURE_PASSWORD = "GesturePassword"; // 手势密码
 
 
     public static final String EDIT_INFO_TYPE = "edit_info_type";

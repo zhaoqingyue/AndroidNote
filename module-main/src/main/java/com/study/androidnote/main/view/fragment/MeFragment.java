@@ -15,7 +15,9 @@ import com.study.biz.constant.AppConstant;
 import com.study.biz.constant.ArouterPath;
 import com.study.biz.db.bean.UserInfo;
 import com.study.biz.db.manager.UserInfoManager;
+import com.study.biz.manager.JumpManager;
 import com.study.commonlib.base.fragment.BaseSupportFragment;
+import com.study.commonlib.util.utilcode.LogUtils;
 import com.study.commonlib.util.utilcode.ToastUtils;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -62,6 +64,9 @@ public class MeFragment extends BaseSupportFragment {
 
     @Override
     protected void initData() {
+
+
+
 //        //设置图片圆角角度
 //        RoundedCorners roundedCorners = new RoundedCorners(6);
 //        //通过RequestOptions扩展功能
@@ -76,6 +81,12 @@ public class MeFragment extends BaseSupportFragment {
 ////                .apply(mRequestOptions)
 //                .into(mAvatar);
 
+
+    }
+
+    @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
 
     }
 

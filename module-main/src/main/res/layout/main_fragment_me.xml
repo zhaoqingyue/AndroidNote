@@ -65,7 +65,7 @@
         android:id="@+id/mc_setting"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_gap"
         app:mc_icon="@mipmap/main_me_setting"
         app:mc_title="@string/main_card_setting"
         app:mc_hasContent="false"

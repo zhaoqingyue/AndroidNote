@@ -32,6 +32,9 @@ import butterknife.OnClick;
 @Route(path = ArouterPath.PATH_ME_SETTING)
 public class SettingActivity extends BaseTopBarActivity {
 
+    @BindView(R2.id.switch_open_gesture_pwd)
+    Switch mOpenGesturePwd;
+
     @BindView(R2.id.switch_open_guide)
     Switch mOpenGuide;
 
@@ -48,6 +51,7 @@ public class SettingActivity extends BaseTopBarActivity {
 
     @Override
     protected void initData(Bundle saveInstanceState) {
+        mOpenGesturePwd.setChecked(SpManager.isOpenGesturePwd());
         mOpenGuide.setChecked(SpManager.isFirstOpen());
         mNightMode.setChecked(SpManager.isNightMode());
         mClearCache.setContent(getTotalCacheSize());
@@ -84,13 +88,15 @@ public class SettingActivity extends BaseTopBarActivity {
         }
     }
 
-    @OnCheckedChanged({R2.id.switch_open_guide, R2.id.switch_night_mode})
+    @OnCheckedChanged({R2.id.switch_open_gesture_pwd, R2.id.switch_open_guide, R2.id.switch_night_mode})
     public void onCheckChanged(CompoundButton view, boolean isChecked) {
         int id = view.getId();
-        if (id == R.id.switch_open_guide) {
+        if (id == R.id.switch_open_gesture_pwd) {
+            SpManager.setOpenGesturePwd(isChecked);
+        } else if (id == R.id.switch_open_guide) {
             SpManager.setFirstOpen(isChecked);
         } else if (id == R.id.switch_night_mode) {
-            SpManager.setNightModen(isChecked);
+            SpManager.setNightMode(isChecked);
         }
     }
 

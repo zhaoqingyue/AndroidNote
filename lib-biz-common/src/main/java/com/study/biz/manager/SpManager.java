@@ -1,7 +1,9 @@
 package com.study.biz.manager;
 
 import com.study.biz.constant.AppConstant;
+import com.study.biz.util.LockCache;
 import com.study.commonlib.util.utilcode.SPUtils;
+import com.study.commonlib.util.utilcode.Utils;
 
 /**
  * Created by zhao.qingyue on 2019/8/23.
@@ -19,8 +21,22 @@ public class SpManager {
     /**
      * 设置夜间模式
      */
-    public static void setNightModen(boolean nightMode) {
+    public static void setNightMode(boolean nightMode) {
         SPUtils.getInstance().put(AppConstant.NIGHT_MODE, nightMode);
+    }
+
+    /**
+     * 是否开启手势密码
+     */
+    public static boolean isOpenGesturePwd() {
+        return SPUtils.getInstance().getBoolean(AppConstant.OPEN_GESTURE_PWD, true);
+    }
+
+    /**
+     * 设置开启手势密码状态
+     */
+    public static void setOpenGesturePwd(boolean firstOpen) {
+        SPUtils.getInstance().put(AppConstant.OPEN_GESTURE_PWD, firstOpen);
     }
 
     /**
@@ -50,6 +66,4 @@ public class SpManager {
     public static void setLoginStatus(boolean loginStatus) {
         SPUtils.getInstance().put(AppConstant.ALREADY_LOGIN, loginStatus);
     }
-
-
 }

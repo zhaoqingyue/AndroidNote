@@ -16,7 +16,7 @@
         android:id="@+id/mc_user_name"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_gap"
         app:mc_title="@string/me_user_name"
         app:mc_hasContent="true"
         app:mc_alignRight="true"

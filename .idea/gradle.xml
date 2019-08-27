@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/lib-biz-common" />
             <option value="$PROJECT_DIR$/lib-common" />
             <option value="$PROJECT_DIR$/module-account" />
+            <option value="$PROJECT_DIR$/module-lock" />
             <option value="$PROJECT_DIR$/module-main" />
             <option value="$PROJECT_DIR$/module-me" />
             <option value="$PROJECT_DIR$/module-search" />

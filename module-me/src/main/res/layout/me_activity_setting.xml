@@ -16,15 +16,51 @@
         android:id="@+id/mc_account"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_gap"
         app:mc_title="@string/me_account_safe"
         app:mc_hasDivider="false"/>
+
+    <!-- 开启手势密码 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_gap"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:background="@drawable/selector_item_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/me_open_gesture_pwd"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_18"
+            android:layout_centerVertical="true"/>
+
+        <Switch
+            android:id="@+id/switch_open_gesture_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_24"
+            android:switchMinWidth="20dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:thumb="@drawable/selector_switch_thumb"
+            android:track="@drawable/selector_switch_track"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0.5"
+            android:background="@color/main_divider"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible" />
+
+    </RelativeLayout>
 
     <!-- 开启引导页 -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
         android:paddingLeft="@dimen/dp_20"
         android:paddingRight="@dimen/dp_20"
         android:background="@drawable/selector_item_bg">
@@ -43,8 +79,8 @@
             android:layout_height="@dimen/dp_24"
             android:switchMinWidth="20dp"
             android:layout_marginStart="@dimen/dp_10"
-            android:thumb="@drawable/me_selector_switch_thumb"
-            android:track="@drawable/me_selector_switch_track"
+            android:thumb="@drawable/selector_switch_thumb"
+            android:track="@drawable/selector_switch_track"
            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"/>
 
@@ -79,8 +115,8 @@
             android:layout_height="@dimen/dp_24"
             android:switchMinWidth="20dp"
             android:layout_marginStart="@dimen/dp_10"
-            android:thumb="@drawable/me_selector_switch_thumb"
-            android:track="@drawable/me_selector_switch_track"
+            android:thumb="@drawable/selector_switch_thumb"
+            android:track="@drawable/selector_switch_track"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"/>
 
@@ -110,7 +146,7 @@
         android:id="@+id/mc_help"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_gap"
         app:mc_title="@string/me_help" />
 
     <!-- 意见反馈 -->
@@ -126,7 +162,7 @@
         android:id="@+id/mc_about"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_gap"
         app:mc_title="@string/me_about"
         app:mc_hasDivider="false"/>
 
@@ -134,7 +170,7 @@
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_gap"
         android:gravity="center"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/sp_18"

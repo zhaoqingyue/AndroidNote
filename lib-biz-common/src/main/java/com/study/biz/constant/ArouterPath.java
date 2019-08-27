@@ -15,6 +15,12 @@ public class ArouterPath {
     // 首页——搜索
     public static final String PATH_HOME_SEARCH = "/search/SearchActivity";
 
+    // 手势——创建
+    public static final String PATH_GESTURE_CREATE = "/lock/CreateGestureActivity";
+
+    // 手势——登录
+    public static final String PATH_GESTURE_LOGIN = "/lock/GestureLoginActivity";
+
 
     // 我的——个人信息
     public static final String PATH_ME_USER_INFO = "/me/UserInfoActivity";

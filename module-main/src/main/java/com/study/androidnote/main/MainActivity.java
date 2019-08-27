@@ -8,6 +8,8 @@ import com.study.androidnote.main.view.fragment.MeFragment;
 import com.study.androidnote.main.view.fragment.MsgFragment;
 import com.study.androidnote.main.view.fragment.NoteFragment;
 import com.study.biz.constant.ArouterPath;
+import com.study.biz.manager.JumpManager;
+import com.study.biz.manager.SpManager;
 import com.study.commonlib.base.activity.BaseSupportActivity;
 import com.study.commonlib.ui.fragmentation.SupportFragment;
 import com.study.commonlib.ui.view.BottomBar;
@@ -67,6 +69,12 @@ public class MainActivity extends BaseSupportActivity implements BottomBar.OnTab
     @Override
     public void onTabSelected(int position, int prePosition) {
         showHideFragment(mFragments[position], mFragments[prePosition]);
+        if (position == FOUR) {
+            if (SpManager.isOpenGesturePwd()) {
+                // 手势解锁
+                JumpManager.gotoGesturePwd();
+            }
+        }
     }
 
     @Override

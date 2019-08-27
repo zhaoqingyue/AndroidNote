@@ -34,6 +34,7 @@
     <!-- 设置 -->
     <string name="me_setting">设置</string>
     <string name="me_account_safe">账号与安全</string>
+    <string name="me_open_gesture_pwd">开启手势密码</string>
     <string name="me_open_guide">开启引导页</string>
     <string name="me_night_mode">夜间模式</string>
     <string name="me_clear_cache">清除缓存</string>

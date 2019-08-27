@@ -1,0 +1,33 @@
+<resources>
+    <string name="lock_app_name">module-lock</string>
+
+    <string name="lock_create_gesture">设置手势密码</string>
+    <string name="lock_gesture_login">解锁</string>
+    <string name="lock_gesture_setting">手势设置</string>
+    <string name="lock_show_gesture_locus">显示手势轨迹</string>
+    <string name="lock_modify_gesture_pwd">修改手势密码</string>
+    <string name="lock_forget_gesture_pwd">忘记手势密码</string>
+    <string name="lock_verification_gesture_pwd">验证手势密码</string>
+    <string name="lock_verification_login_pwd">验证登录密码</string>
+    <string name="lock_gesture_unlock">指纹/手势解锁</string>
+    <string name="lock_set_unlock_method">设置解锁方式</string>
+    <string name="lock_unlock_method_fingerprint">指纹</string>
+    <string name="lock_unlock_method_gesture_pwd">手势密码</string>
+
+    <!-- Create gesture activity -->
+    <string name="lock_create_gesture_default">绘制解锁图案</string>
+    <string name="lock_create_gesture_correct">再次绘制解锁图案</string>
+    <string name="lock_create_gesture_less_error">至少连接4个点，请重新输入</string>
+    <string name="lock_create_gesture_confirm_error">与上一次绘制不一致，请重新绘制</string>
+    <string name="lock_create_gesture_confirm_correct">设置成功</string>
+    <string name="lock_create_gesture_reset">重新设置</string>
+
+    <!-- Gesture login activity -->
+    <string name="lock_gesture_forget_gesture">忘记手势密码</string>
+    <string name="lock_gesture_input_olo_pwd">请输入原手势密码</string>
+    <string name="lock_gesture_default">请输入手势密码</string>
+    <string name="lock_gesture_error">手势密码输入错误</string>
+    <string name="lock_gesture_correct">输入正确</string>
+    <string name="lock_gesture_manager">管理手势密码</string>
+
+</resources>

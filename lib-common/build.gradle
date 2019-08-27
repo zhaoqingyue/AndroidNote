@@ -66,5 +66,7 @@ dependencies {
     //比例布局
     api(name: 'percent-support-extends-1.1.1', ext: 'aar')
 
-
+    // 二维码生成、扫描、识别
+    api(name: 'bga-qrcodecore-1.1.8', ext: 'aar')
+    api(name: 'bga-qrcode-zxing-1.2.5', ext: 'aar')
 }

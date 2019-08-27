@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="lock_grey_dde1e7">#DDE1E7</color>
+    <color name="lock_msg_default">#A5A5A5</color>
+    <color name="lock_msg_error">#F4333C</color>
+    <color name="lock_cell_default_indicator">#B2B2B2</color>
+    <color name="lock_cell_default">#78D2F6</color>
+    <color name="lock_cell_select">#00AAEE</color>
+    <color name="lock_cell_error">#F3323B</color>
+
+</resources>

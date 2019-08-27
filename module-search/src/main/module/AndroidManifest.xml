@@ -3,7 +3,7 @@
 
     <!--组件模式下的清单文件-->
     <application
-        android:name="debug.SearchApp"
+        android:name="debug.LockApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/search_app_name"

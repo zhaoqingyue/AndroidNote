@@ -69,7 +69,7 @@
         android:id="@+id/mc_copyright"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_gap"
         app:mc_title="@string/me_copyright" />
 
     <!-- 去评分 -->
@@ -93,7 +93,7 @@
         android:id="@+id/mc_user_agreement"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_gap"
         app:mc_title="@string/me_user_agreement"
         app:mc_hasDivider="true"/>
 
@@ -110,7 +110,7 @@
         android:id="@+id/mc_reward"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_gap"
         app:mc_title="@string/me_reward"
         app:mc_hasDivider="false"/>
 
