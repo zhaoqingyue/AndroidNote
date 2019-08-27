@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/me_account_safe"/>
+
+    <!-- 手机号 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_mobile_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        app:mc_title="@string/me_mobile_phone"
+        app:mc_hasDivider="true"/>
+
+    <!-- 设置密码 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_password"
+        app:mc_hasDivider="false"/>
+
+
+</LinearLayout>

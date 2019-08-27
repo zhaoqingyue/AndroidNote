@@ -116,6 +116,7 @@
     <dimen name="dp_180">180dp</dimen>
     <dimen name="dp_200">200dp</dimen>
     <dimen name="dp_225">225dp</dimen>
+    <dimen name="dp_240">240dp</dimen>
     <dimen name="dp_255">255dp</dimen>
     <dimen name="dp_270">270dp</dimen>
     <dimen name="dp_280">280dp</dimen>
@@ -188,5 +189,15 @@
     <dimen name="sp_50">50sp</dimen>
 
     <dimen name="lineHeight">1px</dimen>
+    <!-- 标题栏高度 -->
+    <dimen name="title_height">70dp</dimen>
+    <dimen name="title_height_land">55dp</dimen>
+
+    <!-- MultiCard卡片高度 -->
+    <dimen name="multiCard_height">55dp</dimen>
+    <dimen name="multiCard_height_land">45dp</dimen>
+
+    <dimen name="edit_height">70dp</dimen>
+    <dimen name="btn_height">60dp</dimen>
 
 </resources>

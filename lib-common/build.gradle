@@ -42,7 +42,6 @@ android {
 }
 
 dependencies {
-//    api fileTree(dir: 'libs', include: ['*.jar'])
     api fileTree(dir: 'libs', excludes: ['butterknife-compiler-8.5.0.jar'], include: ['*.jar'])
     annotationProcessor files('libs/butterknife-compiler-8.5.0.jar')
     annotationProcessor project(':arouter-compiler')
@@ -62,7 +61,10 @@ dependencies {
     api(name: 'arouter-api-1.4.0', ext: 'aar')
     api(name: 'rxandroid-2.0.1', ext: 'aar')
     api(name: 'rxbinding-2.0.0', ext: 'aar')
-    api(name: 'permission-2.0.0-rc12', ext: 'aar')
+    api(name: 'permission-1.1.0', ext: 'aar')
     api(name: 'butterknife-8.8.1', ext: 'aar')
+    //比例布局
+    api(name: 'percent-support-extends-1.1.1', ext: 'aar')
+
 
 }

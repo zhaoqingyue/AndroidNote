@@ -66,6 +66,7 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', excludes: ['butterknife-compiler-8.5.0.jar'], include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     annotationProcessor files('libs/butterknife-compiler-8.5.0.jar')
     annotationProcessor project(':arouter-compiler')
     api project(":lib-biz-common")

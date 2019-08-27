@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/account_reset_pwd"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_40"
+        android:paddingRight="@dimen/dp_40"
+        android:orientation="vertical">
+
+        <!-- 手机号 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_height"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/account_icon_mobile"/>
+
+            <EditText
+                android:id="@+id/lost_pwd_edit_mobile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:textCursorDrawable="@drawable/shape_edit_cursor_bg"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/account_input_mobile_hint"
+                android:inputType="number"
+                android:maxLength="11"
+                android:singleLine="true"
+                android:text=""
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/colorEditNormal"
+                android:textColorHint="@color/colorEditHint" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorDivider" />
+
+        <!-- 验证码 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_height"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/account_icon_vercode"/>
+
+            <EditText
+                android:id="@+id/lost_pwd_edit_vericode"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:textCursorDrawable="@drawable/shape_edit_cursor_bg"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/account_input_verCode_hint"
+                android:inputType="number"
+                android:maxLength="6"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/colorEditNormal"
+                android:textColorHint="@color/colorEditHint" />
+
+            <!-- 获取验证码 -->
+            <TextView
+                android:id="@+id/lost_pwd_text_vericode"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:enabled="false"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/sp_18"
+                android:text="@string/account_get_verCode"
+                android:textColor="@drawable/account_selector_vercode_text" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorDivider" />
+
+        <!-- 密码 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_height"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/account_icon_pwd"/>
+
+            <EditText
+                android:id="@+id/lost_pwd_edit_pwd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:textCursorDrawable="@drawable/shape_edit_cursor_bg"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/account_input_new_pwd_hint"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/colorEditNormal"
+                android:textColorHint="@color/colorEditHint" />
+
+            <ImageView
+                android:id="@+id/iv_pwd_visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_30"
+                android:src="@mipmap/account_pwd_invisible"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorDivider" />
+
+        <!-- 确认密码 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_height"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/account_icon_pwd"/>
+
+            <EditText
+                android:id="@+id/lost_pwd_edit_confirm_pwd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:textCursorDrawable="@drawable/shape_edit_cursor_bg"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/account_input_new_confirm_pwd_hint"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/colorEditNormal"
+                android:textColorHint="@color/colorEditHint" />
+
+            <ImageView
+                android:id="@+id/iv_confirm_pwd_visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_30"
+                android:src="@mipmap/account_pwd_invisible"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorDivider" />
+
+        <!-- 重设密码 -->
+        <Button
+            android:id="@+id/btn_reset_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_40"
+            android:background="@drawable/account_selector_btn_emerald_green_bg"
+            android:enabled="false"
+            android:textSize="@dimen/sp_20"
+            android:text="@string/account_reset_pwd"
+            android:textColor="@drawable/account_selector_btn_emerald_green_text" />
+    </LinearLayout>
+
+</LinearLayout>

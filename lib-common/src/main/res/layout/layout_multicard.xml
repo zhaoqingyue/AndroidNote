@@ -13,8 +13,8 @@
         android:background="@drawable/selector_item_bg"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/dp_40"
-        android:paddingRight="@dimen/dp_40">
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
 
         <TextView
             android:id="@+id/tv_letter"
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/sp_18" />
+                android:textSize="@dimen/sp_16" />
 
             <TextView
                 android:id="@+id/tv_title_hint"
@@ -72,7 +72,7 @@
                 android:gravity="right|center_vertical"
                 android:text=""
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/sp_18"
+                android:textSize="@dimen/sp_16"
                 android:visibility="gone" />
 
             <EditText
@@ -83,7 +83,7 @@
                 android:gravity="right|center_vertical"
                 android:text=""
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/sp_18"
+                android:textSize="@dimen/sp_16"
                 android:visibility="gone" />
 
         </RelativeLayout>
@@ -102,8 +102,8 @@
         android:id="@+id/v_line"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0.5"
-        android:layout_marginLeft="@dimen/dp_27"
-        android:layout_marginRight="@dimen/dp_27"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
         android:background="@color/main_divider"
         android:visibility="visible" />
 

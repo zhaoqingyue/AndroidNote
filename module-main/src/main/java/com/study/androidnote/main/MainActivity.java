@@ -1,16 +1,21 @@
 package com.study.androidnote.main;
 
 import android.os.Bundle;
+
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.study.androidnote.main.view.fragment.HomeFragment;
 import com.study.androidnote.main.view.fragment.MeFragment;
 import com.study.androidnote.main.view.fragment.MsgFragment;
 import com.study.androidnote.main.view.fragment.NoteFragment;
+import com.study.biz.constant.ArouterPath;
 import com.study.commonlib.base.activity.BaseSupportActivity;
 import com.study.commonlib.ui.fragmentation.SupportFragment;
 import com.study.commonlib.ui.view.BottomBar;
 import com.study.commonlib.ui.view.BottomBarTab;
+
 import butterknife.BindView;
 
+@Route(path = ArouterPath.PATH_MAIN)
 public class MainActivity extends BaseSupportActivity implements BottomBar.OnTabSelectedListener {
 
     public static final int FIRST = 0;
@@ -40,7 +45,7 @@ public class MainActivity extends BaseSupportActivity implements BottomBar.OnTab
                 .addItem(mBottomBarMsg)
                 .addItem(me);
         mBottomBar.setOnTabSelectedListener(this);
-        mBottomBarMsg.setUnreadCount(100);
+        mBottomBarMsg.setUnreadCount(10);
     }
 
     @Override

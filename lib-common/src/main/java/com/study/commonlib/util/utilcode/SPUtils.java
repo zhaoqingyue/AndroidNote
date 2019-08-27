@@ -17,7 +17,6 @@ import java.util.Map;
 public class SPUtils {
 
     private static SPUtils instance;
-    private static SPUtils feedbackSPUtils;//意见反馈保存文本专用
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
 
@@ -31,16 +30,6 @@ public class SPUtils {
         }
         return instance;
     }
-    public static SPUtils getFeedbackSPUtils() {
-        if (feedbackSPUtils == null) {
-            synchronized(SPUtils.class) {
-                if (feedbackSPUtils == null) {
-                    feedbackSPUtils = new SPUtils("feedback_text");
-                }
-            }
-        }
-        return feedbackSPUtils;
-    }
 
     /**
      * SPUtils构造函数
@@ -53,32 +42,6 @@ public class SPUtils {
         editor = sp.edit();
         editor.apply();
     }
-
-//    /**
-//     */
-//    public void putBean(DriveBehavLatestResp bean) {
-//        Gson gson = new Gson();
-//        String jsonBean = gson.toJson(bean);
-//        editor.putString("DriveBehavLatestResp", jsonBean).apply();
-//    }
-//    /**
-//     *
-//     * @return 存在返回对应值，不存在返回默认值{@code null}
-//     */
-//    public DriveBehavLatestResp getBean() {
-//        Gson gson = new Gson();
-//        String json = sp.getString("DriveBehavLatestResp","");
-////        Type type = new TypeToken<DriveBehavLatestResp>(){}.getType();
-//        if(TextUtils.isEmpty(json)){
-//            return null;
-//        }else{
-//            DriveBehavLatestResp  resp = gson.fromJson(json,DriveBehavLatestResp.class);
-//            return resp;
-//        }
-//
-//
-//    }
-
 
     /**
      * SP中写入String类型value
@@ -348,7 +311,4 @@ public class SPUtils {
             sp.edit().putBoolean(key, value).apply();
         }
     }
-
-
-
 }

@@ -9,7 +9,7 @@
         android:id="@+id/id_mainLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"/>
 
     <View
         android:layout_width="match_parent"

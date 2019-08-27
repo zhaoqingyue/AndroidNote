@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBlack">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/me_user_edit_avatar" />
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="100%w"
+            app:layout_widthPercent="100%w"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/me_logo"/>
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/me_prompt"
+            android:drawablePadding="@dimen/dp_5"
+            android:layout_centerHorizontal="true"
+            android:text="@string/me_user_avatar_upload"
+            android:textColor="@color/gray_868686"
+            android:textSize="@dimen/sp_12"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_60"
+        android:paddingRight="@dimen/dp_60"
+        android:paddingTop="@dimen/dp_30"
+        android:paddingBottom="@dimen/dp_15"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <com.study.androidnote.me.view.user.AvatarBar
+            android:id="@+id/ll_avatar_camera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:me_ab_avatarIcon="@drawable/me_selector_avatar_camera"
+            app:me_ab_avatarType="@string/me_user_avatar_camera"/>
+
+        <com.study.androidnote.me.view.user.AvatarBar
+            android:id="@+id/ll_avatar_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:me_ab_avatarIcon="@drawable/me_selector_avatar_default"
+            app:me_ab_avatarType="@string/me_user_avatar_default"/>
+
+        <com.study.androidnote.me.view.user.AvatarBar
+            android:id="@+id/ll_avatar_select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:me_ab_avatarIcon="@drawable/me_selector_avatar_select"
+            app:me_ab_avatarType="@string/me_user_avatar_select"/>
+
+    </LinearLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

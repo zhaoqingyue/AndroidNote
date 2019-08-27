@@ -55,16 +55,10 @@ dependencies {
     compile project(':lib-biz-common')
 
     if (!isModule.toBoolean()) {
-        compile project(':module-welcome')
         compile project(':module-account')
         compile project(':module-main')
         compile project(':module-me')
-
-//        compile project(':module-feedback')
-//        compile project(':module-search')
-//        compile project(':module-smartsteward')
-//        compile project(':module-usercenter')
-//        compile project(':module-carhealth')
-//        compile project(':module-voice')
+        compile project(':module-search')
+        compile project(':module-welcome')
     }
 }

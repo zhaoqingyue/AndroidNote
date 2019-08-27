@@ -76,6 +76,6 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    api project(":lib-common")
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':lib-common')
 }

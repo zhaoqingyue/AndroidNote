@@ -69,12 +69,12 @@ public class TopBar extends RelativeLayout {
     private boolean mDividerVisible;
     private int mDividerColor;
 
-    public TopBar(Context context) {
-        super(context);
-        handleTypedArray(context, null);
-        bindView(context);
-        initData();
-    }
+//    public TopBar(Context context) {
+//        super(context);
+//        handleTypedArray(context, null);
+//        bindView(context);
+//        initData();
+//    }
 
     public TopBar(Context context, AttributeSet attrs) {
         super(context, attrs);

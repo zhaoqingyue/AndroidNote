@@ -39,7 +39,7 @@
     <color name="btn_bg_highlight_pressed">#2476C8</color>  <!-- 高亮Button背景按下颜色值 -->
     <!-- 可点击item -->
     <color name="item_bg_nor">#FFFFFF</color>               <!-- 可点击Item正常颜色值 -->
-    <color name="item_bg_pressed">#B2B2B2</color>           <!-- 可点击Item点击颜色值 -->
+    <color name="item_bg_pressed">#E5E5E5</color>           <!-- 可点击Item点击颜色值 -->
 
     <color name="colorKeyboardBg">#CCD0D7</color>          <!-- 键盘背景色 -->
     <color name="colorKeyboardItemNor">#FFFFFF</color>     <!-- 键盘Item常规背景色 -->
@@ -58,6 +58,15 @@
     <!-- 导航栏文字颜色 -->
     <color name="tab_text_nor_color">#888888</color>
     <color name="tab_text_select_color">#EF2C29</color>
+
+
+    <color name="colorEditNormal">#222222</color>
+    <color name="colorEditHint">#7A7E83</color>
+
+    <color name="colorVerCodeDisable">#109EA2</color>
+    <color name="colorVerCodeNormal">#109EA2</color>
+    <color name="colorVerCodePressed">#109EA2</color>
+    <color name="colorVerCode">#80beba</color>
 
     <!--白色-->
     <color name="white_ffffff">#ffffff</color>
@@ -102,6 +111,7 @@
     <color name="colorCircleBg">#B4B4B4</color>
     <color name="colorMobile">#009C52</color>
     <color name="blue_0084FF">#0084FF</color>
+    <color name="blue_067AF5">#067AF5</color>
 
 
 

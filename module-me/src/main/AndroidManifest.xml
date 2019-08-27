@@ -1,12 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.study.androidnote.me" >
+    package="com.study.androidnote.me">
 
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
-
+        <activity android:name=".view.setting.SettingActivity" />
+        <activity android:name=".view.setting.safe.SafeActivity" />
+        <activity android:name=".view.setting.about.AboutActivity" />
+        <activity android:name=".view.setting.about.CopyrightActivity" />
+        <activity android:name=".view.setting.about.UserAgreementActivity" />
+        <activity android:name=".view.setting.about.RewardActivity" />
+        <activity android:name=".view.user.UserInfoActivity" />
+        <activity android:name=".view.user.UserMoreActivity" />
+        <activity android:name=".view.user.EditAvatarActivity" />
+        <activity android:name=".view.user.EditInfoActivity" />
+        <activity android:name=".view.user.SexActivity" />
+        <activity android:name=".view.user.QrCodeActivity" />
+        <activity android:name=".view.user.VerifiedActivity" />
+        <activity android:name=".view.user.ShipAddressActivity" />
+        <activity android:name=".view.user.BirthdayActivity" />
+        <activity android:name=".view.user.AreaActivity"/>
     </application>
 
 </manifest>
-
-

@@ -1,10 +1,14 @@
 package com.study.commonlib.base.activity;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.TextView;
 
 import com.study.commonlib.R;
 import com.study.commonlib.R2;
 
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -14,11 +18,23 @@ import butterknife.OnClick;
  */
 public abstract class BaseTopBarActivity extends BaseActivity {
 
-    @OnClick({R2.id.ll_leftLayout})
-    public void onClick(View view) {
-        int id = view.getId();
-        if (id == R.id.ll_leftLayout) {
-            finish();
-        }
+//    @BindView(R2.id.tv_title)
+//    TextView mTitle;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+//        if (isNeedBindTitle()) {
+//            mTitle.setText(getTitleValue());
+//        }
     }
+
+//    protected boolean isNeedBindTitle() {
+//        return false;
+//    }
+//
+//    protected String getTitleValue() {
+//        return "";
+//    }
 }

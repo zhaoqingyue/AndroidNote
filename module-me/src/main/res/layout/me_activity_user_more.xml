@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/me_user_more"/>
+
+    <!-- 姓名 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        app:mc_title="@string/me_user_name"
+        app:mc_hasContent="true"
+        app:mc_alignRight="true"
+        app:mc_contentHint="@string/me_user_hint_unset"
+        app:mc_hasDivider="true"/>
+
+    <!-- 手机号 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_user_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_user_mobile"
+        app:mc_hasContent="true"
+        app:mc_alignRight="true"
+        app:mc_contentHint="@string/me_user_hint_unset"
+        app:mc_hasDivider="true"/>
+
+    <!-- 性别 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_user_sex"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_user_sex"
+        app:mc_hasContent="true"
+        app:mc_alignRight="true"
+        app:mc_contentHint="@string/me_user_hint_unset"
+        app:mc_hasDivider="true"/>
+
+    <!-- 出生日期 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_user_birth"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_user_birth"
+        app:mc_hasContent="true"
+        app:mc_alignRight="true"
+        app:mc_contentHint="@string/me_user_hint_unset"
+        app:mc_hasDivider="true"/>
+
+    <!-- 邮箱 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_user_email"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_user_email"
+        app:mc_hasContent="true"
+        app:mc_alignRight="true"
+        app:mc_contentHint="@string/me_user_hint_unset"
+        app:mc_hasDivider="true"/>
+
+    <!-- 地区 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_user_area"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_user_area"
+        app:mc_hasContent="true"
+        app:mc_alignRight="true"
+        app:mc_contentHint="@string/me_user_hint_select_area"
+        app:mc_hasDivider="true"/>
+
+    <!-- 个人签名 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_user_signature"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_user_signature"
+        app:mc_hasContent="true"
+        app:mc_alignRight="true"
+        app:mc_contentHint="@string/me_user_hint_unset"
+        app:mc_hasDivider="false"/>
+
+</LinearLayout>

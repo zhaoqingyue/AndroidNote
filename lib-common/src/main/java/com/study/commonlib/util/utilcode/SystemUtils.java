@@ -19,4 +19,19 @@ public class SystemUtils {
         return UUID.randomUUID().toString().replaceAll("-", "");
     }
 
+    /**
+     * 随机生成一个账号
+     */
+    public static String generateAccount() {
+        String machineId = "note_"; //最大支持1-9个集群机器部署
+        int hashCode = UUID.randomUUID().toString().hashCode();
+        if (hashCode < 0) {
+            //有可能是负数
+            hashCode = -hashCode;
+        }
+        LogUtils.e("ZQY", "generateAccount: " + hashCode);
+        // 保持11位
+        String hashCodeStr = String.format("%011d", hashCode);
+        return machineId + hashCodeStr;
+    }
 }

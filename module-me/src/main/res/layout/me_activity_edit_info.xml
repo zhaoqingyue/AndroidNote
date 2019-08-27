@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_rightTextVisible="true"
+        app:tb_rightText="@string/btn_save"
+        app:tb_rightTextColor="@color/blue_0084FF"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_40"
+        android:paddingRight="@dimen/sp_40"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:paddingLeft="@dimen/dp_2"
+            android:paddingRight="@dimen/dp_2"
+            android:background="@null"
+            android:maxLength="255"
+            android:singleLine="true"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/gray_868686"
+            android:hint=""
+            android:textCursorDrawable="@drawable/shape_edit_cursor_bg"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/colorDivider"/>
+
+    </LinearLayout>
+
+</LinearLayout>

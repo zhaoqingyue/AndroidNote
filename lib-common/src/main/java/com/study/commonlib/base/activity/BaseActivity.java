@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import com.study.commonlib.util.utilcode.ActivityUtils;
+
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
 
 /**
@@ -31,6 +34,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         setContentView(getLayoutId());
         ButterKnife.bind(this);
+        if (receiveEventBus()) {
+            EventBus.getDefault().register(this);
+        }
         initData(savedInstanceState);
     }
 
@@ -41,9 +47,24 @@ public abstract class BaseActivity extends AppCompatActivity {
         return false;
     }
 
+    /**
+     * 是否接收EventBus事件
+     */
+    protected boolean receiveEventBus() {
+        return false;
+    }
+
     protected abstract int getLayoutId();
 
     protected abstract void initData(Bundle saveInstanceState);
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (receiveEventBus()) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
 
     @Override
     public Resources getResources() {

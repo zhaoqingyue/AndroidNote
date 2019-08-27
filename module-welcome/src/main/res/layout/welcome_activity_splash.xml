@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/colorWindows">
+
+    <TextView
+        android:id="@+id/text0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/dp_50"
+        android:ems="1"
+        android:text="业精于勤荒于嬉"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/sp_32" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_toRightOf="@+id/text0"
+        android:ems="1"
+        android:text="行成于思毁于随"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/sp_32" />
+
+</RelativeLayout>

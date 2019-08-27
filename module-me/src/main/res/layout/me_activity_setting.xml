@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/me_setting" />
+
+    <!-- 账号 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_account"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        app:mc_title="@string/me_account_safe"
+        app:mc_hasDivider="false"/>
+
+    <!-- 开启引导页 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:background="@drawable/selector_item_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/me_open_guide"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_18"
+            android:layout_centerVertical="true"/>
+
+        <Switch
+            android:id="@+id/switch_open_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_24"
+            android:switchMinWidth="20dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:thumb="@drawable/me_selector_switch_thumb"
+            android:track="@drawable/me_selector_switch_track"
+           android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0.5"
+            android:background="@color/main_divider"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <!-- 夜间模式 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:background="@drawable/selector_item_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/me_night_mode"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_18"
+            android:layout_centerVertical="true"/>
+
+        <Switch
+            android:id="@+id/switch_night_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_24"
+            android:switchMinWidth="20dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:thumb="@drawable/me_selector_switch_thumb"
+            android:track="@drawable/me_selector_switch_track"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+        <View
+            android:id="@+id/v_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0.5"
+            android:background="@color/main_divider"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <!-- 清除缓存 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_clear_cache"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_clear_cache"
+        app:mc_hasContent="true"
+        app:mc_content="10.9MB"
+        app:mc_alignRight="true"
+        app:mc_hasDivider="false"/>
+
+    <!-- 帮助 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_help"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        app:mc_title="@string/me_help" />
+
+    <!-- 意见反馈 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_feedback"
+        app:mc_hasDivider="false"/>
+
+    <!-- 关于 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_about"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        app:mc_title="@string/me_about"
+        app:mc_hasDivider="false"/>
+
+    <TextView
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/sp_18"
+        android:text="@string/me_logout"
+        android:background="@drawable/selector_item_bg"/>
+
+
+</LinearLayout>

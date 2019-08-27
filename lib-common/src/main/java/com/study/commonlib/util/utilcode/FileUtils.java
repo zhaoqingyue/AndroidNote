@@ -21,6 +21,7 @@ import java.io.OutputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -1092,6 +1093,40 @@ public class FileUtils {
     }
 
     /**
+     * 递归获取文件长度
+     */
+    public static long getFileSizes(File f) throws Exception {
+        long size = 0;
+        File fileList[] = f.listFiles();
+        for (int i = 0; i < fileList.length; i++) {
+            if (fileList[i].isDirectory()) {
+                size = size + getFileSizes(fileList[i]);
+            } else {
+                size = size + fileList[i].length();
+            }
+        }
+        return size;
+    }
+
+    /**
+     * 转换文件大小
+     */
+    public static String formatFileSize(long fileS) {
+        DecimalFormat df = new DecimalFormat("#0.00");
+        String fileSizeString = "";
+        if (fileS < 1024) {
+            fileSizeString = df.format((double) fileS) + "B";
+        } else if (fileS < 1048576) {
+            fileSizeString = df.format((double) fileS / 1024) + "KB";
+        } else if (fileS < 1073741824) {
+            fileSizeString = df.format((double) fileS / 1048576) + "MB";
+        } else {
+            fileSizeString = df.format((double) fileS / 1073741824) + "GB";
+        }
+        return fileSizeString;
+    }
+
+    /**
      * 获取目录长度
      *
      * @param dirPath 目录路径
@@ -1108,7 +1143,9 @@ public class FileUtils {
      * @return 文件大小
      */
     public static long getDirLength(File dir) {
-        if (!isDir(dir)) return -1;
+        if (!isDir(dir))
+            return -1;
+
         long len = 0;
         File[] files = dir.listFiles();
         if (files != null && files.length != 0) {
@@ -1140,7 +1177,9 @@ public class FileUtils {
      * @return 文件大小
      */
     public static long getFileLength(File file) {
-        if (!isFile(file)) return -1;
+        if (!isFile(file))
+            return -1;
+
         return file.length();
     }
 

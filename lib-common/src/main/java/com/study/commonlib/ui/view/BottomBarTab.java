@@ -52,8 +52,8 @@ public class BottomBarTab extends FrameLayout {
         lLContainer.setLayoutParams(paramsContainer);
 
         // 图片icon
-        int fontSize = (int) (getResources().getDisplayMetrics().heightPixels * 0.09 * 0.21);
-        int iconSize = (int) (getResources().getDisplayMetrics().heightPixels * 0.09 * 0.53);
+        int fontSize = (int) (getResources().getDisplayMetrics().heightPixels * 0.08 * 0.20);
+        int iconSize = (int) (getResources().getDisplayMetrics().heightPixels * 0.08 * 0.50);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(iconSize, iconSize);
         mIcon = new ImageView(context);
         mIcon.setImageResource(icon);

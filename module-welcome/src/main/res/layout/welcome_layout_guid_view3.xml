@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/welcome_guide3" />
+
+    <TextView
+        android:id="@+id/guide_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_45"
+        android:paddingLeft="@dimen/dp_30"
+        android:paddingRight="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_60"
+        android:background="@drawable/welcome_selector_btn_guide_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/welcome_experience"
+        android:textColor="#CFCfCF"
+        android:textSize="@dimen/sp_18"
+        android:visibility="visible" />
+
+</RelativeLayout>

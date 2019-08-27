@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 登录 -->
+    <string name="login_edit_widthPercent">71.3%w</string>
+    <string name="login_edit_heightPercent">14%h</string>
+    <string name="login_btn_widthPercent">71.3%w</string>
+    <string name="login_btn_heightPercent">14%h</string>
+
+
+
+</resources>

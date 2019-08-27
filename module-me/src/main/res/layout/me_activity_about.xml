@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/me_about"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_20"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_about_icon"
+            android:layout_width="@dimen/dp_72"
+            android:layout_height="@dimen/dp_72"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_about_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/me_app_name"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/tv_about_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="V1.0.1"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_16" />
+
+    </LinearLayout>
+
+    <!-- 项目主页 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_homepage"
+        app:mc_hasDivider="true"/>
+
+    <!-- 版本更新 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_update"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_update"
+        app:mc_hasContent="true"
+        app:mc_content="V1.0.0"
+        app:mc_alignRight="true"
+        app:mc_hasDivider="false"/>
+
+    <!-- 版权信息 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_copyright"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        app:mc_title="@string/me_copyright" />
+
+    <!-- 去评分 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_score"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_score"
+        app:mc_hasDivider="true"/>
+
+    <!-- 分享好友 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_share"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_share"
+        app:mc_hasDivider="false"/>
+
+    <!-- 用户协议 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_user_agreement"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        app:mc_title="@string/me_user_agreement"
+        app:mc_hasDivider="true"/>
+
+    <!-- 隐私协议 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_privacy_agreement"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_privacy_agreement"
+        app:mc_hasDivider="false"/>
+
+    <!-- 打赏 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_reward"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_5"
+        app:mc_title="@string/me_reward"
+        app:mc_hasDivider="false"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="Copyright © 1988-2019 zhaoqy. All Rights Reserved."
+            android:textColor="@color/colorDivider"
+            android:textSize="@dimen/sp_12"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

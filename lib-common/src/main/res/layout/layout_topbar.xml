@@ -42,22 +42,25 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/dp_16"
         android:layout_centerVertical="true" >
 
         <ImageView
             android:id="@+id/iv_rightImage"
             android:layout_width="@dimen/dp_20"
             android:layout_height="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_16"
             android:layout_alignParentRight="true"
             android:src="@mipmap/icon_setting"
-            android:visibility="gone"/>
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/tv_rightText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/dp_16"
+            android:paddingLeft="@dimen/dp_16"
             android:layout_alignParentRight="true"
+            android:gravity="center"
             android:text="右文本"
             android:textColor="@color/colorTitle"
             android:textSize="@dimen/sp_16"

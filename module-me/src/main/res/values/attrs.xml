@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 头像栏 -->
+    <declare-styleable name="me_AvatarBar">
+        <attr name="me_ab_avatarIcon" format="reference"/>   <!-- 头像图标 -->
+        <attr name="me_ab_avatarType" format="string"/>      <!-- 头像类型 -->
+    </declare-styleable>
+
+</resources>

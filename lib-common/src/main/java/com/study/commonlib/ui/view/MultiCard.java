@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.study.commonlib.R;
+import com.study.commonlib.util.utilcode.LogUtils;
 import com.study.commonlib.util.utilcode.ScreenUtils;
 
 /**
@@ -77,15 +78,14 @@ public class MultiCard extends LinearLayout {
 
     private void handleTypedArray(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MultiCard);
-        int def_color = getResources().getColor(R.color.colorBlack);
 
         // 图标
         iconResId = typedArray.getResourceId(R.styleable.MultiCard_mc_icon, -1);
 
         // 标题
         title = typedArray.getString(R.styleable.MultiCard_mc_title);
-        titleTextColor = typedArray.getColor(R.styleable.MultiCard_mc_titleTextColor, def_color);
-        titleTextSize = typedArray.getDimension(R.styleable.MultiCard_mc_titleTextSize, ScreenUtils.sp2px(18));
+        titleTextColor = typedArray.getColor(R.styleable.MultiCard_mc_titleTextColor, getResources().getColor(R.color.colorBlack));
+        titleTextSize = typedArray.getDimension(R.styleable.MultiCard_mc_titleTextSize, ScreenUtils.sp2px(16));
         hasLetter = typedArray.getBoolean(R.styleable.MultiCard_mc_hasLetter, false);
 
         // 标题下面的提示
@@ -95,12 +95,12 @@ public class MultiCard extends LinearLayout {
         // 内容
         hasContent = typedArray.getBoolean(R.styleable.MultiCard_mc_hasContent, false);
         content = typedArray.getString(R.styleable.MultiCard_mc_content);
-        contentTextColor = typedArray.getColor(R.styleable.MultiCard_mc_contentTextColor, def_color);
-        contentTextSize = typedArray.getDimension(R.styleable.MultiCard_mc_contentTextSize, ScreenUtils.sp2px(18));
+        contentTextColor = typedArray.getColor(R.styleable.MultiCard_mc_contentTextColor, getResources().getColor(R.color.gray_9b9b9b));
+        contentTextSize = typedArray.getDimension(R.styleable.MultiCard_mc_contentTextSize, ScreenUtils.sp2px(14));
         contentHint = typedArray.getString(R.styleable.MultiCard_mc_contentHint);
-        int defHintColor = getResources().getColor(R.color.gray_868686);
-        contentHintTextColor = typedArray.getColor(R.styleable.MultiCard_mc_contentHintTextColor, defHintColor);
-        contentHintTextSize = typedArray.getDimension(R.styleable.MultiCard_mc_contentHintTextSize, ScreenUtils.sp2px(15));
+
+        contentHintTextColor = typedArray.getColor(R.styleable.MultiCard_mc_contentHintTextColor, getResources().getColor(R.color.gray_868686));
+        contentHintTextSize = typedArray.getDimension(R.styleable.MultiCard_mc_contentHintTextSize, ScreenUtils.sp2px(14));
         isMobile = typedArray.getBoolean(R.styleable.MultiCard_mc_isMobile, false);
         isEdited = typedArray.getBoolean(R.styleable.MultiCard_mc_isEdited, false);
         alignRight = typedArray.getBoolean(R.styleable.MultiCard_mc_alignRight, true);
@@ -113,8 +113,8 @@ public class MultiCard extends LinearLayout {
         hasDivider = typedArray.getBoolean(R.styleable.MultiCard_mc_hasDivider, true);
         int defLineColor = getResources().getColor(R.color.main_divider);
         dividerColor = typedArray.getColor(R.styleable.MultiCard_mc_dividerColor, defLineColor);
-        dividerMarginLeft = typedArray.getDimension(R.styleable.MultiCard_mc_dividerMarginLeft, ScreenUtils.dp2px(27.5f));
-        dividerMarginRight = typedArray.getDimension(R.styleable.MultiCard_mc_dividerMarginRight, ScreenUtils.dp2px(27.5f));
+        dividerMarginLeft = typedArray.getDimension(R.styleable.MultiCard_mc_dividerMarginLeft, ScreenUtils.dp2px(20f));
+        dividerMarginRight = typedArray.getDimension(R.styleable.MultiCard_mc_dividerMarginRight, ScreenUtils.dp2px(20f));
 
         typedArray.recycle();
     }
