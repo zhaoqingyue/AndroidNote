@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxWidth="@dimen/dp_160"
+    android:layout_margin="@dimen/dp_5"
+    android:paddingBottom="@dimen/dp_10"
+    android:paddingLeft="@dimen/dp_20"
+    android:paddingRight="@dimen/dp_20"
+    android:paddingTop="@dimen/dp_10"
+    android:maxLines="1"
+    android:ellipsize="end"
+    android:text="PHP是世界上最好的编程语言"
+    android:textColor="#3f3e3e"
+    android:textSize="@dimen/dp_14"
+    android:background="@drawable/search_selector_label_bg">
+
+</TextView>

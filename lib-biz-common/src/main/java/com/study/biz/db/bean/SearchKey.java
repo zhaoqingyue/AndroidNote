@@ -12,7 +12,7 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity
 public class SearchKey {
 
-    @Id
+    @Id(autoincrement = true)
     private Long historyId;
 
     @Property(nameInDb = "keyWod")

@@ -41,7 +41,7 @@ public class SearchKeyDao extends AbstractDao<SearchKey, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"SEARCH_KEY\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY ," + // 0: historyId
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: historyId
                 "\"keyWod\" TEXT);"); // 1: keyWod
     }
 
