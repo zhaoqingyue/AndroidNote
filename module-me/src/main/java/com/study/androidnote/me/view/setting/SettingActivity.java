@@ -12,6 +12,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
 import com.study.androidnote.me.view.setting.about.AboutActivity;
+import com.study.androidnote.me.view.setting.safe.AvatarTypeActivity;
 import com.study.androidnote.me.view.setting.safe.SafeActivity;
 import com.study.biz.constant.ArouterPath;
 import com.study.biz.db.manager.UserInfoManager;
@@ -65,12 +66,14 @@ public class SettingActivity extends BaseTopBarActivity {
         }
     }
 
-    @OnClick({R2.id.mc_account, R2.id.mc_clear_cache, R2.id.mc_help, R2.id.mc_feedback, R2.id.mc_about, R2.id.btn_logout})
+    @OnClick({R2.id.mc_account, R2.id.mc_avatar_type, R2.id.mc_clear_cache, R2.id.mc_help, R2.id.mc_feedback, R2.id.mc_about, R2.id.btn_logout})
     public void onClick(View view) {
         int id = view.getId();
        if (id == R.id.mc_account) {
            goToActivity(SafeActivity.class);
-        } else if (id == R.id.mc_clear_cache) {
+        } else if (id == R.id.mc_avatar_type) {
+           goToActivity(AvatarTypeActivity.class);
+       } else if (id == R.id.mc_clear_cache) {
            // 清除缓存
            CleanUtils.cleanInternalCache();
            CleanUtils.cleanExternalCache();

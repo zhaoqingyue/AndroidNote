@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import com.study.commonlib.ui.fragmentation.SupportActivity;
 import com.study.commonlib.util.utilcode.ActivityUtils;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
 
 /**
@@ -28,6 +30,9 @@ public abstract class BaseSupportActivity extends SupportActivity {
         }
         setContentView(getLayoutId());
         ButterKnife.bind(this);
+        if (receiveEventBus()) {
+            EventBus.getDefault().register(this);
+        }
         initFragment(savedInstanceState);
         initData(savedInstanceState);
     }
@@ -39,11 +44,24 @@ public abstract class BaseSupportActivity extends SupportActivity {
         return false;
     }
 
+    /**
+     * 是否接收EventBus事件
+     */
+    protected boolean receiveEventBus() {
+        return false;
+    }
+
     protected abstract int getLayoutId();
 
     protected abstract void initFragment(Bundle saveInstanceState);
 
     protected abstract void initData(Bundle saveInstanceState);
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (receiveEventBus()) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
 }

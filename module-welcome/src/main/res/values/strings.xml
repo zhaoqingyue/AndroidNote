@@ -4,8 +4,7 @@
 
     <string name="welcome_skip">跳过%d秒</string>
     <string name="welcome_skip_guide">跳过引导</string>
+    <string name="welcome_next">下一步</string>
     <string name="welcome_experience">开始体验</string>
-
-
 
 </resources>

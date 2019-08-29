@@ -3,17 +3,24 @@ package com.study.androidnote.main;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.study.androidnote.main.view.fragment.CardFragment;
 import com.study.androidnote.main.view.fragment.HomeFragment;
 import com.study.androidnote.main.view.fragment.MeFragment;
 import com.study.androidnote.main.view.fragment.MsgFragment;
 import com.study.androidnote.main.view.fragment.NoteFragment;
+import com.study.biz.bean.event.LockEvent;
 import com.study.biz.constant.ArouterPath;
 import com.study.biz.manager.JumpManager;
 import com.study.biz.manager.SpManager;
 import com.study.commonlib.base.activity.BaseSupportActivity;
+import com.study.commonlib.ui.dialog.LoadingDialog;
 import com.study.commonlib.ui.fragmentation.SupportFragment;
 import com.study.commonlib.ui.view.BottomBar;
 import com.study.commonlib.ui.view.BottomBarTab;
+import com.study.commonlib.util.utilcode.ToastUtils;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 
@@ -24,11 +31,12 @@ public class MainActivity extends BaseSupportActivity implements BottomBar.OnTab
     public static final int SECOND = 1;
     public static final int THIRD = 2;
     public static final int FOUR = 3;
+    public static final int FIVE = 4;
 
     @BindView(R2.id.bb_bottomBar)
     BottomBar mBottomBar;
 
-    private SupportFragment[] mFragments = new SupportFragment[4];
+    private SupportFragment[] mFragments = new SupportFragment[5];
     private BottomBarTab mBottomBarMsg;
 
     @Override
@@ -37,14 +45,21 @@ public class MainActivity extends BaseSupportActivity implements BottomBar.OnTab
     }
 
     @Override
+    protected boolean receiveEventBus() {
+        return true;
+    }
+
+    @Override
     protected void initData(Bundle saveInstanceState) {
         BottomBarTab home = new BottomBarTab(this, R.drawable.main_selector_bottom_home, getString(R.string.main_bottom_home));
         BottomBarTab task = new BottomBarTab(this, R.drawable.main_selector_bottom_note, getString(R.string.main_bottom_note));
         mBottomBarMsg = new BottomBarTab(this, R.drawable.main_selector_bottom_msg, getString(R.string.main_bottom_msg));
+        BottomBarTab card = new BottomBarTab(this, R.drawable.main_selector_bottom_card, getString(R.string.main_bottom_card));
         BottomBarTab me = new BottomBarTab(this, R.drawable.main_selector_bottom_me, getString(R.string.main_bottom_me));
         mBottomBar.addItem(home)
                 .addItem(task)
                 .addItem(mBottomBarMsg)
+                .addItem(card)
                 .addItem(me);
         mBottomBar.setOnTabSelectedListener(this);
         mBottomBarMsg.setUnreadCount(10);
@@ -56,23 +71,33 @@ public class MainActivity extends BaseSupportActivity implements BottomBar.OnTab
             mFragments[FIRST] = HomeFragment.newInstance();
             mFragments[SECOND] = NoteFragment.newInstance();
             mFragments[THIRD] = MsgFragment.newInstance();
-            mFragments[FOUR] = MeFragment.newInstance();
-            loadMultipleRootFragment(R.id.id_mainLayout, FIRST, mFragments[FIRST], mFragments[SECOND], mFragments[THIRD], mFragments[FOUR]);
+            mFragments[FOUR] = CardFragment.newInstance();
+            mFragments[FIVE] = MeFragment.newInstance();
+            loadMultipleRootFragment(R.id.id_mainLayout, FIRST, mFragments[FIRST], mFragments[SECOND], mFragments[THIRD], mFragments[FOUR], mFragments[FIVE]);
         } else {
             mFragments[FIRST] = findFragment(HomeFragment.class);
             mFragments[SECOND] = findFragment(NoteFragment.class);
             mFragments[THIRD] = findFragment(MsgFragment.class);
-            mFragments[FOUR] = findFragment(MeFragment.class);
+            mFragments[FOUR] = findFragment(CardFragment.class);
+            mFragments[FIVE] = findFragment(MeFragment.class);
         }
     }
 
+    private int position;
+    private int prePosition;
+
     @Override
     public void onTabSelected(int position, int prePosition) {
-        showHideFragment(mFragments[position], mFragments[prePosition]);
-        if (position == FOUR) {
+        this.position = position;
+        this.prePosition = prePosition;
+        if (position != FIVE) {
+            showHideFragment(mFragments[position], mFragments[prePosition]);
+        } else {
             if (SpManager.isOpenGesturePwd()) {
                 // 手势解锁
                 JumpManager.gotoGesturePwd();
+            } else {
+                showHideFragment(mFragments[position], mFragments[prePosition]);
             }
         }
     }
@@ -86,5 +111,19 @@ public class MainActivity extends BaseSupportActivity implements BottomBar.OnTab
     public void onTabReselected(int position) {
         SupportFragment currentFragment = mFragments[position];
         currentFragment.getChildFragmentManager().getBackStackEntryCount();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(LockEvent event) {
+        switch (event.msgId) {
+            case 0: {
+                showHideFragment(mFragments[position], mFragments[prePosition]);
+                break;
+            }
+            case 1: {
+                mBottomBar.setCurrentItem(prePosition);
+                break;
+            }
+        }
     }
 }

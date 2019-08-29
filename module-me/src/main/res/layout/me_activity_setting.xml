@@ -18,6 +18,14 @@
         android:layout_height="@dimen/multiCard_height"
         android:layout_marginTop="@dimen/dp_gap"
         app:mc_title="@string/me_account_safe"
+        app:mc_hasDivider="true"/>
+
+    <!-- 头像类型 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_avatar_type"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_avatar_type"
         app:mc_hasDivider="false"/>
 
     <!-- 开启手势密码 -->

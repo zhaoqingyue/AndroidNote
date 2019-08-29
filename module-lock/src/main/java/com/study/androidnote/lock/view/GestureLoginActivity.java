@@ -12,6 +12,7 @@ import com.study.androidnote.lock.R2;
 import com.study.androidnote.lock.util.LockUtils;
 import com.study.androidnote.lock.view.cell.LockCell;
 import com.study.androidnote.lock.view.custom.LockView;
+import com.study.biz.bean.event.LockEvent;
 import com.study.biz.constant.AppConstant;
 import com.study.biz.constant.ArouterPath;
 import com.study.biz.db.bean.UserInfo;
@@ -19,6 +20,9 @@ import com.study.biz.db.manager.UserInfoManager;
 import com.study.biz.util.LockCache;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.util.utilcode.ToastUtils;
+
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -93,14 +97,6 @@ public class GestureLoginActivity extends BaseTopBarActivity {
         }
     };
 
-    @OnClick({R2.id.ll_leftLayout})
-    public void onBackPressed(View view) {
-        int id = view.getId();
-        if (id == R.id.ll_leftLayout) {
-            finish();
-        }
-    }
-
     /**
      * 手势管理
      */
@@ -135,7 +131,23 @@ public class GestureLoginActivity extends BaseTopBarActivity {
      */
     private void loginGestureSuccess() {
         ToastUtils.showShortToast("检验成功");
+        LockEvent event = new LockEvent();
+        event.msgId = 0;
+        event.errCode = 0;
+        EventBus.getDefault().post(event);
         finish();
+    }
+
+    @OnClick({R2.id.ll_leftLayout})
+    public void onBackPressed(View view) {
+        int id = view.getId();
+        if (id == R.id.ll_leftLayout) {
+            LockEvent event = new LockEvent();
+            event.msgId = 1;
+            event.errCode = 0;
+            EventBus.getDefault().post(event);
+            finish();
+        }
     }
 
     private enum Status {

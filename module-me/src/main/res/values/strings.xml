@@ -34,6 +34,7 @@
     <!-- 设置 -->
     <string name="me_setting">设置</string>
     <string name="me_account_safe">账号与安全</string>
+    <string name="me_avatar_type">头像类型</string>
     <string name="me_open_gesture_pwd">开启手势密码</string>
     <string name="me_open_guide">开启引导页</string>
     <string name="me_night_mode">夜间模式</string>
@@ -42,6 +43,10 @@
     <string name="me_feedback">意见反馈</string>
     <string name="me_about">关于</string>
     <string name="me_logout">退出登录</string>
+    <string name="me_avatar_type_square">方形</string>
+    <string name="me_avatar_type_round_angle">圆角</string>
+    <string name="me_avatar_type_circle">圆形</string>
+    <string name="me_avatar_type_circle_V">圆形 + V</string>
 
     <!-- 账号与密码 -->
     <string name="me_mobile_phone">手机号</string>

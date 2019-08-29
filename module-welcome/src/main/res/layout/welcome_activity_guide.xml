@@ -22,4 +22,20 @@
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/sp_14" />
 
+    <TextView
+        android:id="@+id/guide_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_45"
+        android:paddingLeft="@dimen/dp_30"
+        android:paddingRight="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_60"
+        android:background="@drawable/welcome_shape_btn_guide"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/welcome_next"
+        android:textColor="@color/welcome_stroke_color"
+        android:textSize="@dimen/sp_18"
+        android:visibility="visible" />
+
 </RelativeLayout>

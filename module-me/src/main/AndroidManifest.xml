@@ -7,6 +7,7 @@
         android:supportsRtl="true">
         <activity android:name=".view.setting.SettingActivity" />
         <activity android:name=".view.setting.safe.SafeActivity" />
+        <activity android:name=".view.setting.safe.AvatarTypeActivity"/>
         <activity android:name=".view.setting.about.AboutActivity" />
         <activity android:name=".view.setting.about.CopyrightActivity" />
         <activity android:name=".view.setting.about.UserAgreementActivity" />
@@ -20,7 +21,8 @@
         <activity android:name=".view.user.VerifiedActivity" />
         <activity android:name=".view.user.ShipAddressActivity" />
         <activity android:name=".view.user.BirthdayActivity" />
-        <activity android:name=".view.user.AreaActivity"/>
+        <activity android:name=".view.user.AreaActivity" />
+
     </application>
 
 </manifest>
