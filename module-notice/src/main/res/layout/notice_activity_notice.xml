@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/iv_leftImage"
+            android:layout_width="@dimen/dp_14"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_5"
+            android:src="@mipmap/icon_back"/>
+
+        <com.study.commonlib.ui.view.RVPIndicator
+            android:id="@+id/indicator"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            app:indicator_color="@color/blue_0084FF"
+            app:indicator_height="5dp"
+            app:indicator_style="line"
+            app:indicator_visible_count="2"
+            app:item_paddingLeft="48dp"
+            app:item_paddingRight="48dp"
+            app:style_line_padding="48dp"
+            app:text_color_normal="@color/colorBlack"
+            app:text_color_selected="@color/blue_0084FF"
+            app:text_size="@dimen/sp_18" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_14"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:src="@mipmap/icon_back"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
+
+    <com.study.commonlib.ui.view.NoScrollViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

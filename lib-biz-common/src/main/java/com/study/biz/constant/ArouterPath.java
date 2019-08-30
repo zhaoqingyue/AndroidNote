@@ -9,18 +9,20 @@ public class ArouterPath {
     // 账号——登录
     public static final String PATH_ACCOUNT_LOGIN = "/account/LoginActivity";
 
-    // 首页——搜索
+    // 首页
     public static final String PATH_MAIN = "/main/MainActivity";
 
     // 首页——搜索
     public static final String PATH_HOME_SEARCH = "/search/SearchActivity";
+
+    // 首页——消息通知
+    public static final String PATH_HOME_NOTICE = "/notice/NoticeActivity";
 
     // 手势——创建
     public static final String PATH_GESTURE_CREATE = "/lock/CreateGestureActivity";
 
     // 手势——登录
     public static final String PATH_GESTURE_LOGIN = "/lock/GestureLoginActivity";
-
 
     // 我的——个人信息
     public static final String PATH_ME_USER_INFO = "/me/UserInfoActivity";

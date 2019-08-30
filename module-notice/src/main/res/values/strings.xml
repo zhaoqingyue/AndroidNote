@@ -1,0 +1,11 @@
+<resources>
+    <string name="notice_app_name">module-msg</string>
+
+    <string name="notice_msg">消息</string>
+    <string name="notice_msg_notice">消息通知</string>
+    <string name="notice_sys_notice">系统公告</string>
+    <string name="notice_msg_detail">消息详情</string>
+    <string name="notice_sys_detail">公告详情</string>
+
+
+</resources>

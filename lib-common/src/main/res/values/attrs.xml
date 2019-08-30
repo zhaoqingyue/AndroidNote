@@ -277,6 +277,32 @@
         <attr name="tb_bottomDividerColor" format="color"/>        <!-- 底部间隔线背景色 -->
     </declare-styleable>
 
+    <!-- RVPIndicator -->
+    <declare-styleable name="RVPIndicator">
+        <attr name="text_color_normal" format="color" />
+        <attr name="text_color_selected" format="color" />
+        <attr name="text_size" format="dimension" />
+        <!--指示器可见数量-->
+        <attr name="indicator_visible_count" format="integer" />
+        <attr name="indicator_color" format="color" />
+        <attr name="indicator_style">
+            <enum name="bitmap" value="0" />
+            <enum name="line" value="1" />
+            <enum name="triangle" value="2" />
+        </attr>
+        <!--指示器bitmap资源,style=bitmap有效-->
+        <attr name="style_bitmap_src" format="reference" />
+        <attr name="item_paddingLeft" format="dimension" />
+        <attr name="item_paddingRight" format="dimension" />
+        <!--线性指示器左右padding，默认根据数量均分屏幕-->
+        <attr name="style_line_padding" format="dimension" />
+        <!--指示器高度-->
+        <attr name="indicator_height" format="dimension" />
+        <!--指示器宽度-->
+        <attr name="indicator_width" format="dimension" />
+    </declare-styleable>
+
+
 
     <!-- 加载动画样式 -->
     <declare-styleable name="AVLoadingIndicatorView">
@@ -321,32 +347,6 @@
 
     </declare-styleable>
 
-    <!-- RVPIndicator -->
-    <declare-styleable name="RVPIndicator">
-        <attr name="text_color_normal" format="color" />
-        <attr name="text_color_selected" format="color" />
-        <attr name="text_size" format="dimension" />
-        <!--指示器可见数量-->
-        <attr name="indicator_visible_count" format="integer" />
-        <attr name="indicator_color" format="color" />
-        <attr name="indicator_style">
-            <enum name="bitmap" value="0" />
-            <enum name="line" value="1" />
-            <enum name="triangle" value="2" />
-        </attr>
-        <!--指示器bitmap资源,style=bitmap有效-->
-        <attr name="style_bitmap_src" format="reference" />
-
-        <attr name="item_paddingLeft" format="dimension" />
-        <attr name="item_paddingRight" format="dimension" />
-
-        <!--线性指示器左右padding，默认根据数量均分屏幕-->
-        <attr name="style_line_padding" format="dimension" />
-        <!--指示器高度-->
-        <attr name="indicator_height" format="dimension" />
-        <!--指示器宽度-->
-        <attr name="indicator_width" format="dimension" />
-    </declare-styleable>
 
     <declare-styleable name="CircleProgressView">
         <attr name="baseRingColor" format="color"/><!--底部基准圆环底色-->

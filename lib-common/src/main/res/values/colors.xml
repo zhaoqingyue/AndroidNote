@@ -14,6 +14,8 @@
     <color name="colorTitle">#222222</color>
     <color name="colorPageTitleBg">#FFFFFF</color>
     <color name="colorDivider">#9b9b9b</color>
+    <color name="colorStroke">#C7C7C7</color>
+
 
     <!--透明:所有透明度的颜色都放在这里-->
     <color name="transparent">#00000000</color>

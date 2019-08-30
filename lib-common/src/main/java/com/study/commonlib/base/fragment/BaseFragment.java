@@ -33,9 +33,9 @@ public abstract class BaseFragment extends Fragment {
         initData();
     }
 
-    protected abstract void initPresenter();
-
     protected abstract int getLayoutResID();
 
     protected abstract void initData();
+
+    protected abstract void initPresenter();
 }

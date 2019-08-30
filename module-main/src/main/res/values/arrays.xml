@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="main_manager">
+        <item>银行卡</item>
+        <item>其它卡</item>
+        <item>证件</item>
+        <item>账户</item>
+    </string-array>
+
+</resources>

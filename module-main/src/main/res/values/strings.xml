@@ -5,12 +5,12 @@
     <string name="main_bottom_note">笔记</string>
     <string name="main_bottom_msg">消息</string>
     <string name="main_bottom_card">卡管理</string>
+    <string name="main_bottom_manager">管理</string>
     <string name="main_bottom_me">我的</string>
 
 
     <string name="main_card_setting">设置</string>
     <string name="main_card_wallet">钱包</string>
     <string name="main_unset_nick">未设置昵称</string>
-
 
 </resources>
