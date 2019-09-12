@@ -69,12 +69,9 @@ public class TopBar extends RelativeLayout {
     private boolean mDividerVisible;
     private int mDividerColor;
 
-//    public TopBar(Context context) {
-//        super(context);
-//        handleTypedArray(context, null);
-//        bindView(context);
-//        initData();
-//    }
+    public TopBar(Context context) {
+        super(context);
+    }
 
     public TopBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -92,10 +89,10 @@ public class TopBar extends RelativeLayout {
 
     private void handleTypedArray(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TopBar);
-        int def_color = ContextCompat.getColor(context, R.color.colorBlack);
+        int def_color = getResources().getColor(R.color.colorBlack);
 
         // 背景色
-        mBgColor = typedArray.getColor(R.styleable.TopBar_tb_bgColor, ContextCompat.getColor(context, R.color.colorWhite));
+        mBgColor = typedArray.getColor(R.styleable.TopBar_tb_bgColor, getResources().getColor(R.color.colorWhite));
 
         // 左icon图标
         mLeftResId = typedArray.getResourceId(R.styleable.TopBar_tb_leftIcon, -1);

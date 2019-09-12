@@ -1,2 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.study.module_manager" />
+    package="com.study.androidnote.manager">
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity android:name=".view.bank.BankActivity" />
+        <activity android:name=".view.bank.BankAddActivity" />
+        <activity android:name=".view.bank.BankDetailActivity" />
+        <activity android:name=".view.bank.BankSelectActivity" />
+        <activity android:name=".view.bank.BankTypeActivity" />
+        <activity android:name=".view.card.CardActivity" />
+        <activity android:name=".view.card.CardAddActivity" />
+        <activity android:name=".view.card.CardDetailActivity" />
+        <activity android:name=".view.card.CardTypeActivity" />
+        <activity android:name=".view.paperwork.PaperworkActivity" />
+        <activity android:name=".view.paperwork.PaperworkAddActivity" />
+        <activity android:name=".view.paperwork.PaperworkDetailActivity" />
+        <activity android:name=".view.paperwork.PaperworkTypeActivity" />
+        <activity android:name=".view.account.AccountActivity" />
+        <activity android:name=".view.account.AccountAddActivity" />
+        <activity android:name=".view.account.AccountDetailActivity"/>
+        <activity android:name=".view.account.AccountTypeActivity" />
+        <activity android:name=".view.bookkeeping.BookKeepingActivity" />
+
+    </application>
+
+</manifest>

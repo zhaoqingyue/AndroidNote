@@ -277,6 +277,27 @@
         <attr name="tb_bottomDividerColor" format="color"/>        <!-- 底部间隔线背景色 -->
     </declare-styleable>
 
+    <!-- 编辑Item -->
+    <declare-styleable name="EditItem">
+        <!-- 标题 -->
+        <attr name="et_titleText" format="string"/>                <!-- 标题 -->
+        <attr name="et_titleTextColor" format="color"/>            <!-- 标题文本颜色值 -->
+        <attr name="et_titleTextSize" format="dimension"/>         <!-- 标题文本字体大小 -->
+        <!-- 内容 -->
+        <attr name="et_contentText" format="string"/>              <!-- 内容 -->
+        <attr name="et_contentTextHint" format="string"/>          <!-- 内容 -->
+        <attr name="et_contentTextColor" format="color"/>          <!-- 内容颜色值 -->
+        <attr name="et_contentTextColorHnt" format="color"/>       <!-- 内容颜色值 -->
+        <attr name="et_contentTextSize" format="dimension"/>       <!-- 内容字体大小 -->
+        <attr name="et_contentEditable" format="boolean"/>         <!-- 内容是否可编辑 -->
+        <!-- 箭头图标 -->
+        <attr name="et_arrowIcon" format="reference"/>             <!-- 箭头图标 -->
+        <attr name="et_arrowIconVisible" format="boolean"/>        <!-- 箭头图标是否显示 -->
+        <!-- 分割线 -->
+        <attr name="et_bottomDividerVisible" format="boolean"/>    <!-- 底部间隔线是否显示 -->
+        <attr name="et_bottomDividerColor" format="color"/>        <!-- 底部间隔线背景色 -->
+    </declare-styleable>
+
     <!-- RVPIndicator -->
     <declare-styleable name="RVPIndicator">
         <attr name="text_color_normal" format="color" />

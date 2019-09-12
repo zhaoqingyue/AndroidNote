@@ -51,8 +51,7 @@ public class RVPIndicator extends LinearLayout {
     /**
      * 系统默认:文字选中时颜色
      */
-    private static final int D_TEXT_COLOR_HIGHLIGHT = Color
-            .parseColor("#FF0000");
+    private static final int D_TEXT_COLOR_HIGHLIGHT = Color.parseColor("#FF0000");
 
     /**
      * 系统默认:指示器颜色

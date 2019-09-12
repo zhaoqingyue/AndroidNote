@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/manager_add_bank"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:orientation="vertical"
+        android:background="@drawable/shape_white_bg">
+
+        <!-- 姓名 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_userName"
+            app:et_contentEditable="true"
+            app:et_contentTextHint="@string/manager_input_userName"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 银行 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_bank_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_bankName"
+            app:et_contentEditable="false"
+            app:et_contentTextHint="@string/manager_input_bankName"
+            app:et_arrowIconVisible="true"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 卡类型 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_bank_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_bankType"
+            app:et_contentEditable="false"
+            app:et_contentTextHint="@string/manager_input_bankType"
+            app:et_arrowIconVisible="true"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 卡号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_bank_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_bankNumber"
+            app:et_contentEditable="true"
+            app:et_contentTextHint="@string/manager_input_bankNumber"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 密码 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_bank_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_password"
+            app:et_contentEditable="true"
+            app:et_contentTextHint="@string/manager_input_password"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 身份证号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_identity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_identity"
+            app:et_contentEditable="true"
+            app:et_contentTextHint="@string/manager_input_identity"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 手机号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_mobile"
+            app:et_contentEditable="true"
+            app:et_contentTextHint="@string/manager_input_mobile"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="false"/>
+
+    </LinearLayout>
+
+    <!-- 保存 -->
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_margin="@dimen/dp_20"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/selector_btn_emerald_green_bg"
+        android:enabled="false"
+        android:textSize="@dimen/sp_20"
+        android:text="@string/btn_save"
+        android:textColor="@drawable/selector_btn_emerald_green_text" />
+
+</LinearLayout>

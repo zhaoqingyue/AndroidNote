@@ -1,3 +1,68 @@
 <resources>
     <string name="manager_app_name">module-manager</string>
+
+    <string name="manager_type_bank">银行卡</string>
+    <string name="manager_type_card">其它卡</string>
+    <string name="manager_type_paperwork">证件</string>
+    <string name="manager_type_account">账户</string>
+    <string name="manager_type_bookkeeping">记账</string>
+
+    <string name="manager_bank_type">银行卡类型</string>
+    <string name="manager_card_type">卡类型</string>
+    <string name="manager_paperwork_type">证件类型</string>
+    <string name="manager_account_type">账户类型</string>
+
+    <string name="manager_add_bank">添加银行卡</string>
+    <string name="manager_add_card">添加卡</string>
+    <string name="manager_add_paperwork">添加证件</string>
+    <string name="manager_add_account">添加账户</string>
+    <string name="manager_bank_select">选择银行</string>
+    <string name="manager_bank_detail">银行卡管理</string>
+    <string name="manager_card_detail">卡详情</string>
+    <string name="manager_paperwork_detail">证件详情</string>
+    <string name="manager_account_detail">账户详情</string>
+    <string name="manager_bank_type_debit">借记卡-储蓄卡</string>
+    <string name="manager_bank_type_credit">贷记卡-信用卡</string>
+    <string name="manager_account_select">选择账户类型</string>
+
+    <string name="manager_userName">姓名&#8195;&#8195;&#8195;</string>
+    <string name="manager_nickName">昵称&#8195;&#8195;&#8195;</string>
+    <string name="manager_bankName">银行&#8195;&#8195;&#8195;</string>
+    <string name="manager_accountType">账户类型&#8195;</string>
+    <string name="manager_bankType">卡类型&#8195;&#8195;</string>
+    <string name="manager_bankNumber">银行卡号&#8195;</string>
+    <string name="manager_account">账号&#8195;&#8195;&#8195;</string>
+    <string name="manager_password">密码&#8195;&#8195;&#8195;</string>
+    <string name="manager_identity">身份证号&#8195;</string>
+    <string name="manager_mobile">手机号&#8195;&#8195;</string>
+    <string name="manager_email">邮箱&#8195;&#8195;&#8195;</string>
+    <string name="manager_cardType">卡类型&#8195;&#8195;</string>
+    <string name="manager_cardNumber">卡号&#8195;&#8195;&#8195;</string>
+    <string name="manager_computerNumber">电脑号&#8195;&#8195;</string>
+    <string name="manager_certificateType">证件类型&#8195;</string>
+    <string name="manager_certificateNumber">证件号&#8195;&#8195;</string>
+    <string name="manager_url">网址&#8195;&#8195;&#8195;</string>
+
+    <string name="manager_input_userName">请输入持卡人姓名</string>
+    <string name="manager_input_certificateType_userName">请输入证件人姓名</string>
+    <string name="manager_input_account_userName">请输入账户姓名</string>
+    <string name="manager_input_nickName">请输入昵称</string>
+    <string name="manager_input_bankName">选择银行</string>
+    <string name="manager_input_bankType">选择银行卡类型</string>
+    <string name="manager_input_bankNumber">请输入银行卡号</string>
+    <string name="manager_input_account">请输入账号</string>
+    <string name="manager_input_password">请输入密码</string>
+    <string name="manager_input_identity">请输入身份证号</string>
+    <string name="manager_input_mobile">请输入手机号</string>
+    <string name="manager_input_email">请输入邮箱</string>
+    <string name="manager_input_url">请输入网址&#8195;&#8195;&#8195;</string>
+    <string name="manager_input_cardNumber">请输入卡号</string>
+    <string name="manager_input_computerNumber">请输入电脑号</string>
+    <string name="manager_input_cardType">选择卡类型</string>
+    <string name="manager_input_certificateType">选择证件类型</string>
+    <string name="manager_input_certificateNumber">请输入证件号</string>
+    <string name="manager_input_certificateType_identity">居民身份证</string>
+    <string name="manager_input_certificateType_birth">出生证</string>
+    <string name="manager_input_certificateType_passport">护照</string>
+
 </resources>

@@ -233,11 +233,11 @@
             android:layout_height="@dimen/btn_height"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/dp_20"
-            android:background="@drawable/account_selector_btn_emerald_green_bg"
+            android:background="@drawable/selector_btn_emerald_green_bg"
             android:enabled="false"
             android:textSize="@dimen/sp_20"
             android:text="@string/account_register"
-            android:textColor="@drawable/account_selector_btn_emerald_green_text" />
+            android:textColor="@drawable/selector_btn_emerald_green_text" />
 
         <RelativeLayout
             android:layout_width="match_parent"

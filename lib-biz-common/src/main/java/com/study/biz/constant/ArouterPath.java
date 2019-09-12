@@ -18,6 +18,21 @@ public class ArouterPath {
     // 首页——消息通知
     public static final String PATH_HOME_NOTICE = "/notice/NoticeActivity";
 
+    // 管理——银行卡
+    public static final String PATH_MANAGER_BANK = "/manager/BankActivity";
+
+    // 管理——其它卡
+    public static final String PATH_MANAGER_CARD = "/manager/CardActivity";
+
+    // 管理——证件
+    public static final String PATH_MANAGER_PAPERWORK = "/manager/PaperworkActivity";
+
+    // 管理——账号
+    public static final String PATH_MANAGER_ACCOUNT = "/manager/AccountActivity";
+
+    // 管理——记账
+    public static final String PATH_MANAGER_BOOKKEEPING = "/manager/BookKeepingActivity";
+
     // 手势——创建
     public static final String PATH_GESTURE_CREATE = "/lock/CreateGestureActivity";
 

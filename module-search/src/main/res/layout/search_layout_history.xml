@@ -30,7 +30,7 @@
 
     </RelativeLayout>
 
-    <com.study.androidnote.search.view.FlowLayout
+    <com.study.androidnote.search.view.FlowLayout1
         android:id="@+id/zfl_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

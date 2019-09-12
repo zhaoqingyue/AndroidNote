@@ -1,6 +1,7 @@
 package com.study.androidnote.search.view;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,13 @@ import java.util.List;
  * 自定义搜索流式布局
  */
 public class FlowLayout extends ViewGroup {
+
+    private int limitLineCount = 3; //显示行数
+
+    private boolean isLimitLine; //是否有行限制
+
+    private boolean isOverFlow; //是否溢出
+
     /**
      * 存储所有子View
      */
@@ -45,29 +53,40 @@ public class FlowLayout extends ViewGroup {
         int sizeHeight = MeasureSpec.getSize(heightMeasureSpec);
         int modeHeight = MeasureSpec.getMode(heightMeasureSpec);
 
-        //如果当前ViewGroup的宽高为wrap_content的情况
-        //自己测量的宽度
+        // 如果当前ViewGroup的宽高为wrap_content的情况
+        // 自己测量的宽度
         int width = 0;
         //自己测量的高度
         int height = 0;
-        //记录每一行的宽度和高度
+        // 记录每一行的宽度，width不断取最大宽度
         int lineWidth = 0;
+        // 每一行的高度，累加至height
         int lineHeight = 0;
 
-        //获取子view的个数
+        int lineCount = 1;
+        isOverFlow = false;
+
+        // 获取子view的个数
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
-            //测量子View的宽和高
+            // 测量子View的宽和高
             measureChild(child, widthMeasureSpec, heightMeasureSpec);
-            //得到LayoutParams
+            // 得到LayoutParams
             MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
-            //子View占据的宽度
+            // 子View占据的宽度
             int childWidth = child.getMeasuredWidth() + lp.leftMargin + lp.rightMargin;
-            //子View占据的高度
+            // 子View占据的高度
             int childHeight = child.getMeasuredHeight() + lp.topMargin + lp.bottomMargin;
-            //换行时候
+            // 如果加入当前child，则超出最大宽度，则的到目前最大宽度给width，累加height 然后开启新行
             if (lineWidth + childWidth > sizeWidth) {
+                if(isLimitLine) {
+                    if(lineCount == this.limitLineCount + 1) {
+                        setOverFlow(true);
+                        break;
+                    }
+                }
+
                 //对比得到最大的宽度
                 width = Math.max(width, lineWidth);
                 //重置lineWidth
@@ -75,6 +94,7 @@ public class FlowLayout extends ViewGroup {
                 //记录行高
                 height += lineHeight;
                 lineHeight = childHeight;
+                lineCount ++;
             } else {//不换行情况
                 //叠加行宽
                 lineWidth += childWidth;
@@ -100,6 +120,7 @@ public class FlowLayout extends ViewGroup {
 
         int lineWidth = 0;
         int lineHeight = 0;
+        int lineCount = 1;
         //记录当前行的view
         List<View> lineViews = new ArrayList<View>();
         int childCount = getChildCount();
@@ -111,15 +132,22 @@ public class FlowLayout extends ViewGroup {
 
             //如果需要换行
             if (childWidth + lineWidth + lp.leftMargin + lp.rightMargin > width) {
+                if(isLimitLine) {
+                    if(lineCount == this.limitLineCount + 1) {
+                        break;
+                    }
+                }
+
                 //记录LineHeight
                 mLineHeight.add(lineHeight);
                 //记录当前行的Views
                 mAllChildViews.add(lineViews);
                 //重置行的宽高
                 lineWidth = 0;
-                lineHeight = childHeight + lp.topMargin + lp.bottomMargin;
+//                lineHeight = childHeight + lp.topMargin + lp.bottomMargin;
                 //重置view的集合
                 lineViews = new ArrayList();
+                lineCount ++;
             }
             lineWidth += childWidth + lp.leftMargin + lp.rightMargin;
             lineHeight = Math.max(lineHeight, childHeight + lp.topMargin + lp.bottomMargin);
@@ -133,8 +161,8 @@ public class FlowLayout extends ViewGroup {
         int left = 0;
         int top = 0;
         //获取行数
-        int lineCount = mAllChildViews.size();
-        for (int i = 0; i < lineCount; i++) {
+        int lineNum  = mAllChildViews.size();
+        for (int i = 0; i < lineNum; i++) {
             //当前行的views和高度
             lineViews = mAllChildViews.get(i);
             lineHeight = mLineHeight.get(i);
@@ -149,6 +177,12 @@ public class FlowLayout extends ViewGroup {
                 int cTop = top + lp.topMargin;
                 int cRight = cLeft + child.getMeasuredWidth();
                 int cBottom = cTop + child.getMeasuredHeight();
+
+                // 修正rc margin
+                if (cRight + lp.rightMargin > getWidth()) {
+                    cRight = getWidth() - lp.rightMargin;
+                }
+
                 //进行子View进行布局
                 child.layout(cLeft, cTop, cRight, cBottom);
                 left += child.getMeasuredWidth() + lp.leftMargin + lp.rightMargin;
@@ -164,6 +198,14 @@ public class FlowLayout extends ViewGroup {
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new MarginLayoutParams(getContext(), attrs);
+    }
+
+    @Override
+    protected void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if(isLimitLine) {
+            // 这里写一个回调，activity中收到后判断isOverFlow，如果溢出，则显示点击更多样式，否则不显示。
+        }
     }
 
     public void setAdapter(Context context, List<SearchKey> searchKeys) {
@@ -204,5 +246,20 @@ public class FlowLayout extends ViewGroup {
     public interface OnItemClickListener {
 
         void onItemClick(int position, String key);
+    }
+
+    public boolean isOverFlow() {
+        return isOverFlow;
+    }
+
+    public void setOverFlow(boolean overFlow) {
+        isOverFlow = overFlow;
+    }
+
+    public void setIsLimitLine(boolean isLimitLine) {
+        this.isLimitLine = isLimitLine;
+        this.requestLayout();
+        this.invalidate();
+
     }
 }

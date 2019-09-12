@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/manager_bank_detail"/>
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:orientation="vertical"
+        android:background="@drawable/shape_white_bg">
+
+        <!-- 姓名 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/et_userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_userName"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 银行 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/et_bankName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_bankName"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 卡类型 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/et_bankType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_bankType"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 卡号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/et_bankNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_bankNumber"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 密码 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/et_bankPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_password"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+
+        <!-- 身份证号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/et_identity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_identity"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 手机号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/et_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/manager_mobile"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="false"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

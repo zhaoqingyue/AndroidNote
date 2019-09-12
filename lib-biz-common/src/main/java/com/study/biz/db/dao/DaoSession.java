@@ -8,9 +8,17 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
+import com.study.biz.db.bean.AccountBean;
+import com.study.biz.db.bean.BankBean;
+import com.study.biz.db.bean.CardBean;
+import com.study.biz.db.bean.PaperworkBean;
 import com.study.biz.db.bean.SearchKey;
 import com.study.biz.db.bean.UserInfo;
 
+import com.study.biz.db.dao.AccountBeanDao;
+import com.study.biz.db.dao.BankBeanDao;
+import com.study.biz.db.dao.CardBeanDao;
+import com.study.biz.db.dao.PaperworkBeanDao;
 import com.study.biz.db.dao.SearchKeyDao;
 import com.study.biz.db.dao.UserInfoDao;
 
@@ -23,9 +31,17 @@ import com.study.biz.db.dao.UserInfoDao;
  */
 public class DaoSession extends AbstractDaoSession {
 
+    private final DaoConfig accountBeanDaoConfig;
+    private final DaoConfig bankBeanDaoConfig;
+    private final DaoConfig cardBeanDaoConfig;
+    private final DaoConfig paperworkBeanDaoConfig;
     private final DaoConfig searchKeyDaoConfig;
     private final DaoConfig userInfoDaoConfig;
 
+    private final AccountBeanDao accountBeanDao;
+    private final BankBeanDao bankBeanDao;
+    private final CardBeanDao cardBeanDao;
+    private final PaperworkBeanDao paperworkBeanDao;
     private final SearchKeyDao searchKeyDao;
     private final UserInfoDao userInfoDao;
 
@@ -33,22 +49,62 @@ public class DaoSession extends AbstractDaoSession {
             daoConfigMap) {
         super(db);
 
+        accountBeanDaoConfig = daoConfigMap.get(AccountBeanDao.class).clone();
+        accountBeanDaoConfig.initIdentityScope(type);
+
+        bankBeanDaoConfig = daoConfigMap.get(BankBeanDao.class).clone();
+        bankBeanDaoConfig.initIdentityScope(type);
+
+        cardBeanDaoConfig = daoConfigMap.get(CardBeanDao.class).clone();
+        cardBeanDaoConfig.initIdentityScope(type);
+
+        paperworkBeanDaoConfig = daoConfigMap.get(PaperworkBeanDao.class).clone();
+        paperworkBeanDaoConfig.initIdentityScope(type);
+
         searchKeyDaoConfig = daoConfigMap.get(SearchKeyDao.class).clone();
         searchKeyDaoConfig.initIdentityScope(type);
 
         userInfoDaoConfig = daoConfigMap.get(UserInfoDao.class).clone();
         userInfoDaoConfig.initIdentityScope(type);
 
+        accountBeanDao = new AccountBeanDao(accountBeanDaoConfig, this);
+        bankBeanDao = new BankBeanDao(bankBeanDaoConfig, this);
+        cardBeanDao = new CardBeanDao(cardBeanDaoConfig, this);
+        paperworkBeanDao = new PaperworkBeanDao(paperworkBeanDaoConfig, this);
         searchKeyDao = new SearchKeyDao(searchKeyDaoConfig, this);
         userInfoDao = new UserInfoDao(userInfoDaoConfig, this);
 
+        registerDao(AccountBean.class, accountBeanDao);
+        registerDao(BankBean.class, bankBeanDao);
+        registerDao(CardBean.class, cardBeanDao);
+        registerDao(PaperworkBean.class, paperworkBeanDao);
         registerDao(SearchKey.class, searchKeyDao);
         registerDao(UserInfo.class, userInfoDao);
     }
     
     public void clear() {
+        accountBeanDaoConfig.clearIdentityScope();
+        bankBeanDaoConfig.clearIdentityScope();
+        cardBeanDaoConfig.clearIdentityScope();
+        paperworkBeanDaoConfig.clearIdentityScope();
         searchKeyDaoConfig.clearIdentityScope();
         userInfoDaoConfig.clearIdentityScope();
+    }
+
+    public AccountBeanDao getAccountBeanDao() {
+        return accountBeanDao;
+    }
+
+    public BankBeanDao getBankBeanDao() {
+        return bankBeanDao;
+    }
+
+    public CardBeanDao getCardBeanDao() {
+        return cardBeanDao;
+    }
+
+    public PaperworkBeanDao getPaperworkBeanDao() {
+        return paperworkBeanDao;
     }
 
     public SearchKeyDao getSearchKeyDao() {

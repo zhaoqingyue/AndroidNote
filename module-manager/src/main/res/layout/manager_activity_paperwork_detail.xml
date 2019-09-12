@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWindows"
+    android:orientation="vertical">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/manager_paperwork_detail" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:background="@drawable/shape_white_bg"
+        android:orientation="vertical">
+
+        <!-- 姓名 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"
+            app:et_contentEditable="false"
+            app:et_titleText="@string/manager_userName" />
+
+        <!-- 证件类型 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_certificateType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"
+            app:et_contentEditable="false"
+            app:et_titleText="@string/manager_certificateType" />
+
+        <!-- 证件号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_certificateNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"
+            app:et_contentEditable="false"
+            app:et_titleText="@string/manager_certificateNumber" />
+
+        <!-- 身份证号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_identity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"
+            app:et_contentEditable="false"
+            app:et_titleText="@string/manager_identity" />
+
+        <!-- 手机号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="false"
+            app:et_contentEditable="false"
+            app:et_titleText="@string/manager_mobile" />
+
+    </LinearLayout>
+
+</LinearLayout>

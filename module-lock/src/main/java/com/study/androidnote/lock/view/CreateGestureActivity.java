@@ -12,11 +12,14 @@ import com.study.androidnote.lock.util.LockUtils;
 import com.study.androidnote.lock.view.cell.LockCell;
 import com.study.androidnote.lock.view.custom.LockIndicator;
 import com.study.androidnote.lock.view.custom.LockView;
+import com.study.biz.bean.event.LockEvent;
 import com.study.biz.constant.AppConstant;
 import com.study.biz.constant.ArouterPath;
 import com.study.biz.util.LockCache;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.util.utilcode.ToastUtils;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -131,6 +134,10 @@ public class CreateGestureActivity extends BaseTopBarActivity {
     public void onBackPressed(View view) {
         int id = view.getId();
         if (id == R.id.ll_leftLayout) {
+            LockEvent event = new LockEvent();
+            event.msgId = 1;
+            event.errCode = 0;
+            EventBus.getDefault().post(event);
             finish();
         }
     }

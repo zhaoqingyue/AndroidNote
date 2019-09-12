@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="manager_bank_name">
+        <item>中国工商银行</item>
+        <item>中国农业银行</item>
+        <item>中国银行</item>
+        <item>中国建设银行</item>
+        <item>中国邮政银行</item>
+        <item>中国光大银行</item>
+        <item>中国民生银行</item>
+        <item>汇丰银行</item>
+        <item>中信银行</item>
+        <item>兴业银行</item>
+        <item>招商银行</item>
+        <item>平安银行</item>
+        <item>交通银行</item>
+        <item>广发银行</item>
+        <item>华夏银行</item>
+    </string-array>
+
+    <integer-array name="manager_bank_logo">
+        <item>@mipmap/manager_bank_0</item>
+        <item>@mipmap/manager_bank_1</item>
+        <item>@mipmap/manager_bank_2</item>
+        <item>@mipmap/manager_bank_3</item>
+        <item>@mipmap/manager_bank_4</item>
+        <item>@mipmap/manager_bank_5</item>
+        <item>@mipmap/manager_bank_6</item>
+        <item>@mipmap/manager_bank_7</item>
+        <item>@mipmap/manager_bank_8</item>
+        <item>@mipmap/manager_bank_9</item>
+        <item>@mipmap/manager_bank_10</item>
+        <item>@mipmap/manager_bank_11</item>
+        <item>@mipmap/manager_bank_12</item>
+        <item>@mipmap/manager_bank_13</item>
+        <item>@mipmap/manager_bank_14</item>
+    </integer-array>
+
+    <string-array name="manager_card">
+        <item>社保卡</item>
+        <item>公积金</item>
+        <item>公交卡</item>
+    </string-array>
+
+    <string-array name="manager_paperwork">
+        <item>身份证</item>
+        <item>居住证</item>
+        <item>护照</item>
+        <item>学生证</item>
+        <item>军官证</item>
+        <item>侨胞证</item>
+    </string-array>
+
+    <!--   <item>港澳通行证</item>-->
+
+    <string-array name="manager_account">
+        <item>微信</item>
+        <item>支付宝</item>
+        <item>QQ</item>
+        <item>新浪微博</item>
+        <item>知乎</item>
+        <item>百度云盘</item>
+        <item>华为</item>
+        <item>钉钉</item>
+        <item>QQ空间</item>
+        <item>朋友圈</item>
+        <item>邮箱</item>
+        <item>脉脉</item>
+        <item>豆瓣</item>
+        <item>淘宝</item>
+        <item>印象笔记</item>
+        <item>有道云笔记</item>
+        <item>Axure</item>
+        <item>Github</item>
+        <item>CSDN</item>
+        <item>简书</item>
+        <item>UI中国</item>
+        <item>Outlook</item>
+        <item>12306</item>
+        <item>开源中国</item>
+        <item>天猫</item>
+        <item>京东</item>
+        <item>唯品会</item>
+        <item>亚马逊</item>
+
+<!--        <item>Bintray</item>
+        <item>税务局</item>
+        <item>深圳人社局社会统一用户基础平台</item>-->
+
+    </string-array>
+
+
+    <string-array name="manager_account_government">
+        <item>深圳人社局社会统一用户基础平台</item>
+        <item>税务局</item>
+    </string-array>
+
+    <string-array name="manager_account_social">
+        <item>微信</item>
+        <item>支付宝</item>
+        <item>今日头条</item>
+        <item>钉钉</item>
+        <item>新浪微博</item>
+        <item>知乎</item>
+        <item>QQ</item>
+        <item>QQ空间</item>
+        <item>朋友圈</item>
+        <item>脉脉</item>
+        <item>豆瓣</item>
+    </string-array>
+
+    <string-array name="manager_account_tool">
+        <item>QQ邮箱</item>
+        <item>12306</item>
+    </string-array>
+
+    <string-array name="manager_account_note">
+        <item>QQ邮箱</item>
+        <item>百度云盘</item>
+        <item>印象笔记</item>
+        <item>有道云笔记</item>
+    </string-array>
+
+    <string-array name="manager_account_study">
+        <item>Github</item>
+        <item>CSDN</item>
+        <item>简书</item>
+        <item>Oschina</item>
+        <item>Bintray</item>
+        <item>Axure</item>
+        <item>UI中国</item>
+        <item>Outlook</item>
+    </string-array>
+
+    <string-array name="manager_account_shopping">
+        <item>天猫</item>
+        <item>淘宝</item>
+        <item>京东</item>
+        <item>唯品会</item>
+        <item>亚马逊</item>
+    </string-array>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

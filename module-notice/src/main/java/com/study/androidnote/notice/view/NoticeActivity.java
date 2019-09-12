@@ -10,7 +10,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.study.androidnote.notice.R;
 import com.study.androidnote.notice.R2;
 import com.study.androidnote.notice.view.fragment.MsgNoticeFragment;
-import com.study.androidnote.notice.view.fragment.SystemNoticeFragment;
+import com.study.androidnote.notice.view.fragment.SysNoticeFragment;
 import com.study.biz.constant.ArouterPath;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.ui.view.NoScrollViewPager;
@@ -50,7 +50,7 @@ public class NoticeActivity extends BaseTopBarActivity implements ViewPager.OnPa
         mData.add(getString(R.string.notice_sys_notice));
         mTabContents = new ArrayList<>();
         mTabContents.add(new MsgNoticeFragment());
-        mTabContents.add(new SystemNoticeFragment());
+        mTabContents.add(new SysNoticeFragment());
         mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
 
             @Override

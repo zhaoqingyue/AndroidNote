@@ -72,14 +72,15 @@ public class SearchActivity extends BaseActivity implements BaseQuickAdapter.OnI
     LinearLayout mHistoryLayout;
 
     @BindView( R2.id.zfl_history)
-    FlowLayout mFlowLayout;
+    FlowLayout1 mFlowLayout;
 
     private RecdAdapter mRecdAdapter;
     private List<AppBean> mRecdList;
     private SearchKeyDBManager<SearchKey, SearchKeyDao> mDbManager;
 
     // 数据模拟，实际应从网络获取此数据
-    private String[] mVal = new String[] {"Java是世界上最好的编程语言", "Android", "iOS", "Python", "Mac OS", "PHP", "JavaScript", "Objective-C", "Groovy", "Pascal", "Ruby", "Go", "Swift"};
+    private String[] mVal = new String[] {"Java是世界上最好的编程语言", "Android", "iOS", "Python", "Mac OS", "PHP", "JavaScript", "Objective-C", "Groovy", "Pascal", "Ruby", "Go", "Swift",
+            "1111", "22222", "33333", "4444", "55555", "6666666", "7777777", "8888888"};
 
     @Override
     protected int getLayoutId() {
@@ -128,6 +129,8 @@ public class SearchActivity extends BaseActivity implements BaseQuickAdapter.OnI
         }
 
         if (init) {
+//            mFlowLayout.setIsLimitLine(true);
+//            mFlowLayout.setLimitLineCount(4);
             mFlowLayout.setAdapter(this, searchKeys);
         } else {
             mFlowLayout.changeAdapter(this, searchKeys);

@@ -12,9 +12,9 @@ import java.util.List;
  * Created by zhao.qingyue on 2019/8/29.
  * 系统公告Adapter
  */
-public class SystemNoticeAdapter extends BaseQuickAdapter<SystemNotice, BaseViewHolder> {
+public class SysNoticeAdapter extends BaseQuickAdapter<SystemNotice, BaseViewHolder> {
 
-    public SystemNoticeAdapter(List<SystemNotice> data) {
+    public SysNoticeAdapter(List<SystemNotice> data) {
         super(R.layout.notice_item_sys, data);
     }
 
