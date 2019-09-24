@@ -17,11 +17,17 @@
         <!-- <activity android:name=".view.SplashActivity"
                 android:theme="@style/SplashTheme"/> -->
         <activity
-            android:name=".view.StartActivity"
+            android:name=".view.StartImageActivity"
             android:theme="@style/SplashTheme"/>
+
+        <activity
+            android:name=".view.StartVideoActivity"
+            android:theme="@style/SplashTheme"/>
+
         <activity
             android:name=".view.GuideActivity"
             android:theme="@style/SplashTheme"/>
+
     </application>
 
 </manifest>

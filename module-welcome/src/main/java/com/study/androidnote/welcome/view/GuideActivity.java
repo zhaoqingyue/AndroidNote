@@ -4,13 +4,11 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.study.androidnote.welcome.R;
 import com.study.androidnote.welcome.R2;
-import com.study.biz.constant.ArouterPath;
+import com.study.androidnote.welcome.view.adapter.GuidePagerAdapter;
 import com.study.biz.manager.JumpManager;
 import com.study.commonlib.base.activity.BaseActivity;
 

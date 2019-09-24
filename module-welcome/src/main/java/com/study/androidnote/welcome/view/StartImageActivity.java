@@ -17,9 +17,9 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * 启动页
+ * 启动页——图片
  */
-public class StartActivity extends BaseActivity {
+public class StartImageActivity extends BaseActivity {
 
     private static final int COUNT_DOWN = 3;
 
@@ -30,7 +30,7 @@ public class StartActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.welcome_activity_start;
+        return R.layout.welcome_activity_start_image;
     }
 
     @Override
@@ -58,7 +58,12 @@ public class StartActivity extends BaseActivity {
             SpManager.setFirstOpen(false);
             goToActivity(GuideActivity.class);
         } else {
-            JumpManager.endOfWelcome();
+            boolean needVideo = true;
+            if (needVideo) {
+                goToActivity(StartVideoActivity.class);
+            } else {
+                JumpManager.endOfWelcome();
+            }
         }
         finish();
     }

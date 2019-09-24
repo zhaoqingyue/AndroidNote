@@ -1,4 +1,4 @@
-package com.study.androidnote.welcome.view;
+package com.study.androidnote.welcome.view.adapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;

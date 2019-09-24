@@ -2,13 +2,10 @@ package com.study.androidnote.welcome.view;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatDelegate;
-import android.util.Log;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -17,11 +14,8 @@ import android.widget.RelativeLayout;
 
 import com.study.androidnote.welcome.R;
 import com.study.androidnote.welcome.R2;
-import com.study.biz.constant.AppConstant;
 import com.study.biz.manager.SettingManager;
-import com.study.biz.manager.SpManager;
 import com.study.commonlib.base.activity.BaseActivity;
-import com.study.commonlib.util.utilcode.SPUtils;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 
@@ -63,7 +57,7 @@ public class SplashActivity extends BaseActivity {
 
     private void jumpToNext() {
         if (isPermissionRequestFinish) {
-            goToActivity(StartActivity.class);
+            goToActivity(StartImageActivity.class);
             finish();
         } else {
             mHandler.sendEmptyMessageDelayed(0, 1500);
