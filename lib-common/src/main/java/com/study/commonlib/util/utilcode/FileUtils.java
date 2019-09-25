@@ -1,6 +1,7 @@
 package com.study.commonlib.util.utilcode;
 
 import android.content.Context;
+import android.os.Environment;
 import android.text.TextUtils;
 
 import java.io.BufferedInputStream;
@@ -1106,6 +1107,37 @@ public class FileUtils {
             }
         }
         return size;
+    }
+
+    /**
+     * 获取缓存大小
+     */
+    public static String getTotalCacheSize(Context context) {
+        long externalCacheSize = 0;
+        long cacheSize = 0;
+        long filesSize = 0;
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            try {
+                externalCacheSize = FileUtils.getFileSizes(context.getExternalCacheDir());
+            } catch (Exception e) {
+                e.printStackTrace();
+                return "";
+            }
+        }
+        try {
+            cacheSize = FileUtils.getFileSizes(context.getCacheDir());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+
+        try {
+            filesSize = FileUtils.getFileSizes(context.getFilesDir());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+        return FileUtils.formatFileSize(externalCacheSize + cacheSize + filesSize);
     }
 
     /**

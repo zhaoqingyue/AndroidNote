@@ -39,6 +39,7 @@
     <string name="toast_network_is_unavailable">网络连接不可用，请稍候再试</string>
     <string name="toast_server_exception">当前服务器繁忙，请稍后再试</string>
     <string name="toast_app_not_install">该应用未安装</string>
+    <string name="touch_the_screen_to_reload">加载失败，轻触屏幕重新加载</string>
 
     <string name="common_set_failed">操作失败，请检查网络！</string>
     <string name="common_network_abnormal">网络通信出现问题，请稍后再试</string>

@@ -17,6 +17,9 @@ import com.study.commonlib.util.utilcode.ToastUtils;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+/**
+ * 关于
+ */
 public class AboutActivity extends BaseTopBarActivity {
 
     @BindView(R2.id.tv_about_version)
@@ -41,13 +44,18 @@ public class AboutActivity extends BaseTopBarActivity {
         }
     }
 
-    @OnClick({R2.id.mc_homepage, R2.id.mc_update, R2.id.mc_copyright, R2.id.mc_score, R2.id.mc_share, R2.id.mc_user_agreement, R2.id.mc_privacy_agreement, R2.id.mc_reward})
+    @OnClick({R2.id.mc_features, R2.id.mc_homepage, R2.id.mc_update, R2.id.mc_copyright, R2.id.mc_score, R2.id.mc_share, R2.id.mc_user_agreement, R2.id.mc_privacy_agreement, R2.id.mc_reward})
     public void onClick(View view) {
         int id = view.getId();
-        if (id == R.id.mc_homepage) {
-
+        if (id == R.id.mc_features) {
+            // 功能介绍
+            goToActivity(FeaturesActivity.class);
+        } else if (id == R.id.mc_homepage) {
+            // 项目主页
+            goToActivity(GitHubActivity.class);
         } else if (id == R.id.mc_update) {
-
+            // 版本更新
+            ToastUtils.showShortToast("该功能暂未实现");
         } else if (id == R.id.mc_copyright) {
             // 版权信息
             goToActivity(CopyrightActivity.class);
@@ -62,7 +70,7 @@ public class AboutActivity extends BaseTopBarActivity {
             goToActivity(UserAgreementActivity.class);
         } else if (id == R.id.mc_privacy_agreement) {
             // 隐私协议
-
+            goToActivity(UserAgreementActivity.class);
         } else if (id == R.id.mc_reward) {
             // 打赏
             goToActivity(RewardActivity.class);

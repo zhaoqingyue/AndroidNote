@@ -1,13 +1,9 @@
 package com.study.androidnote.me.view.setting;
 
-import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
@@ -15,14 +11,12 @@ import com.study.androidnote.me.view.setting.about.AboutActivity;
 import com.study.androidnote.me.view.setting.safe.AvatarTypeActivity;
 import com.study.androidnote.me.view.setting.safe.SafeActivity;
 import com.study.biz.constant.ArouterPath;
-import com.study.biz.db.manager.UserInfoManager;
 import com.study.biz.manager.SpManager;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
-import com.study.commonlib.ui.dialog.LoadingDialog;
 import com.study.commonlib.ui.view.MultiCard;
 import com.study.commonlib.util.utilcode.CleanUtils;
 import com.study.commonlib.util.utilcode.FileUtils;
-
+import com.study.commonlib.util.utilcode.ToastUtils;
 import butterknife.BindView;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
@@ -55,7 +49,7 @@ public class SettingActivity extends BaseTopBarActivity {
         mOpenGesturePwd.setChecked(SpManager.isOpenGesturePwd());
         mOpenGuide.setChecked(SpManager.isFirstOpen());
         mNightMode.setChecked(SpManager.isNightMode());
-        mClearCache.setContent(getTotalCacheSize());
+        mClearCache.setContent(FileUtils.getTotalCacheSize(this));
     }
 
     @OnClick({R2.id.ll_leftLayout})
@@ -70,22 +64,28 @@ public class SettingActivity extends BaseTopBarActivity {
     public void onClick(View view) {
         int id = view.getId();
        if (id == R.id.mc_account) {
+           // 账号与安全
            goToActivity(SafeActivity.class);
         } else if (id == R.id.mc_avatar_type) {
+           // 头像类型
            goToActivity(AvatarTypeActivity.class);
        } else if (id == R.id.mc_clear_cache) {
            // 清除缓存
            CleanUtils.cleanInternalCache();
            CleanUtils.cleanExternalCache();
            CleanUtils.cleanInternalFiles();
-           mClearCache.setContent(getTotalCacheSize());
+           mClearCache.setContent(FileUtils.getTotalCacheSize(this));
         } else if (id == R.id.mc_help) {
-
+           // 帮助
+           ToastUtils.showShortToast("该功能暂未实现");
         } else if (id == R.id.mc_feedback) {
-
+           // 意见反馈
+           ToastUtils.showShortToast("该功能暂未实现");
         } else if (id == R.id.mc_about) {
+           // 关于
             goToActivity(AboutActivity.class);
         } else if (id == R.id.btn_logout) {
+           // 退出登录
 //           SpManager.setLoginStatus(false);
 //           UserInfoManager.exit();
         }
@@ -101,33 +101,5 @@ public class SettingActivity extends BaseTopBarActivity {
         } else if (id == R.id.switch_night_mode) {
             SpManager.setNightMode(isChecked);
         }
-    }
-
-    private String getTotalCacheSize() {
-        long externalCacheSize = 0;
-        long cacheSize = 0;
-        long filesSize = 0;
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            try {
-                externalCacheSize = FileUtils.getFileSizes(getExternalCacheDir());
-            } catch (Exception e) {
-                e.printStackTrace();
-                return "";
-            }
-        }
-        try {
-            cacheSize = FileUtils.getFileSizes(getCacheDir());
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "";
-        }
-
-        try {
-            filesSize = FileUtils.getFileSizes(getFilesDir());
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "";
-        }
-        return FileUtils.formatFileSize(externalCacheSize + cacheSize + filesSize);
     }
 }

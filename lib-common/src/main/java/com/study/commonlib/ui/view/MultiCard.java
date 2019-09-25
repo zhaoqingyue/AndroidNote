@@ -61,13 +61,11 @@ public class MultiCard extends LinearLayout {
     private float dividerMarginRight;
 
     public MultiCard(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public MultiCard(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        handleTypedArray(context, attrs);
-        initView(context);
+        this(context, attrs, 0);
     }
 
     public MultiCard(Context context, AttributeSet attrs, int defStyleAttr) {

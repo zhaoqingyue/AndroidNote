@@ -174,6 +174,11 @@
         <attr name="tvRightVisibility" format="integer"/><!--0：VISIBLE，1：INVISIBLE，2：GONE-->
     </declare-styleable>
 
+
+
+
+    <!--+++++++++++++++++++++++++++++++赵庆月+++++++++++++++++++++++++++++++-->
+
     <!-- 轮视图WheelView -->
     <declare-styleable name="Wheel_View">
         <!-- 文本 -->
@@ -323,7 +328,15 @@
         <attr name="indicator_width" format="dimension" />
     </declare-styleable>
 
+    <!--ProgressBarLoading-->
+    <declare-styleable name="ProgressBarLoading">
+        <attr name="pbl_progress" format="integer"/>
+        <attr name="pbl_max" format="integer"/>
+        <attr name="pbl_progressHeight" format="integer"/>
+        <attr name="pbl_progressColor" format="color"/>
+    </declare-styleable>
 
+    <!--+++++++++++++++++++++++++++++++赵庆月+++++++++++++++++++++++++++++++-->
 
     <!-- 加载动画样式 -->
     <declare-styleable name="AVLoadingIndicatorView">

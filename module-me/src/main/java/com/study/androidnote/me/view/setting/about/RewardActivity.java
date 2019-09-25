@@ -9,6 +9,9 @@ import com.study.commonlib.base.activity.BaseTopBarActivity;
 
 import butterknife.OnClick;
 
+/**
+ * 打赏
+ */
 public class RewardActivity extends BaseTopBarActivity {
 
     @Override

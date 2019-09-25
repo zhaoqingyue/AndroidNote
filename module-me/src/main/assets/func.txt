@@ -1,0 +1,154 @@
+功能介绍：
+
+1. 沉浸式效果：隐藏状态栏 和 标题栏
+
+2. ButterKnife 依赖
+
+3. EventBus 使用
+
+4. 闪屏
+
+    （1）文字竖排显示
+
+     实现方式：设置android:ems属性（注意：只有在android:layout_width="wrap_content"时，android:ems属性才会有效果，否则无效）
+
+    （2）动画：ScaleAnimation + AlphaAnimation
+
+    （3）5.0权限动态申请
+
+5. 引导页： ViewPager + PagerAdapter + OnPageChangeListener
+
+6. 登录：
+
+    （1）手机号 + 验证码
+
+    （2）用户名 + 密码
+
+    （3）忘记密码
+
+    （4）注册账号
+
+7. 主页：
+
+    （1）修改Toolbar导航图标： app:navigationIcon="@mipmap/icon_nav"
+
+	（2）设置Toolbar的title为空，重新定义title，使title文字居中显示
+
+	（3）侧边栏DrawerLayout的使用
+
+	（4）悬浮按钮
+
+	（5）夜间-日间模式切换
+
+	（6）Toolbar导航按钮的按键事件
+
+	（7）再按一次退出程序
+
+	（8）自定义指示器
+
+	（9）Banner图片轮播
+
+	（10）MVP模式
+
+	（11）相册选择器
+
+	（12）RecyclerView
+
+	（13）Canvas
+
+	（14）日历
+
+	（15）天气
+
+	（16）手电筒
+
+	（17）计算器
+
+	（18）计步器
+
+	（19）身份证查询
+
+	（20）手机号归属地
+
+	（21）二维码
+
+	（22）图片管理
+
+	（23）应用管理
+
+	（24）文件管理
+
+	（25）文档管理
+
+	（26）通话记录
+
+	（27）联系人
+
+	（28）信息
+
+	（29）书单
+
+8. 用户信息：
+
+	（1）修改头像
+
+	（2）修改昵称
+
+	（3）修改性别
+
+	（4）个性签名
+
+	（5）二维码
+
+	（6）自定义卡片（icon + title + content + arrow + 点击效果）
+
+	（7）退出登录
+
+9. 个人主页：
+
+	（1）CoordinatorLayout的使用
+
+	（2）CircleImageView的使用
+
+	（3）FloatingActionButton的使用
+
+	（4）Snackbar的使用
+
+	（5）PhotoView缩放图片
+
+	（6）加载WebView
+
+10. 设置：
+
+	（1）开启引导页
+
+	（2）开启悬浮球
+
+	（3）支付密码
+
+	（4）意见反馈
+
+	（5）清除缓存
+
+	（6）关于
+
+11. 关于：
+
+	（1）项目主页
+
+	（2）检查更新
+
+	（3）功能说明
+
+	（4）版本说明
+
+	（5）版权信息
+
+	（6）去评分
+
+	（7）打赏
+
+	（8）分享好友
+
+	（9）致谢
+

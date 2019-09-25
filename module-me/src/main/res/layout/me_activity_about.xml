@@ -47,6 +47,14 @@
 
     <!-- 项目主页 -->
     <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_features"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_features"
+        app:mc_hasDivider="true"/>
+
+    <!-- 项目主页 -->
+    <com.study.commonlib.ui.view.MultiCard
         android:id="@+id/mc_homepage"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
