@@ -17,6 +17,7 @@
     <string name="me_user_mobile">手机号</string>
     <string name="me_user_email">邮箱</string>
     <string name="me_user_area">地区</string>
+    <string name="me_user_university">大学</string>
     <string name="me_user_signature">个人签名</string>
     <string name="me_user_verified">实名认证</string>
     <string name="me_user_shipping_address">收货地址</string>
@@ -25,6 +26,7 @@
     <string name="me_user_hint_unverified">未实名</string>
     <string name="me_user_hint_unset">未设置</string>
     <string name="me_user_hint_select_area">选择地区</string>
+    <string name="me_user_hint_select_university">选择学校</string>
 
     <string name="me_user_avatar_camera">拍照</string>
     <string name="me_user_avatar_default">默认头像</string>
@@ -64,8 +66,6 @@
     <string name="me_reward">打赏</string>
     <string name="me_reward_weixin_pay">微信支付</string>
     <string name="me_reward_air_pay">支付宝</string>
-
-
 
 
 </resources>

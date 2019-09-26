@@ -3,7 +3,11 @@ package com.study.androidnote.me.view.setting;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
@@ -11,8 +15,13 @@ import com.study.androidnote.me.view.setting.about.AboutActivity;
 import com.study.androidnote.me.view.setting.safe.AvatarTypeActivity;
 import com.study.androidnote.me.view.setting.safe.SafeActivity;
 import com.study.biz.constant.ArouterPath;
+import com.study.biz.db.manager.UserInfoManager;
 import com.study.biz.manager.SpManager;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
+import com.study.commonlib.ui.dialog.nicedialog.BaseNiceDialog;
+import com.study.commonlib.ui.dialog.nicedialog.NiceDialog;
+import com.study.commonlib.ui.dialog.nicedialog.ViewConvertListener;
+import com.study.commonlib.ui.dialog.nicedialog.ViewHolder;
 import com.study.commonlib.ui.view.MultiCard;
 import com.study.commonlib.util.utilcode.CleanUtils;
 import com.study.commonlib.util.utilcode.FileUtils;
@@ -86,8 +95,47 @@ public class SettingActivity extends BaseTopBarActivity {
             goToActivity(AboutActivity.class);
         } else if (id == R.id.btn_logout) {
            // 退出登录
-//           SpManager.setLoginStatus(false);
-//           UserInfoManager.exit();
+           onLogout();
+        }
+    }
+
+    private void onLogout() {
+        NiceDialog.init()
+                .setLayoutId(R.layout.dialog_confirm)
+                .setConvertListener(new ViewConvertListener() {
+
+                    @Override
+                    protected void convertView(ViewHolder holder, BaseNiceDialog dialog) {
+                        TextView title = holder.getView(R.id.tv_title);
+                        TextView message = holder.getView(R.id.tv_message);
+                        title.setText("温馨提示");
+                        message.setText("确定要退出登录吗？");
+                        holder.setOnClickListener(R.id.tv_cancel, new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        holder.setOnClickListener(R.id.tv_ok, new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                                startLogout();
+                            }
+                        });
+                    }
+                })
+                .setMargin(60)
+                .setOutCancel(false)
+                .show(getSupportFragmentManager());
+    }
+
+    private void startLogout() {
+        boolean exitApp = false;
+        if (exitApp) {
+            SpManager.setLoginStatus(false);
+            UserInfoManager.exit();
         }
     }
 

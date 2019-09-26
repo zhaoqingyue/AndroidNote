@@ -46,6 +46,9 @@ public class UserMoreActivity extends BaseTopBarActivity {
     @BindView(R2.id.mc_user_area)
     MultiCard mArea;
 
+    @BindView(R2.id.mc_user_university)
+    MultiCard mUniversity;
+
     @BindView(R2.id.mc_user_signature)
     MultiCard mSignature;
 
@@ -79,7 +82,7 @@ public class UserMoreActivity extends BaseTopBarActivity {
         }
     }
 
-    @OnClick({R2.id.mc_user_name, R2.id.mc_user_mobile, R2.id.mc_user_sex, R2.id.mc_user_birth, R2.id.mc_user_email, R2.id.mc_user_area, R2.id.mc_user_signature})
+    @OnClick({R2.id.mc_user_name, R2.id.mc_user_mobile, R2.id.mc_user_sex, R2.id.mc_user_birth, R2.id.mc_user_email, R2.id.mc_user_area, R2.id.mc_user_university, R2.id.mc_user_signature})
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.mc_user_name) {
@@ -106,6 +109,9 @@ public class UserMoreActivity extends BaseTopBarActivity {
         } else if (id == R.id.mc_user_area) {
             // 地区
             goToActivity(AreaActivity.class);
+        } else if (id == R.id.mc_user_university) {
+            // 大学
+            goToActivity(UniversityActivity.class);
         } else if (id == R.id.mc_user_signature) {
             // 个人签名
             Bundle extras = new Bundle();

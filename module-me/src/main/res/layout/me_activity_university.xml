@@ -9,7 +9,7 @@
     <com.study.commonlib.ui.view.TopBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tb_title="@string/me_user_hint_select_area"/>
+        app:tb_title="@string/me_user_hint_select_university"/>
 
 
 

@@ -188,6 +188,10 @@
     <dimen name="sp_49">49sp</dimen>
     <dimen name="sp_50">50sp</dimen>
 
+    <!-- 圆角半径 -->
+    <dimen name="dp_radius">5dp</dimen>
+
+
     <dimen name="lineHeight">1px</dimen>
     <!-- 标题栏高度 -->
     <dimen name="title_height">70dp</dimen>

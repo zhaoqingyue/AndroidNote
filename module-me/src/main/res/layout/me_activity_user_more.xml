@@ -78,6 +78,17 @@
         app:mc_contentHint="@string/me_user_hint_select_area"
         app:mc_hasDivider="true"/>
 
+    <!-- 大学 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_user_university"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_user_university"
+        app:mc_hasContent="true"
+        app:mc_alignRight="true"
+        app:mc_contentHint="@string/me_user_hint_select_university"
+        app:mc_hasDivider="true"/>
+
     <!-- 个人签名 -->
     <com.study.commonlib.ui.view.MultiCard
         android:id="@+id/mc_user_signature"
