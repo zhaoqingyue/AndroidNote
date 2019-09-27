@@ -11,9 +11,10 @@ import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
 import com.study.androidnote.me.model.bean.CityBean;
 import com.study.androidnote.me.model.bean.CityInfoBean;
-import com.study.androidnote.me.view.adapter.CityAdapter;
+import com.study.androidnote.me.view.user.area.adapter.CityAdapter;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.ui.recycleradapter.BaseQuickAdapter;
+import com.study.commonlib.util.utilcode.LogUtils;
 
 import java.util.List;
 

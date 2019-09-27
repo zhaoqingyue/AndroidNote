@@ -1,10 +1,9 @@
-package com.study.androidnote.me.view.adapter;
+package com.study.androidnote.me.view.user.area.adapter;
 
 import android.content.Context;
 
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.model.bean.CityInfoBean;
-import com.study.androidnote.me.model.bean.NationCodeBean;
 import com.study.commonlib.ui.recycleradapter.BaseQuickAdapter;
 import com.study.commonlib.ui.recycleradapter.BaseViewHolder;
 

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/main_dialog_bg">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            android:text="@string/btn_cancel"
+            android:textColor="@color/btn_text_normal"
+            android:textSize="@dimen/sp_16"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:text="选择日期"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_16"/>
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="@string/btn_confirm"
+            android:textColor="@color/btn_text_normal"
+            android:textSize="@dimen/sp_16"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@color/main_divider"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:visibility="visible">
+
+        <com.study.commonlib.ui.view.wheel.WheelViewDate
+            android:id="@+id/wvdYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:wvd_cyclic="false"
+            app:wvd_dividerColor="@color/gray_9b9b9b"
+            app:wvd_dividerHeight="0.5dp"
+            app:wvd_dividerType="fill"
+            app:wvd_integerFormat="%04d"
+            app:wvd_integerNeedFormat="true"
+            app:wvd_labelText="@string/me_date_year"
+            app:wvd_labelTextColor="@color/colorBlack"
+            app:wvd_labelTextSize="@dimen/sp_10"
+            app:wvd_lineSpacing="10dp"
+            app:wvd_maxLength="4"
+            app:wvd_normalItemTextColor="@color/gray_9b9b9b"
+            app:wvd_selectedItemPosition="2"
+            app:wvd_selectedItemTextColor="@color/blue_0084FF"
+            app:wvd_selectedItemTextSize="@dimen/sp_30"
+            app:wvd_showDivider="true"
+            app:wvd_showLabel="true"
+            app:wvd_textAlign="center"
+            app:wvd_textBoundaryMargin="20dp"
+            app:wvd_textSize="@dimen/sp_16"
+            app:wvd_visibleItems="5" />
+
+        <com.study.commonlib.ui.view.wheel.WheelViewDate
+            android:id="@+id/wvdMonth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:wvd_cyclic="false"
+            app:wvd_dividerColor="@color/gray_9b9b9b"
+            app:wvd_dividerHeight="0.5dp"
+            app:wvd_dividerType="fill"
+            app:wvd_integerFormat="%02d"
+            app:wvd_integerNeedFormat="true"
+            app:wvd_labelText="@string/me_date_month"
+            app:wvd_labelTextColor="@color/colorBlack"
+            app:wvd_labelTextSize="@dimen/sp_10"
+            app:wvd_lineSpacing="10dp"
+            app:wvd_maxLength="2"
+            app:wvd_normalItemTextColor="@color/gray_9b9b9b"
+            app:wvd_selectedItemPosition="2"
+            app:wvd_selectedItemTextColor="@color/blue_0084FF"
+            app:wvd_selectedItemTextSize="@dimen/sp_30"
+            app:wvd_showDivider="true"
+            app:wvd_showLabel="true"
+            app:wvd_textAlign="center"
+            app:wvd_textBoundaryMargin="20dp"
+            app:wvd_textSize="@dimen/sp_16"
+            app:wvd_visibleItems="5" />
+
+        <com.study.commonlib.ui.view.wheel.WheelViewDate
+            android:id="@+id/wvdDay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:wvd_cyclic="false"
+            app:wvd_dividerColor="@color/gray_9b9b9b"
+            app:wvd_dividerHeight="0.5dp"
+            app:wvd_dividerType="fill"
+            app:wvd_integerFormat="%02d"
+            app:wvd_integerNeedFormat="true"
+            app:wvd_labelText="@string/me_date_day"
+            app:wvd_labelTextColor="@color/colorBlack"
+            app:wvd_labelTextSize="@dimen/sp_10"
+            app:wvd_lineSpacing="10dp"
+            app:wvd_maxLength="2"
+            app:wvd_normalItemTextColor="@color/gray_9b9b9b"
+            app:wvd_selectedItemPosition="2"
+            app:wvd_selectedItemTextColor="@color/blue_0084FF"
+            app:wvd_selectedItemTextSize="@dimen/sp_30"
+            app:wvd_showDivider="true"
+            app:wvd_showLabel="true"
+            app:wvd_textAlign="center"
+            app:wvd_textBoundaryMargin="20dp"
+            app:wvd_textSize="@dimen/sp_16"
+            app:wvd_visibleItems="5" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

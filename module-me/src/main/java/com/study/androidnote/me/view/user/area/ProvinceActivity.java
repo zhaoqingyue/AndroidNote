@@ -13,12 +13,12 @@ import com.study.androidnote.me.model.bean.CityBean;
 import com.study.androidnote.me.model.bean.CityInfoBean;
 import com.study.androidnote.me.util.CityListLoader;
 import com.study.androidnote.me.util.Constant;
-import com.study.androidnote.me.view.adapter.CityAdapter;
-import com.study.androidnote.me.view.adapter.NationCodeAdapter;
+import com.study.androidnote.me.view.user.area.adapter.CityAdapter;
+import com.study.androidnote.me.view.user.area.adapter.NationCodeAdapter;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.ui.recycleradapter.BaseQuickAdapter;
+import com.study.commonlib.util.utilcode.LogUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -107,7 +107,7 @@ public class ProvinceActivity extends BaseTopBarActivity implements BaseQuickAda
             if (requestCode == Constant.RESULT_DATA_TO_CITY) {
                 CityBean city = data.getParcelableExtra("city");
                 intent.putExtra("city", city);
-            } else if (requestCode == Constant.RESULT_DATA_TO_AREA){
+            } else if (requestCode == Constant.RESULT_DATA_TO_AREA) {
                 intent.putExtra("city", mCurCityBean);
             }
             intent.putExtra("area", area);

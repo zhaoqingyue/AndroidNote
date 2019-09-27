@@ -14,7 +14,7 @@ import com.study.androidnote.me.model.bean.CityBean;
 import com.study.androidnote.me.model.bean.NationCodeBean;
 import com.study.androidnote.me.util.CityListLoader;
 import com.study.androidnote.me.util.Constant;
-import com.study.androidnote.me.view.adapter.NationCodeAdapter;
+import com.study.androidnote.me.view.user.area.adapter.NationCodeAdapter;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.ui.recycleradapter.BaseQuickAdapter;
 import com.study.commonlib.util.utilcode.LogUtils;

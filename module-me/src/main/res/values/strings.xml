@@ -33,6 +33,10 @@
     <string name="me_user_select_area">选择地区</string>
     <string name="me_user_city_list">城市列表</string>
 
+    <string name="me_date_year">年</string>
+    <string name="me_date_month">月</string>
+    <string name="me_date_day">日</string>
+
     <string name="me_user_avatar_camera">拍照</string>
     <string name="me_user_avatar_default">默认头像</string>
     <string name="me_user_avatar_select">选择图片</string>

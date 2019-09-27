@@ -1,4 +1,4 @@
-package com.study.androidnote.me.view.adapter;
+package com.study.androidnote.me.view.user.area.adapter;
 
 import android.content.Context;
 

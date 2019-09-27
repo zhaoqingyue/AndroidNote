@@ -32,26 +32,20 @@ public class AvatarBar extends LinearLayout implements View.OnTouchListener {
     private int mResId;
     private String mTypeValue;
 
-//    public AvatarBar(Context context) {
-//        super(context);
-//        handleTypedArray(context, null);
-//        bindView(context);
-//        initData();
-//    }
+    public AvatarBar(Context context) {
+        this(context, null);
+    }
 
     public AvatarBar(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
+    }
+
+    public AvatarBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
         handleTypedArray(context, attrs);
         bindView(context);
         initData();
     }
-
-//    public AvatarBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-//        super(context, attrs, defStyleAttr);
-//        handleTypedArray(context, attrs);
-//        bindView(context);
-//        initData();
-//    }
 
     private void handleTypedArray(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.me_AvatarBar);

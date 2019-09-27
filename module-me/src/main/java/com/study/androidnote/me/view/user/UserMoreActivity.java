@@ -3,11 +3,13 @@ package com.study.androidnote.me.view.user;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
 import com.study.androidnote.me.model.bean.CityBean;
+import com.study.androidnote.me.view.dialog.WheelViewDateDialog;
 import com.study.androidnote.me.view.user.area.NationActivity;
 import com.study.biz.bean.event.UserInfoUpdateEvent;
 import com.study.biz.constant.AppConstant;
@@ -168,7 +170,12 @@ public class UserMoreActivity extends BaseTopBarActivity {
             goToActivity(SexActivity.class);
         } else if (id == R.id.mc_user_birth) {
             // 出生日期
-            goToActivity(BirthdayActivity.class);
+//            goToActivity(BirthdayActivity.class);
+            WheelViewDateDialog.newInstance(2)
+                    .setOutCancel(false)
+                    .setDimAmount(0.3f)
+                    .setGravity(Gravity.BOTTOM)
+                    .show(getSupportFragmentManager());
         } else if (id == R.id.mc_user_email) {
             // 邮箱
             Bundle extras = new Bundle();

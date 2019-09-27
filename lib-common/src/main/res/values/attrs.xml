@@ -1,6 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--+++++++++++++++++++++++++++++++赵庆月+++++++++++++++++++++++++++++++-->
+
+    <!-- 轮视图WheelView -->
+    <declare-styleable name="WheelViewDate">
+        <!-- 文本 -->
+        <attr name="wvd_autoFitTextSize" format="boolean"/>        <!-- 是否自适应文字大小以完全显示过长的文字 -->
+        <attr name="wvd_textSize" format="dimension"/>             <!-- 未选中文字大小 -->
+        <attr name="wvd_selectedItemTextSize" format="dimension"/> <!-- 选中文字大小 -->
+        <attr name="wvd_normalItemTextColor" format="color"/>      <!-- 未选中文字颜色 -->
+        <attr name="wvd_selectedItemTextColor" format="color"/>    <!-- 被选中的文字颜色 -->
+        <attr name="wvd_textAlign" format="enum">                  <!-- 文字对齐方式 -->
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <!-- 标签 -->
+        <attr name="wvd_showLabel" format="boolean"/>              <!-- 是否显示附加标签 -->
+        <attr name="wvd_labelText" format="string"/>               <!-- 标签文本 -->
+        <attr name="wvd_labelTextSize" format="dimension"/>        <!-- 标签文本大小 -->
+        <attr name="wvd_labelTextColor" format="color"/>           <!-- 标签文本字体颜色 -->
+        <attr name="wvd_maxLength" format="integer"/>              <!-- 标签最大长度 -->
+        <!-- 分割线 -->
+        <attr name="wvd_showDivider" format="boolean"/>              <!-- 是否显示分割线 -->
+        <attr name="wvd_dividerType" format="enum">                  <!-- 分割线类型 -->
+            <enum name="fill" value="0"/>
+            <enum name="wrap" value="1"/>
+        </attr>
+        <attr name="wvd_dividerColor" format="color"/>               <!-- 分割线颜色 -->
+        <attr name="wvd_dividerHeight" format="dimension"/>          <!-- 分割线高度 -->
+        <attr name="wvd_dividerPaddingForWrap" format="dimension"/>  <!-- wrap类型下分割线内边距 -->
+        <!-- 其它属性 -->
+        <attr name="wvd_textBoundaryMargin" format="dimension"/>  <!-- 文字距离边界的外边距 -->
+        <attr name="wvd_lineSpacing" format="dimension"/>         <!-- 行间距 -->
+        <attr name="wvd_visibleItems" format="integer"/>          <!-- 可见item数 -->
+        <attr name="wvd_cyclic" format="boolean"/>                <!-- 是否循环滚动 -->
+        <attr name="wvd_selectedItemPosition" format="integer"/>  <!-- 当前选中下标 -->
+        <attr name="wvd_drawSelectedRect" format="boolean"/>      <!-- 是否绘制选中区域 -->
+        <attr name="wvd_selectedRectColor" format="color"/>       <!-- 选中区域颜色 -->
+        <attr name="wvd_integerNeedFormat" format="boolean"/>     <!-- 数据为Integer类型时是否需要转换 -->
+        <attr name="wvd_integerFormat" format="string"/>          <!-- Integer类型转换格式 -->
+    </declare-styleable>
+
+    <!-- 多功能卡片 -->
+    <declare-styleable name="MultiCard">
+        <!-- 图标 -->
+        <attr name="mc_icon" format="reference"/>                  <!-- icon图标 -->
+        <!-- 标题 -->
+        <attr name="mc_title" format="string"/>                    <!-- 标题 -->
+        <attr name="mc_titleTextColor" format="color"/>            <!-- 标题颜色值 -->
+        <attr name="mc_titleTextSize" format="dimension"/>         <!-- 标题文本字体大小 -->
+        <attr name="mc_hasLetter" format="boolean"/>               <!-- 是否显示第一个字符 -->
+        <!-- 标题下面的提示 -->
+        <attr name="mc_titleHint" format="string"/>                <!-- 标题提示 -->
+        <attr name="mc_titleHintVisible" format="boolean"/>        <!-- 是否显示标题提示 -->
+        <!-- 内容 -->
+        <attr name="mc_hasContent" format="boolean"/>              <!-- 是否有内容 -->
+        <attr name="mc_content" format="string"/>                  <!-- 内容 -->
+        <attr name="mc_contentTextColor" format="color"/>          <!-- 内容文本颜色值 -->
+        <attr name="mc_contentTextSize" format="dimension"/>       <!-- 内容文本字体大小 -->
+        <attr name="mc_contentHint" format="string"/>              <!-- 内容hint -->
+        <attr name="mc_contentHintTextColor" format="color"/>      <!-- 内容hint文本颜色值 -->
+        <attr name="mc_contentHintTextSize" format="dimension"/>   <!-- 内容hint文本字体大小 -->
+        <attr name="mc_isMobile" format="boolean"/>                <!-- 内容是否是手机号 -->
+        <attr name="mc_isEdited" format="boolean"/>                <!-- 内容是否可编辑 -->
+        <attr name="mc_alignRight" format="boolean"/>              <!-- 内容是否右对齐 -->
+        <!-- 右箭头 -->
+        <attr name="mc_hasArrow" format="boolean"/>                <!-- 是否有箭头 -->
+        <attr name="mc_arrowIcon" format="reference"/>             <!-- 箭头icon图标 -->
+        <!-- 分割线 -->
+        <attr name="mc_hasDivider" format="boolean"/>              <!-- 是否有间隔线 -->
+        <attr name="mc_dividerColor" format="color"/>              <!-- 内容文本颜色值 -->
+        <attr name="mc_dividerHeight" format="dimension"/>         <!-- 分割线高度 -->
+        <attr name="mc_dividerMarginLeft" format="dimension"/>     <!-- 分割线左margin -->
+        <attr name="mc_dividerMarginRight" format="dimension"/>    <!-- 分割线右margin -->
+    </declare-styleable>
+
+    <!-- 顶部标题栏 -->
+    <declare-styleable name="TopBar">
+        <!-- 背景色 -->
+        <attr name="tb_bgColor" format="color"/>                  <!-- 顶部栏背景色 -->
+        <!-- 左图标 -->
+        <attr name="tb_leftIcon" format="reference"/>             <!-- 左icon图标 -->
+        <attr name="tb_leftIconVisible" format="boolean"/>        <!-- 左icon图标是否显示 -->
+        <!-- 左文本 -->
+        <attr name="tb_leftText" format="string"/>                <!-- 左文本内容 -->
+        <attr name="tb_leftTextColor" format="color"/>            <!-- 左文本颜色值 -->
+        <attr name="tb_leftTextSize" format="dimension"/>         <!-- 左文本字体大小 -->
+        <attr name="tb_leftTextVisible" format="boolean"/>        <!-- 左文本是否显示 -->
+        <!-- 标题 -->
+        <attr name="tb_title" format="string"/>                    <!-- 标题 -->
+        <attr name="tb_titleTextColor" format="color"/>            <!-- 标题颜色值 -->
+        <attr name="tb_titleTextSize" format="dimension"/>         <!-- 标题文本字体大小 -->
+        <!-- 右文本 -->
+        <attr name="tb_rightText" format="string"/>                <!-- 右文本内容 -->
+        <attr name="tb_rightTextColor" format="color"/>            <!-- 右文本颜色值 -->
+        <attr name="tb_rightTextSize" format="dimension"/>         <!-- 右文本字体大小 -->
+        <attr name="tb_rightTextVisible" format="boolean"/>        <!-- 右文本是否显示 -->
+        <!-- 右图标 -->
+        <attr name="tb_rightIcon" format="reference"/>             <!-- 右icon图标 -->
+        <attr name="tb_rightIconVisible" format="boolean"/>        <!-- 右icon图标是否显示 -->
+        <!-- 分割线 -->
+        <attr name="tb_bottomDividerVisible" format="boolean"/>    <!-- 底部间隔线是否显示 -->
+        <attr name="tb_bottomDividerColor" format="color"/>        <!-- 底部间隔线背景色 -->
+    </declare-styleable>
+
+    <!-- 编辑Item -->
+    <declare-styleable name="EditItem">
+        <!-- 标题 -->
+        <attr name="et_titleText" format="string"/>                <!-- 标题 -->
+        <attr name="et_titleTextColor" format="color"/>            <!-- 标题文本颜色值 -->
+        <attr name="et_titleTextSize" format="dimension"/>         <!-- 标题文本字体大小 -->
+        <!-- 内容 -->
+        <attr name="et_contentText" format="string"/>              <!-- 内容 -->
+        <attr name="et_contentTextHint" format="string"/>          <!-- 内容 -->
+        <attr name="et_contentTextColor" format="color"/>          <!-- 内容颜色值 -->
+        <attr name="et_contentTextColorHnt" format="color"/>       <!-- 内容颜色值 -->
+        <attr name="et_contentTextSize" format="dimension"/>       <!-- 内容字体大小 -->
+        <attr name="et_contentEditable" format="boolean"/>         <!-- 内容是否可编辑 -->
+        <!-- 箭头图标 -->
+        <attr name="et_arrowIcon" format="reference"/>             <!-- 箭头图标 -->
+        <attr name="et_arrowIconVisible" format="boolean"/>        <!-- 箭头图标是否显示 -->
+        <!-- 分割线 -->
+        <attr name="et_bottomDividerVisible" format="boolean"/>    <!-- 底部间隔线是否显示 -->
+        <attr name="et_bottomDividerColor" format="color"/>        <!-- 底部间隔线背景色 -->
+    </declare-styleable>
+
+    <!-- RVPIndicator -->
+    <declare-styleable name="RVPIndicator">
+        <attr name="text_color_normal" format="color" />
+        <attr name="text_color_selected" format="color" />
+        <attr name="text_size" format="dimension" />
+        <!--指示器可见数量-->
+        <attr name="indicator_visible_count" format="integer" />
+        <attr name="indicator_color" format="color" />
+        <attr name="indicator_style">
+            <enum name="bitmap" value="0" />
+            <enum name="line" value="1" />
+            <enum name="triangle" value="2" />
+        </attr>
+        <!--指示器bitmap资源,style=bitmap有效-->
+        <attr name="style_bitmap_src" format="reference" />
+        <attr name="item_paddingLeft" format="dimension" />
+        <attr name="item_paddingRight" format="dimension" />
+        <!--线性指示器左右padding，默认根据数量均分屏幕-->
+        <attr name="style_line_padding" format="dimension" />
+        <!--指示器高度-->
+        <attr name="indicator_height" format="dimension" />
+        <!--指示器宽度-->
+        <attr name="indicator_width" format="dimension" />
+    </declare-styleable>
+
+    <!--ProgressBarLoading-->
+    <declare-styleable name="ProgressBarLoading">
+        <attr name="pbl_progress" format="integer"/>
+        <attr name="pbl_max" format="integer"/>
+        <attr name="pbl_progressHeight" format="integer"/>
+        <attr name="pbl_progressColor" format="color"/>
+    </declare-styleable>
+
+    <!--+++++++++++++++++++++++++++++++赵庆月+++++++++++++++++++++++++++++++-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--+++++++++++++++++++++++++++++刷新控件相关属性+++++++++++++++++++++++++++++-->
 
     <attr name="srlDrawableSize" format="dimension"/><!--图片尺寸-->
@@ -177,166 +364,7 @@
 
 
 
-    <!--+++++++++++++++++++++++++++++++赵庆月+++++++++++++++++++++++++++++++-->
 
-    <!-- 轮视图WheelView -->
-    <declare-styleable name="Wheel_View">
-        <!-- 文本 -->
-        <attr name="wv_autoFitTextSize" format="boolean"/>        <!-- 是否自适应文字大小以完全显示过长的文字 -->
-        <attr name="wv_textSize" format="dimension"/>             <!-- 未选中文字大小 -->
-        <attr name="wv_selectedItemTextSize" format="dimension"/> <!-- 选中文字大小 -->
-        <attr name="wv_normalItemTextColor" format="color"/>      <!-- 未选中文字颜色 -->
-        <attr name="wv_selectedItemTextColor" format="color"/>    <!-- 被选中的文字颜色 -->
-        <attr name="wv_textAlign" format="enum">                  <!-- 文字对齐方式 -->
-            <enum name="left" value="0"/>
-            <enum name="center" value="1"/>
-            <enum name="right" value="2"/>
-        </attr>
-        <!-- 标签 -->
-        <attr name="wv_showLabel" format="boolean"/>              <!-- 是否显示附加标签 -->
-        <attr name="wv_labelText" format="string"/>               <!-- 标签文本 -->
-        <attr name="wv_labelTextSize" format="dimension"/>        <!-- 标签文本大小 -->
-        <attr name="wv_labelTextColor" format="color"/>           <!-- 标签文本字体颜色 -->
-        <attr name="wv_maxLength" format="integer"/>              <!-- 标签最大长度 -->
-        <!-- 分割线 -->
-        <attr name="wv_showDivider" format="boolean"/>              <!-- 是否显示分割线 -->
-        <attr name="wv_dividerType" format="enum">                  <!-- 分割线类型 -->
-            <enum name="fill" value="0"/>
-            <enum name="wrap" value="1"/>
-        </attr>
-        <attr name="wv_dividerColor" format="color"/>               <!-- 分割线颜色 -->
-        <attr name="wv_dividerHeight" format="dimension"/>          <!-- 分割线高度 -->
-        <attr name="wv_dividerPaddingForWrap" format="dimension"/>  <!-- wrap类型下分割线内边距 -->
-        <!-- 其它属性 -->
-        <attr name="wv_textBoundaryMargin" format="dimension"/>  <!-- 文字距离边界的外边距 -->
-        <attr name="wv_lineSpacing" format="dimension"/>         <!-- 行间距 -->
-        <attr name="wv_visibleItems" format="integer"/>          <!-- 可见item数 -->
-        <attr name="wv_cyclic" format="boolean"/>                <!-- 是否循环滚动 -->
-        <attr name="wv_selectedItemPosition" format="integer"/>  <!-- 当前选中下标 -->
-        <attr name="wv_drawSelectedRect" format="boolean"/>      <!-- 是否绘制选中区域 -->
-        <attr name="wv_selectedRectColor" format="color"/>       <!-- 选中区域颜色 -->
-        <attr name="wv_integerNeedFormat" format="boolean"/>     <!-- 数据为Integer类型时是否需要转换 -->
-        <attr name="wv_integerFormat" format="string"/>          <!-- Integer类型转换格式 -->
-    </declare-styleable>
-
-    <!-- 多功能卡片 -->
-    <declare-styleable name="MultiCard">
-        <!-- 图标 -->
-        <attr name="mc_icon" format="reference"/>                  <!-- icon图标 -->
-        <!-- 标题 -->
-        <attr name="mc_title" format="string"/>                    <!-- 标题 -->
-        <attr name="mc_titleTextColor" format="color"/>            <!-- 标题颜色值 -->
-        <attr name="mc_titleTextSize" format="dimension"/>         <!-- 标题文本字体大小 -->
-        <attr name="mc_hasLetter" format="boolean"/>               <!-- 是否显示第一个字符 -->
-        <!-- 标题下面的提示 -->
-        <attr name="mc_titleHint" format="string"/>                <!-- 标题提示 -->
-        <attr name="mc_titleHintVisible" format="boolean"/>        <!-- 是否显示标题提示 -->
-        <!-- 内容 -->
-        <attr name="mc_hasContent" format="boolean"/>              <!-- 是否有内容 -->
-        <attr name="mc_content" format="string"/>                  <!-- 内容 -->
-        <attr name="mc_contentTextColor" format="color"/>          <!-- 内容文本颜色值 -->
-        <attr name="mc_contentTextSize" format="dimension"/>       <!-- 内容文本字体大小 -->
-        <attr name="mc_contentHint" format="string"/>              <!-- 内容hint -->
-        <attr name="mc_contentHintTextColor" format="color"/>      <!-- 内容hint文本颜色值 -->
-        <attr name="mc_contentHintTextSize" format="dimension"/>   <!-- 内容hint文本字体大小 -->
-        <attr name="mc_isMobile" format="boolean"/>                <!-- 内容是否是手机号 -->
-        <attr name="mc_isEdited" format="boolean"/>                <!-- 内容是否可编辑 -->
-        <attr name="mc_alignRight" format="boolean"/>              <!-- 内容是否右对齐 -->
-        <!-- 右箭头 -->
-        <attr name="mc_hasArrow" format="boolean"/>                <!-- 是否有箭头 -->
-        <attr name="mc_arrowIcon" format="reference"/>             <!-- 箭头icon图标 -->
-        <!-- 分割线 -->
-        <attr name="mc_hasDivider" format="boolean"/>              <!-- 是否有间隔线 -->
-        <attr name="mc_dividerColor" format="color"/>              <!-- 内容文本颜色值 -->
-        <attr name="mc_dividerHeight" format="dimension"/>         <!-- 分割线高度 -->
-        <attr name="mc_dividerMarginLeft" format="dimension"/>     <!-- 分割线左margin -->
-        <attr name="mc_dividerMarginRight" format="dimension"/>    <!-- 分割线右margin -->
-    </declare-styleable>
-
-    <!-- 顶部标题栏 -->
-    <declare-styleable name="TopBar">
-        <!-- 背景色 -->
-        <attr name="tb_bgColor" format="color"/>                  <!-- 顶部栏背景色 -->
-        <!-- 左图标 -->
-        <attr name="tb_leftIcon" format="reference"/>             <!-- 左icon图标 -->
-        <attr name="tb_leftIconVisible" format="boolean"/>        <!-- 左icon图标是否显示 -->
-        <!-- 左文本 -->
-        <attr name="tb_leftText" format="string"/>                <!-- 左文本内容 -->
-        <attr name="tb_leftTextColor" format="color"/>            <!-- 左文本颜色值 -->
-        <attr name="tb_leftTextSize" format="dimension"/>         <!-- 左文本字体大小 -->
-        <attr name="tb_leftTextVisible" format="boolean"/>        <!-- 左文本是否显示 -->
-        <!-- 标题 -->
-        <attr name="tb_title" format="string"/>                    <!-- 标题 -->
-        <attr name="tb_titleTextColor" format="color"/>            <!-- 标题颜色值 -->
-        <attr name="tb_titleTextSize" format="dimension"/>         <!-- 标题文本字体大小 -->
-        <!-- 右文本 -->
-        <attr name="tb_rightText" format="string"/>                <!-- 右文本内容 -->
-        <attr name="tb_rightTextColor" format="color"/>            <!-- 右文本颜色值 -->
-        <attr name="tb_rightTextSize" format="dimension"/>         <!-- 右文本字体大小 -->
-        <attr name="tb_rightTextVisible" format="boolean"/>        <!-- 右文本是否显示 -->
-        <!-- 右图标 -->
-        <attr name="tb_rightIcon" format="reference"/>             <!-- 右icon图标 -->
-        <attr name="tb_rightIconVisible" format="boolean"/>        <!-- 右icon图标是否显示 -->
-        <!-- 分割线 -->
-        <attr name="tb_bottomDividerVisible" format="boolean"/>    <!-- 底部间隔线是否显示 -->
-        <attr name="tb_bottomDividerColor" format="color"/>        <!-- 底部间隔线背景色 -->
-    </declare-styleable>
-
-    <!-- 编辑Item -->
-    <declare-styleable name="EditItem">
-        <!-- 标题 -->
-        <attr name="et_titleText" format="string"/>                <!-- 标题 -->
-        <attr name="et_titleTextColor" format="color"/>            <!-- 标题文本颜色值 -->
-        <attr name="et_titleTextSize" format="dimension"/>         <!-- 标题文本字体大小 -->
-        <!-- 内容 -->
-        <attr name="et_contentText" format="string"/>              <!-- 内容 -->
-        <attr name="et_contentTextHint" format="string"/>          <!-- 内容 -->
-        <attr name="et_contentTextColor" format="color"/>          <!-- 内容颜色值 -->
-        <attr name="et_contentTextColorHnt" format="color"/>       <!-- 内容颜色值 -->
-        <attr name="et_contentTextSize" format="dimension"/>       <!-- 内容字体大小 -->
-        <attr name="et_contentEditable" format="boolean"/>         <!-- 内容是否可编辑 -->
-        <!-- 箭头图标 -->
-        <attr name="et_arrowIcon" format="reference"/>             <!-- 箭头图标 -->
-        <attr name="et_arrowIconVisible" format="boolean"/>        <!-- 箭头图标是否显示 -->
-        <!-- 分割线 -->
-        <attr name="et_bottomDividerVisible" format="boolean"/>    <!-- 底部间隔线是否显示 -->
-        <attr name="et_bottomDividerColor" format="color"/>        <!-- 底部间隔线背景色 -->
-    </declare-styleable>
-
-    <!-- RVPIndicator -->
-    <declare-styleable name="RVPIndicator">
-        <attr name="text_color_normal" format="color" />
-        <attr name="text_color_selected" format="color" />
-        <attr name="text_size" format="dimension" />
-        <!--指示器可见数量-->
-        <attr name="indicator_visible_count" format="integer" />
-        <attr name="indicator_color" format="color" />
-        <attr name="indicator_style">
-            <enum name="bitmap" value="0" />
-            <enum name="line" value="1" />
-            <enum name="triangle" value="2" />
-        </attr>
-        <!--指示器bitmap资源,style=bitmap有效-->
-        <attr name="style_bitmap_src" format="reference" />
-        <attr name="item_paddingLeft" format="dimension" />
-        <attr name="item_paddingRight" format="dimension" />
-        <!--线性指示器左右padding，默认根据数量均分屏幕-->
-        <attr name="style_line_padding" format="dimension" />
-        <!--指示器高度-->
-        <attr name="indicator_height" format="dimension" />
-        <!--指示器宽度-->
-        <attr name="indicator_width" format="dimension" />
-    </declare-styleable>
-
-    <!--ProgressBarLoading-->
-    <declare-styleable name="ProgressBarLoading">
-        <attr name="pbl_progress" format="integer"/>
-        <attr name="pbl_max" format="integer"/>
-        <attr name="pbl_progressHeight" format="integer"/>
-        <attr name="pbl_progressColor" format="color"/>
-    </declare-styleable>
-
-    <!--+++++++++++++++++++++++++++++++赵庆月+++++++++++++++++++++++++++++++-->
 
     <!-- 加载动画样式 -->
     <declare-styleable name="AVLoadingIndicatorView">

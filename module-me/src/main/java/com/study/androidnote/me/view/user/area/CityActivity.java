@@ -11,11 +11,11 @@ import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
 import com.study.androidnote.me.model.bean.CityBean;
 import com.study.androidnote.me.model.bean.CityInfoBean;
-import com.study.androidnote.me.util.CityListLoader;
 import com.study.androidnote.me.util.Constant;
-import com.study.androidnote.me.view.adapter.CityAdapter;
+import com.study.androidnote.me.view.user.area.adapter.CityAdapter;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.ui.recycleradapter.BaseQuickAdapter;
+import com.study.commonlib.util.utilcode.LogUtils;
 
 import java.util.List;
 
@@ -84,7 +84,7 @@ public class CityActivity extends BaseTopBarActivity implements BaseQuickAdapter
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Constant.RESULT_DATA_TO_AREA && resultCode == RESULT_OK && data != null) {
+        if (resultCode == RESULT_OK && data != null) {
             CityBean curArea = data.getParcelableExtra("area");
             Intent intent = new Intent();
             intent.putExtra("city", mCurCityBean);
