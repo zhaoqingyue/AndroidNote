@@ -1,10 +1,14 @@
 package com.study.androidnote.me.view.user;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
+import com.study.androidnote.me.model.bean.CityBean;
+import com.study.androidnote.me.view.user.area.NationActivity;
 import com.study.biz.bean.event.UserInfoUpdateEvent;
 import com.study.biz.constant.AppConstant;
 import com.study.biz.db.bean.UserInfo;
@@ -15,6 +19,7 @@ import com.study.biz.db.manager.UserInfoDBManager;
 import com.study.biz.db.manager.UserInfoManager;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.ui.view.MultiCard;
+import com.study.commonlib.util.utilcode.LogUtils;
 import com.study.commonlib.util.utilcode.ToastUtils;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -62,6 +67,7 @@ public class UserMoreActivity extends BaseTopBarActivity {
     @Override
     protected void initData(Bundle saveInstanceState) {
         initDB();
+        updateUserInfo();
     }
 
     @Override
@@ -72,6 +78,68 @@ public class UserMoreActivity extends BaseTopBarActivity {
     private void initDB() {
         DaoSession daoSession = DaoSessionGenerator.getInstance().getDaoSession();
         mDbManager = new UserInfoDBManager<>(daoSession.getUserInfoDao());
+    }
+
+    private void updateUserInfo() {
+        UserInfo userInfo = UserInfoManager.getInstance();
+        if (userInfo == null)
+            return;
+
+        // 用户名
+        String username = userInfo.getUserName();
+        if (TextUtils.isEmpty(username)) {
+            username = getString(R.string.me_user_hint_unset);
+        }
+        mUserName.setContent(username);
+
+        // 手机号
+        String mobile = userInfo.getPhone();
+        if (TextUtils.isEmpty(mobile)) {
+            mobile = getString(R.string.me_user_hint_unset);
+        }
+        mMobile.setContent(mobile);
+
+        // 性别
+        String sex = userInfo.getSex();
+        if (TextUtils.isEmpty(sex)) {
+            sex = getString(R.string.me_user_hint_unset);
+        }
+        mSex.setContent(sex);
+
+        // 出生日期
+        String birthday = userInfo.getBirthday();
+        if (TextUtils.isEmpty(birthday)) {
+            birthday = getString(R.string.me_user_hint_unset);
+        }
+        mBirthday.setContent(birthday);
+
+        // 邮箱
+        String email = userInfo.getEmail();
+        if (TextUtils.isEmpty(email)) {
+            email = getString(R.string.me_user_hint_unset);
+        }
+        mEmail.setContent(email);
+
+        // 地区
+        String area = userInfo.getArea();
+        if (TextUtils.isEmpty(area)) {
+            area = getString(R.string.me_user_hint_select_area);
+        }
+        mArea.setContent(area);
+
+        // 大学
+        String university = "";
+        if (TextUtils.isEmpty(area)) {
+            university = getString(R.string.me_user_hint_select_university);
+        }
+        mUniversity.setContent(university);
+
+        // 签名
+        String signature = userInfo.getSignature();
+        if (TextUtils.isEmpty(signature)) {
+            signature = getString(R.string.me_user_hint_unset);
+        }
+        mSignature.setContent(signature);
     }
 
     @OnClick({R2.id.ll_leftLayout})
@@ -108,7 +176,7 @@ public class UserMoreActivity extends BaseTopBarActivity {
             goToActivity(EditInfoActivity.class, extras);
         } else if (id == R.id.mc_user_area) {
             // 地区
-            goToActivity(AreaActivity.class);
+            goToActivity(NationActivity.class);
         } else if (id == R.id.mc_user_university) {
             // 大学
             goToActivity(UniversityActivity.class);

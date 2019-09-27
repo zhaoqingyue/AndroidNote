@@ -9,10 +9,10 @@
     <com.study.commonlib.ui.view.TopBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tb_title="@string/me_user_select_area"/>
+        app:tb_title="@string/me_user_select_city"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_area"
+        android:id="@+id/rv_city"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/dp_gap"

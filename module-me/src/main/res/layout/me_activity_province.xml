@@ -9,10 +9,13 @@
     <com.study.commonlib.ui.view.TopBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tb_title="@string/me_user_select_area"/>
+        app:tb_title="@string/me_user_select_province"
+        app:tb_rightText="@string/me_user_city_list"
+        app:tb_rightTextVisible="true"
+        app:tb_rightTextColor="@color/blue_0084FF"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_area"
+        android:id="@+id/rv_province"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/dp_gap"

@@ -4,8 +4,8 @@ package com.study.androidnote.me.util;
  * Created by zhao.qingyue on 2019/8/21.
  * 公共常量
  */
-//public class Constant {
-//
+public class Constant {
+
 //    public static final String EDIT_INFO_TYPE = "edit_info_type";
 //
 //    public static final int EDIT_INFO_USERNAME = 0;      // 用户名
@@ -19,4 +19,8 @@ package com.study.androidnote.me.util;
 //    public static final int EDIT_INFO_AREA = 8;          // 地区
 //    public static final int EDIT_INFO_SIGNATURE = 9;     // 签名
 //    public static final int EDIT_INFO_SHOP_ADDRESS = 10; // 收货地址
-//}
+
+    public static final int RESULT_DATA_TO_PROVINCE = 1001; // 省
+    public static final int RESULT_DATA_TO_CITY = 1002;     // 市
+    public static final int RESULT_DATA_TO_AREA = 1003;     // 区
+}

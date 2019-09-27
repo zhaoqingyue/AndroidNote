@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
-import com.study.commonlib.util.utilcode.FileUtils;
+import com.study.commonlib.util.zqy.ReadAssetsUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -27,7 +27,7 @@ public class FeaturesActivity extends BaseTopBarActivity {
 
     @Override
     protected void initData(Bundle saveInstanceState) {
-        String text = FileUtils.getFromAssets(this, "func.txt");
+        String text = ReadAssetsUtils.getFromAssets(this, "func.txt");
         mFeatures.setText(text);
     }
 

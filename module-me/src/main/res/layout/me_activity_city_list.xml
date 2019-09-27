@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/me_user_city_list" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_margin="@dimen/dp_15">
+
+        <com.study.commonlib.ui.view.ClearEditView
+            android:id="@+id/cityInputText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@drawable/shape_edit_bg"
+            android:drawableLeft="@mipmap/search_icon_search"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/selector_clear_bg"
+            android:gravity="left|center_vertical"
+            android:hint="请输入城市"
+            android:padding="10dp"
+            android:textColor="@color/colorEditNormal"
+            android:textColorHint="@color/colorEditHint"
+            android:textCursorDrawable="@drawable/shape_edit_cursor_bg"
+            android:textSize="@dimen/sp_15"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_city_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_selected"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_sidebar_selected_bg"
+            android:gravity="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_24"
+            android:visibility="gone"/>
+
+        <com.study.commonlib.ui.view.SideBar
+            android:id="@+id/sidebar"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center"/>
+
+    </FrameLayout>
+
+</LinearLayout>

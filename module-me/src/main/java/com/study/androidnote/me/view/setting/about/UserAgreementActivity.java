@@ -9,7 +9,7 @@ import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
 import com.study.biz.constant.ArouterPath;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
-import com.study.commonlib.util.utilcode.FileUtils;
+import com.study.commonlib.util.zqy.ReadAssetsUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -30,7 +30,7 @@ public class UserAgreementActivity extends BaseTopBarActivity {
 
     @Override
     protected void initData(Bundle saveInstanceState) {
-        String text = FileUtils.getFromAssets(this, "user_agreement.txt");
+        String text = ReadAssetsUtils.getFromAssets(this, "user_agreement.txt");
         mUserAgreement.setText(text);
     }
 

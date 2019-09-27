@@ -28,6 +28,11 @@
     <string name="me_user_hint_select_area">选择地区</string>
     <string name="me_user_hint_select_university">选择学校</string>
 
+    <string name="me_user_select_province">选择省份</string>
+    <string name="me_user_select_city">选择城市</string>
+    <string name="me_user_select_area">选择地区</string>
+    <string name="me_user_city_list">城市列表</string>
+
     <string name="me_user_avatar_camera">拍照</string>
     <string name="me_user_avatar_default">默认头像</string>
     <string name="me_user_avatar_select">选择图片</string>

@@ -15,8 +15,6 @@ import java.util.List;
  */
 public class AccountTypeAdapter extends BaseQuickAdapter<AccountType, BaseViewHolder> {
 
-    private Context mContext;
-
     public AccountTypeAdapter(Context context, List<AccountType> data) {
         super(R.layout.manager_item_account_type, data);
         mContext = context;

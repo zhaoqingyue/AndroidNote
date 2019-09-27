@@ -23,8 +23,15 @@
         <activity android:name=".view.user.VerifiedActivity" />
         <activity android:name=".view.user.ShipAddressActivity" />
         <activity android:name=".view.user.BirthdayActivity" />
-        <activity android:name=".view.user.AreaActivity" />
-        <activity android:name=".view.user.UniversityActivity"/>
+        <activity android:name=".view.user.area.NationActivity" />
+        <activity android:name=".view.user.area.ProvinceActivity" />
+        <activity android:name=".view.user.area.CityActivity" />
+        <activity
+            android:name=".view.user.area.CityListActivity"
+            android:windowSoftInputMode="adjustNothing|stateUnchanged"/>
+        <activity android:name=".view.user.area.AreaActivity" />
+        <activity android:name=".view.user.UniversityActivity" />
+
     </application>
 
 </manifest>
