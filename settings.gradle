@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':lib-picker'
 include ':arouter-compiler'
 include ':arouter-annotation'
 include ':lib-biz-common'

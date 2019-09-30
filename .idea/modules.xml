@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/arouter-compiler/arouter-compiler.iml" filepath="$PROJECT_DIR$/arouter-compiler/arouter-compiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-biz-common/lib-biz-common.iml" filepath="$PROJECT_DIR$/lib-biz-common/lib-biz-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-common/lib-common.iml" filepath="$PROJECT_DIR$/lib-common/lib-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-picker/lib-picker.iml" filepath="$PROJECT_DIR$/lib-picker/lib-picker.iml" />
       <module fileurl="file://$PROJECT_DIR$/module-account/module-account.iml" filepath="$PROJECT_DIR$/module-account/module-account.iml" />
       <module fileurl="file://$PROJECT_DIR$/module-lock/module-lock.iml" filepath="$PROJECT_DIR$/module-lock/module-lock.iml" />
       <module fileurl="file://$PROJECT_DIR$/module-main/module-main.iml" filepath="$PROJECT_DIR$/module-main/module-main.iml" />

@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/arouter-compiler" />
             <option value="$PROJECT_DIR$/lib-biz-common" />
             <option value="$PROJECT_DIR$/lib-common" />
+            <option value="$PROJECT_DIR$/lib-picker" />
             <option value="$PROJECT_DIR$/module-account" />
             <option value="$PROJECT_DIR$/module-lock" />
             <option value="$PROJECT_DIR$/module-main" />
