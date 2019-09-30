@@ -48,13 +48,15 @@ public class UserInfo {
     @Property(nameInDb = "area")
     private String area;      // 地区
 
+    @Property(nameInDb = "university")
+    private String university; // 大学
+
     @Property(nameInDb = "signature")
     private String signature; // 签名
 
     @Property(nameInDb = "shipAddress")
     private String shipAddress;// 收货地址
 
-    @Generated(hash = 1492997409)
     public UserInfo(Long userId, String token, String userName, String avatar,
             String nickName, String account, String password, String phone,
             String sex, String birthday, String email, String area,
@@ -75,8 +77,29 @@ public class UserInfo {
         this.shipAddress = shipAddress;
     }
 
-    @Generated(hash = 1279772520)
     public UserInfo() {
+    }
+
+    @Generated(hash = 1854673799)
+    public UserInfo(Long userId, String token, String userName, String avatar,
+            String nickName, String account, String password, String phone,
+            String sex, String birthday, String email, String area,
+            String university, String signature, String shipAddress) {
+        this.userId = userId;
+        this.token = token;
+        this.userName = userName;
+        this.avatar = avatar;
+        this.nickName = nickName;
+        this.account = account;
+        this.password = password;
+        this.phone = phone;
+        this.sex = sex;
+        this.birthday = birthday;
+        this.email = email;
+        this.area = area;
+        this.university = university;
+        this.signature = signature;
+        this.shipAddress = shipAddress;
     }
 
     public Long getUserId() {
@@ -127,6 +150,14 @@ public class UserInfo {
         this.account = account;
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getPhone() {
         return this.phone;
     }
@@ -167,6 +198,14 @@ public class UserInfo {
         this.area = area;
     }
 
+    public String getUniversity() {
+        return this.university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
     public String getSignature() {
         return this.signature;
     }
@@ -183,12 +222,6 @@ public class UserInfo {
         this.shipAddress = shipAddress;
     }
 
-    public String getPassword() {
-        return this.password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
 }

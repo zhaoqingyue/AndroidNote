@@ -44,7 +44,15 @@ public class ProvinceActivity extends BaseTopBarActivity implements BaseQuickAda
 
     @Override
     protected void initData(Bundle saveInstanceState) {
+        initCityListLoader();
         initAdapter();
+    }
+
+    private void initCityListLoader() {
+        // 预先加载一级列表所有城市的数据
+        CityListLoader.getInstance().loadCityData(this);
+        // 预先加载三级列表显示省市区的数据
+        CityListLoader.getInstance().loadProData(this);
     }
 
     private void initAdapter() {

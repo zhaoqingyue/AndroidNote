@@ -9,6 +9,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bumptech.glide.Glide;
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
+import com.study.androidnote.me.view.user.area.AddressActivity;
 import com.study.biz.bean.event.UserInfoUpdateEvent;
 import com.study.biz.constant.AppConstant;
 import com.study.biz.constant.ArouterPath;
@@ -142,7 +143,7 @@ public class UserInfoActivity extends BaseTopBarActivity {
             goToActivity(VerifiedActivity.class);
         } else if (id == R.id.mc_user_shipping_address) {
             // 收货地址
-            goToActivity(ShipAddressActivity.class);
+            goToActivity(AddressActivity.class);
         }
     }
 

@@ -42,7 +42,6 @@ public class CityListLoader {
     
     /**
      * 单例模式
-     * @return
      */
     public static CityListLoader getInstance() {
         if (instance == null) {
@@ -57,11 +56,10 @@ public class CityListLoader {
     
     /**
      * 解析357个城市数据
-     * @param context
      */
     public void loadCityData(Context context) {
         
-        String cityJson = ReadAssetsUtils.getJson(context, "china_city.json");
+        String cityJson = ReadAssetsUtils.getJson(context, Constant.JSON_CHINA_CITY);
         Type type = new TypeToken<ArrayList<CityInfoBean>>() {
         }.getType();
         
@@ -85,10 +83,9 @@ public class CityListLoader {
     
     /**
      * 解析34个省市直辖区数据
-     * @param context
      */
     public void loadProData(Context context) {
-        String cityJson = ReadAssetsUtils.getJson(context,"china_city.json");
+        String cityJson = ReadAssetsUtils.getJson(context, Constant.JSON_CHINA_CITY);
         Type type = new TypeToken<ArrayList<CityInfoBean>>() {
 
         }.getType();
@@ -96,5 +93,4 @@ public class CityListLoader {
         //解析省份
         mProListData = new Gson().fromJson(cityJson, type);
     }
-    
 }

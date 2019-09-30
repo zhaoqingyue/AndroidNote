@@ -36,8 +36,9 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
         public final static Property Birthday = new Property(9, String.class, "birthday", false, "birthday");
         public final static Property Email = new Property(10, String.class, "email", false, "email");
         public final static Property Area = new Property(11, String.class, "area", false, "area");
-        public final static Property Signature = new Property(12, String.class, "signature", false, "signature");
-        public final static Property ShipAddress = new Property(13, String.class, "shipAddress", false, "shipAddress");
+        public final static Property University = new Property(12, String.class, "university", false, "university");
+        public final static Property Signature = new Property(13, String.class, "signature", false, "signature");
+        public final static Property ShipAddress = new Property(14, String.class, "shipAddress", false, "shipAddress");
     }
 
 
@@ -65,8 +66,9 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
                 "\"birthday\" TEXT," + // 9: birthday
                 "\"email\" TEXT," + // 10: email
                 "\"area\" TEXT," + // 11: area
-                "\"signature\" TEXT," + // 12: signature
-                "\"shipAddress\" TEXT);"); // 13: shipAddress
+                "\"university\" TEXT," + // 12: university
+                "\"signature\" TEXT," + // 13: signature
+                "\"shipAddress\" TEXT);"); // 14: shipAddress
     }
 
     /** Drops the underlying database table. */
@@ -139,14 +141,19 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
             stmt.bindString(12, area);
         }
  
+        String university = entity.getUniversity();
+        if (university != null) {
+            stmt.bindString(13, university);
+        }
+ 
         String signature = entity.getSignature();
         if (signature != null) {
-            stmt.bindString(13, signature);
+            stmt.bindString(14, signature);
         }
  
         String shipAddress = entity.getShipAddress();
         if (shipAddress != null) {
-            stmt.bindString(14, shipAddress);
+            stmt.bindString(15, shipAddress);
         }
     }
 
@@ -214,14 +221,19 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
             stmt.bindString(12, area);
         }
  
+        String university = entity.getUniversity();
+        if (university != null) {
+            stmt.bindString(13, university);
+        }
+ 
         String signature = entity.getSignature();
         if (signature != null) {
-            stmt.bindString(13, signature);
+            stmt.bindString(14, signature);
         }
  
         String shipAddress = entity.getShipAddress();
         if (shipAddress != null) {
-            stmt.bindString(14, shipAddress);
+            stmt.bindString(15, shipAddress);
         }
     }
 
@@ -245,8 +257,9 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
             cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // birthday
             cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // email
             cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11), // area
-            cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12), // signature
-            cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13) // shipAddress
+            cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12), // university
+            cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13), // signature
+            cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14) // shipAddress
         );
         return entity;
     }
@@ -265,8 +278,9 @@ public class UserInfoDao extends AbstractDao<UserInfo, Long> {
         entity.setBirthday(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
         entity.setEmail(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
         entity.setArea(cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11));
-        entity.setSignature(cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12));
-        entity.setShipAddress(cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13));
+        entity.setUniversity(cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12));
+        entity.setSignature(cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13));
+        entity.setShipAddress(cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14));
      }
     
     @Override

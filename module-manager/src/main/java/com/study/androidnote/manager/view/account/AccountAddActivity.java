@@ -1,6 +1,5 @@
 package com.study.androidnote.manager.view.account;
 
-import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,19 +16,11 @@ import com.study.androidnote.manager.R;
 import com.study.androidnote.manager.R2;
 import com.study.androidnote.manager.model.ManagerAPI;
 import com.study.androidnote.manager.model.bean.AccountType;
-import com.study.androidnote.manager.model.bean.BankType;
 import com.study.androidnote.manager.model.event.AccountEvent;
-import com.study.androidnote.manager.model.event.BankEvent;
-import com.study.androidnote.manager.model.manager.ComplexManager;
-import com.study.androidnote.manager.view.bank.BankSelectActivity;
-import com.study.androidnote.manager.view.bank.BankTypeActivity;
 import com.study.biz.db.bean.AccountBean;
-import com.study.biz.db.bean.BankBean;
 import com.study.biz.db.dao.AccountBeanDao;
-import com.study.biz.db.dao.BankBeanDao;
 import com.study.biz.db.dao.DaoSession;
 import com.study.biz.db.manager.AccountDBManager;
-import com.study.biz.db.manager.BankDBManager;
 import com.study.biz.db.manager.DaoSessionGenerator;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.ui.dialog.LoadingDialog;

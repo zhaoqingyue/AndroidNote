@@ -9,6 +9,7 @@ import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
 import com.study.biz.db.bean.AccountBean;
+import com.study.biz.db.bean.AddressBean;
 import com.study.biz.db.bean.BankBean;
 import com.study.biz.db.bean.CardBean;
 import com.study.biz.db.bean.PaperworkBean;
@@ -16,6 +17,7 @@ import com.study.biz.db.bean.SearchKey;
 import com.study.biz.db.bean.UserInfo;
 
 import com.study.biz.db.dao.AccountBeanDao;
+import com.study.biz.db.dao.AddressBeanDao;
 import com.study.biz.db.dao.BankBeanDao;
 import com.study.biz.db.dao.CardBeanDao;
 import com.study.biz.db.dao.PaperworkBeanDao;
@@ -32,6 +34,7 @@ import com.study.biz.db.dao.UserInfoDao;
 public class DaoSession extends AbstractDaoSession {
 
     private final DaoConfig accountBeanDaoConfig;
+    private final DaoConfig addressBeanDaoConfig;
     private final DaoConfig bankBeanDaoConfig;
     private final DaoConfig cardBeanDaoConfig;
     private final DaoConfig paperworkBeanDaoConfig;
@@ -39,6 +42,7 @@ public class DaoSession extends AbstractDaoSession {
     private final DaoConfig userInfoDaoConfig;
 
     private final AccountBeanDao accountBeanDao;
+    private final AddressBeanDao addressBeanDao;
     private final BankBeanDao bankBeanDao;
     private final CardBeanDao cardBeanDao;
     private final PaperworkBeanDao paperworkBeanDao;
@@ -51,6 +55,9 @@ public class DaoSession extends AbstractDaoSession {
 
         accountBeanDaoConfig = daoConfigMap.get(AccountBeanDao.class).clone();
         accountBeanDaoConfig.initIdentityScope(type);
+
+        addressBeanDaoConfig = daoConfigMap.get(AddressBeanDao.class).clone();
+        addressBeanDaoConfig.initIdentityScope(type);
 
         bankBeanDaoConfig = daoConfigMap.get(BankBeanDao.class).clone();
         bankBeanDaoConfig.initIdentityScope(type);
@@ -68,6 +75,7 @@ public class DaoSession extends AbstractDaoSession {
         userInfoDaoConfig.initIdentityScope(type);
 
         accountBeanDao = new AccountBeanDao(accountBeanDaoConfig, this);
+        addressBeanDao = new AddressBeanDao(addressBeanDaoConfig, this);
         bankBeanDao = new BankBeanDao(bankBeanDaoConfig, this);
         cardBeanDao = new CardBeanDao(cardBeanDaoConfig, this);
         paperworkBeanDao = new PaperworkBeanDao(paperworkBeanDaoConfig, this);
@@ -75,6 +83,7 @@ public class DaoSession extends AbstractDaoSession {
         userInfoDao = new UserInfoDao(userInfoDaoConfig, this);
 
         registerDao(AccountBean.class, accountBeanDao);
+        registerDao(AddressBean.class, addressBeanDao);
         registerDao(BankBean.class, bankBeanDao);
         registerDao(CardBean.class, cardBeanDao);
         registerDao(PaperworkBean.class, paperworkBeanDao);
@@ -84,6 +93,7 @@ public class DaoSession extends AbstractDaoSession {
     
     public void clear() {
         accountBeanDaoConfig.clearIdentityScope();
+        addressBeanDaoConfig.clearIdentityScope();
         bankBeanDaoConfig.clearIdentityScope();
         cardBeanDaoConfig.clearIdentityScope();
         paperworkBeanDaoConfig.clearIdentityScope();
@@ -93,6 +103,10 @@ public class DaoSession extends AbstractDaoSession {
 
     public AccountBeanDao getAccountBeanDao() {
         return accountBeanDao;
+    }
+
+    public AddressBeanDao getAddressBeanDao() {
+        return addressBeanDao;
     }
 
     public BankBeanDao getBankBeanDao() {

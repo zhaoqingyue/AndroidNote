@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
+import com.study.androidnote.me.util.Constant;
 import com.study.biz.constant.ArouterPath;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.util.zqy.ReadAssetsUtils;
@@ -18,19 +19,19 @@ import butterknife.OnClick;
  * 用户协议
  */
 @Route(path = ArouterPath.PATH_ME_USER_AGREEMENT)
-public class UserAgreementActivity extends BaseTopBarActivity {
+public class AgreementActivity extends BaseTopBarActivity {
 
     @BindView( R2.id.tv_agreement)
     TextView mUserAgreement;
 
     @Override
     protected int getLayoutId() {
-        return R.layout.me_activity_user_agreement;
+        return R.layout.me_activity_agreement;
     }
 
     @Override
     protected void initData(Bundle saveInstanceState) {
-        String text = ReadAssetsUtils.getFromAssets(this, "user_agreement.txt");
+        String text = ReadAssetsUtils.getFromAssets(this, Constant.TXT_AGREEMENT);
         mUserAgreement.setText(text);
     }
 

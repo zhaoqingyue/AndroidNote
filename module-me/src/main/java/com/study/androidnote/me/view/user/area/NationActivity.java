@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.study.androidnote.me.R;
@@ -15,8 +16,11 @@ import com.study.androidnote.me.model.bean.NationCodeBean;
 import com.study.androidnote.me.util.CityListLoader;
 import com.study.androidnote.me.util.Constant;
 import com.study.androidnote.me.view.user.area.adapter.NationCodeAdapter;
+import com.study.biz.db.bean.UserInfo;
+import com.study.biz.db.manager.UserInfoManager;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.ui.recycleradapter.BaseQuickAdapter;
+import com.study.commonlib.ui.view.MultiCard;
 import com.study.commonlib.util.utilcode.LogUtils;
 import com.study.commonlib.util.utilcode.PinyinUtils;
 import com.study.commonlib.util.utilcode.ToastUtils;
@@ -37,11 +41,15 @@ import butterknife.OnClick;
  */
 public class NationActivity extends BaseTopBarActivity implements BaseQuickAdapter.OnItemChildClickListener {
 
+    @BindView( R2.id.mc_current_location)
+    MultiCard mCurLocation;
+
     @BindView( R2.id.rv_all_area)
     RecyclerView mRecyclerView;
 
     private NationCodeAdapter mAdapter;
     private List<NationCodeBean> mAreaCodes;
+    private String mCurArea;
 
     @Override
     protected int getLayoutId() {
@@ -50,20 +58,29 @@ public class NationActivity extends BaseTopBarActivity implements BaseQuickAdapt
 
     @Override
     protected void initData(Bundle saveInstanceState) {
+        initCurLocation();
         initAreaCode();
         initAdapter();
+    }
 
-        // 预先加载一级列表所有城市的数据
-        CityListLoader.getInstance().loadCityData(this);
-        // 预先加载三级列表显示省市区的数据
-        CityListLoader.getInstance().loadProData(this);
+    private void initCurLocation() {
+        UserInfo userInfo = UserInfoManager.getInstance();
+        if (userInfo == null)
+            return;
+
+        // 定位当前位置
+        mCurArea = userInfo.getArea();
+        if (TextUtils.isEmpty(mCurArea)) {
+            mCurArea = getString(R.string.me_user_hint_location);
+        }
+        mCurLocation.setTitle(mCurArea);
     }
 
     private void initAreaCode() {
         mAreaCodes = new ArrayList<>();
-        JSONArray array = ReadAssetsUtils.getJSONArray(this, "nation_code.json");
+        JSONArray array = ReadAssetsUtils.getJSONArray(this, Constant.JSON_NATION_CODE);
         if (null == array) array = new JSONArray();
-        for (int i = 0; i < array.length(); i++) {
+        for (int i=0; i<array.length(); i++) {
             NationCodeBean bean = new NationCodeBean();
             JSONObject jsonObject = array.optJSONObject(i);
             bean.setName(jsonObject.optString("zh"));
@@ -85,6 +102,16 @@ public class NationActivity extends BaseTopBarActivity implements BaseQuickAdapt
         mRecyclerView.setLayoutManager(manager);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemChildClickListener(this);
+    }
+
+    @OnClick({R2.id.mc_current_location})
+    public void onClick(View view) {
+        int id = view.getId();
+        if (id == R.id.mc_current_location) {
+            if (mCurArea.startsWith("中国")) {
+                goToActivityForResult(ProvinceActivity.class, Constant.RESULT_DATA_TO_PROVINCE);
+            }
+        }
     }
 
     @OnClick({R2.id.ll_leftLayout})
@@ -124,6 +151,7 @@ public class NationActivity extends BaseTopBarActivity implements BaseQuickAdapt
             } else {
                 areaStr = "中国 " + province.getName() + " " + city.getName() + " " + area.getName();
             }
+            mCurLocation.setContent(areaStr);
             UserInfoAPI.getInstance().updateArea(areaStr);
             finish();
         }

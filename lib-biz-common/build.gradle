@@ -58,7 +58,7 @@ android {
     }
 
     greendao {
-        schemaVersion 1                      // 版本号
+        schemaVersion 2                      // 版本号
         targetGenDir 'src/main/java'         // 当前根目录 不变
         daoPackage 'com.study.biz.db.dao'    // 前面是包名  后面是greenDao自动生成代码所在文件
     }

@@ -23,7 +23,7 @@ public class UserManager {
      * 根据checkedPosition获取性别
      */
     public String getSexByPos(int checkedPosition) {
-        String sex = "";
+        String sex = "男";
         switch (checkedPosition) {
             case 0:{
                 sex = "男";

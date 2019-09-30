@@ -11,13 +11,21 @@
         android:layout_height="wrap_content"
         app:tb_title="@string/me_account_safe"/>
 
-    <!-- 手机号 -->
+    <!-- 账号 -->
     <com.study.commonlib.ui.view.MultiCard
-        android:id="@+id/mc_mobile_phone"
+        android:id="@+id/mc_account"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
         android:layout_marginTop="@dimen/dp_gap"
-        app:mc_title="@string/me_mobile_phone"
+        app:mc_title="@string/me_safe_account"
+        app:mc_hasDivider="true"/>
+
+    <!-- 手机号 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/me_safe_mobile"
         app:mc_hasDivider="true"/>
 
     <!-- 设置密码 -->
@@ -25,8 +33,16 @@
         android:id="@+id/mc_password"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        app:mc_title="@string/me_password"
+        app:mc_title="@string/me_safe_password"
         app:mc_hasDivider="false"/>
 
+    <!-- 应急联系人 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_emergency_contact"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:layout_marginTop="@dimen/dp_gap"
+        app:mc_title="@string/me_safe_emergency_contact"
+        app:mc_hasDivider="false"/>
 
 </LinearLayout>

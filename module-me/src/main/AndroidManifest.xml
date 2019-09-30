@@ -12,7 +12,7 @@
         <activity android:name=".view.setting.about.FeaturesActivity" />
         <activity android:name=".view.setting.about.GitHubActivity" />
         <activity android:name=".view.setting.about.CopyrightActivity" />
-        <activity android:name=".view.setting.about.UserAgreementActivity" />
+        <activity android:name=".view.setting.about.AgreementActivity" />
         <activity android:name=".view.setting.about.RewardActivity" />
         <activity android:name=".view.user.UserInfoActivity" />
         <activity android:name=".view.user.UserMoreActivity" />
@@ -21,15 +21,17 @@
         <activity android:name=".view.user.SexActivity" />
         <activity android:name=".view.user.QrCodeActivity" />
         <activity android:name=".view.user.VerifiedActivity" />
-        <activity android:name=".view.user.ShipAddressActivity" />
+        <activity android:name=".view.user.area.AddressActivity" />
         <activity android:name=".view.user.BirthdayActivity" />
         <activity android:name=".view.user.area.NationActivity" />
         <activity android:name=".view.user.area.ProvinceActivity" />
         <activity android:name=".view.user.area.CityActivity" />
         <activity
             android:name=".view.user.area.CityListActivity"
-            android:windowSoftInputMode="adjustNothing|stateUnchanged"/>
+            android:windowSoftInputMode="adjustNothing|stateUnchanged" />
         <activity android:name=".view.user.area.AreaActivity" />
+        <activity android:name=".view.user.area.AddAddressActivity" />
+        <activity android:name=".view.user.area.AddressDetailActivity"/>
         <activity android:name=".view.user.UniversityActivity" />
 
     </application>

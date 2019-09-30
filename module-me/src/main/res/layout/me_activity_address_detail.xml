@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/me_user_address_detail" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:orientation="vertical"
+        android:background="@drawable/shape_white_bg">
+
+        <!-- 姓名 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_address_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/me_address_name"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 手机号 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_address_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/me_address_phone"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 地区信息 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_address_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/me_address_area"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 详细地址 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_address_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/me_address_detail"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="true"/>
+
+        <!-- 邮政编码 -->
+        <com.study.commonlib.ui.view.EditItem
+            android:id="@+id/edit_address_post_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:et_titleText="@string/me_address_post_code"
+            app:et_contentEditable="false"
+            app:et_arrowIconVisible="false"
+            app:et_bottomDividerVisible="false"/>
+
+    </LinearLayout>
+
+    <!-- 开启手势密码 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:background="@drawable/selector_item_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/me_address_set_default"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_18"
+            android:layout_centerVertical="true"/>
+
+        <Switch
+            android:id="@+id/switch_address_set_default"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_24"
+            android:switchMinWidth="20dp"
+            android:thumb="@drawable/selector_switch_thumb"
+            android:track="@drawable/selector_switch_track"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

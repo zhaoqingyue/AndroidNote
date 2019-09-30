@@ -244,8 +244,8 @@ public class MultiCard extends LinearLayout {
         }
     }
 
-    public void setTitle(String content) {
-        if (!TextUtils.isEmpty(content)) {
+    public void setTitle(String title) {
+        if (!TextUtils.isEmpty(title)) {
             mTitle.setText(title);
         }
     }

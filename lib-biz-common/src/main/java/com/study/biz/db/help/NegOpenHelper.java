@@ -3,6 +3,8 @@ package com.study.biz.db.help;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import com.study.biz.db.dao.DaoMaster;
+import com.study.biz.db.dao.UserInfoDao;
+
 import org.greenrobot.greendao.database.Database;
 
 /**
@@ -26,11 +28,9 @@ public class NegOpenHelper extends DaoMaster.OpenHelper {
     @Override
     public void onUpgrade(Database db, int oldVersion, int newVersion) {
         // 操作数据库的更新，有几个表升级都可以传入到下面
-//        Log.e("version", oldVersion + "---先前和更新之后的版本---" + newVersion);
         if (oldVersion < newVersion) {
-//            Log.e("version", oldVersion + "---先前和更新之后的版本---" + newVersion);
             // 更改过的实体类(新增的不用加)，更新UserDao文件（可以添加多个XXDao.class 文件）
-//            MigrationHelper.getInstance().migrate(db, AutoConfigBeanDao.class);
+            MigrationHelper.getInstance().migrate(db, UserInfoDao.class);
 
 
 

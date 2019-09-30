@@ -67,10 +67,10 @@ public class AboutActivity extends BaseTopBarActivity {
             share();
         } else if (id == R.id.mc_user_agreement) {
             // 用户协议
-            goToActivity(UserAgreementActivity.class);
+            goToActivity(AgreementActivity.class);
         } else if (id == R.id.mc_privacy_agreement) {
             // 隐私协议
-            goToActivity(UserAgreementActivity.class);
+            goToActivity(AgreementActivity.class);
         } else if (id == R.id.mc_reward) {
             // 打赏
             goToActivity(RewardActivity.class);

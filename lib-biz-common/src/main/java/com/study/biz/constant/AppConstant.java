@@ -29,5 +29,5 @@ public class AppConstant {
     public static final int EDIT_INFO_AREA = 8;          // 地区
     public static final int EDIT_INFO_SIGNATURE = 9;     // 签名
     public static final int EDIT_INFO_SHOP_ADDRESS = 10; // 收货地址
-
+    public static final int EDIT_INFO_ADD_ADDRESS = 11;  // 添加收货地址
 }

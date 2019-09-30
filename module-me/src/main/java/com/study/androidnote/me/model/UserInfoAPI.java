@@ -1,5 +1,6 @@
 package com.study.androidnote.me.model;
 
+import com.study.biz.bean.event.AddAddressEvent;
 import com.study.biz.bean.event.UserInfoUpdateEvent;
 import com.study.biz.constant.AppConstant;
 
@@ -142,6 +143,17 @@ public class UserInfoAPI {
         event.msgId = AppConstant.EDIT_INFO_SHOP_ADDRESS;
         event.errCode = 0;
         event.msg = shipAddress;
+        EventBus.getDefault().post(event);
+    }
+
+    /**
+     * 添加收货地址
+     */
+    public void addAddress(String name, String phone, String area, String detail, String postCode) {
+        AddAddressEvent event = new AddAddressEvent();
+        event.msgId = AppConstant.EDIT_INFO_ADD_ADDRESS;
+        event.errCode = 0;
+        event.msg = "";
         EventBus.getDefault().post(event);
     }
 }

@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.study.androidnote.me.R;
 import com.study.androidnote.me.R2;
+import com.study.androidnote.me.util.Constant;
 import com.study.commonlib.base.activity.BaseTopBarActivity;
 import com.study.commonlib.util.zqy.ReadAssetsUtils;
 
@@ -27,7 +28,7 @@ public class FeaturesActivity extends BaseTopBarActivity {
 
     @Override
     protected void initData(Bundle saveInstanceState) {
-        String text = ReadAssetsUtils.getFromAssets(this, "func.txt");
+        String text = ReadAssetsUtils.getFromAssets(this, Constant.TXT_FUNC);
         mFeatures.setText(text);
     }
 

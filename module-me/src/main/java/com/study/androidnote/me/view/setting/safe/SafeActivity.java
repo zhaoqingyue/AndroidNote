@@ -29,12 +29,16 @@ public class SafeActivity extends BaseTopBarActivity {
         }
     }
 
-    @OnClick({R2.id.mc_mobile_phone, R2.id.mc_password})
+    @OnClick({R2.id.mc_account, R2.id.mc_mobile, R2.id.mc_password, R2.id.mc_emergency_contact})
     public void onClick(View view) {
         int id = view.getId();
-        if (id == R.id.mc_mobile_phone) {
+        if (id == R.id.mc_account) {
+
+        } else if (id == R.id.mc_mobile) {
 
         } else if (id == R.id.mc_password) {
+
+        } else if (id == R.id.mc_emergency_contact) {
 
         }
     }
