@@ -108,7 +108,7 @@ public class NationActivity extends BaseTopBarActivity implements BaseQuickAdapt
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.mc_current_location) {
-            if (mCurArea.startsWith("中国")) {
+            if (!TextUtils.isEmpty(mCurArea) && mCurArea.startsWith("中国")) {
                 goToActivityForResult(ProvinceActivity.class, Constant.RESULT_DATA_TO_PROVINCE);
             }
         }
