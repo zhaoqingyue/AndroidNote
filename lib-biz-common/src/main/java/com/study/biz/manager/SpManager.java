@@ -29,7 +29,7 @@ public class SpManager {
      * 是否开启手势密码
      */
     public static boolean isOpenGesturePwd() {
-        return SPUtils.getInstance().getBoolean(AppConstant.OPEN_GESTURE_PWD, true);
+        return SPUtils.getInstance().getBoolean(AppConstant.OPEN_GESTURE_PWD, false);
     }
 
     /**

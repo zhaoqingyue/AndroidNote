@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
 
-    <TextView
+    <!-- 选择器 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_picker"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="笔记"/>
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/main_note_picker"
+        app:mc_hasContent="false"
+        app:mc_hasDivider="true"/>
+
+    <!-- 钱包 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/main_card_wallet"
+        app:mc_hasContent="false"
+        app:mc_hasDivider="false"
+        android:visibility="visible"/>
 
 </LinearLayout>

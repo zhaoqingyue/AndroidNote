@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/note_picker"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_gap"
+        android:scrollbarSize="@dimen/dp_5"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 内嵌视图选择器 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_embedded"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_embedded"
+                app:mc_hasDivider="true"/>
+
+            <!-- 单项选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_single"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_single"
+                app:mc_hasDivider="true"/>
+
+            <!-- 民族选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_nationality"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_nationality"
+                app:mc_hasDivider="true"/>
+
+            <!-- 年月日时间选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_year_month_day_time"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_year_month_day_time"
+                app:mc_hasDivider="true"/>
+
+            <!-- 年月日选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_year_month_day"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_year_month_day"
+                app:mc_hasDivider="true"/>
+
+            <!-- 年月选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_year_month"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_year_month"
+                app:mc_hasDivider="true"/>
+
+            <!-- 月日选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_month_day"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_month_day"
+                app:mc_hasDivider="true"/>
+
+            <!-- 时间选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_time"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_time"
+                app:mc_hasDivider="true"/>
+
+            <!-- 数字选择——身高 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_numeral_height"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_numeral_height"
+                app:mc_hasDivider="true"/>
+
+            <!-- 数字选择——体重 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_numeral_weight"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_numeral_weight"
+                app:mc_hasDivider="true"/>
+
+            <!-- 数字选择——年龄 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_numeral_age"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_numeral_age"
+                app:mc_hasDivider="true"/>
+
+            <!-- 数字选择——温度 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_numeral_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_numeral_temperature"
+                app:mc_hasDivider="true"/>
+
+            <!-- 星座选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_constellation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_constellation"
+                app:mc_hasDivider="true"/>
+
+            <!-- 编程语言选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_programming_language"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_programming_language"
+                app:mc_hasDivider="true"/>
+
+            <!-- 车牌选择 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_plate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_plate"
+                app:mc_hasDivider="true"/>
+
+            <!-- 地址选择——省 + 市 + 县 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_address_province_city_county"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_address_province_city_county"
+                app:mc_hasDivider="true"/>
+
+            <!-- 地址选择——省 + 市 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_address_province_city"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_address_province_city"
+                app:mc_hasDivider="true"/>
+
+            <!-- 地址选择——市 + 县 -->
+            <com.study.commonlib.ui.view.MultiCard
+                android:id="@+id/mc_address_city_county"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/multiCard_height"
+                app:mc_title="@string/note_picker_address_city_county"
+                app:mc_hasDivider="true"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

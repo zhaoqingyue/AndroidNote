@@ -60,6 +60,7 @@ dependencies {
         compile project(':module-main')
         compile project(':module-manager')
         compile project(':module-me')
+        compile project(':module-note')
         compile project(':module-notice')
         compile project(':module-search')
         compile project(':module-welcome')

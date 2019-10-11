@@ -3,7 +3,7 @@
 
     <!--组件模式下的清单文件-->
     <application xmlns:tools="http://schemas.android.com/tools"
-        android:name="debug.AccountApp"
+        android:name="debug.NoteApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/account_app_name"

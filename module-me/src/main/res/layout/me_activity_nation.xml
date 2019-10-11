@@ -40,7 +40,7 @@
                 android:id="@+id/mc_current_location"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/multiCard_height"
-                app:mc_title="中国 广东 深圳"
+                app:mc_title="定位..."
                 app:mc_hasDivider="false"/>
 
             <TextView

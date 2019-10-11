@@ -1,15 +1,21 @@
 package com.study.androidnote.main.view.fragment;
 
 import android.os.Bundle;
+import android.view.View;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.study.androidnote.main.R;
+import com.study.androidnote.main.R2;
+import com.study.biz.constant.ArouterPath;
 import com.study.commonlib.base.fragment.BaseSupportFragment;
+import com.study.commonlib.util.utilcode.ToastUtils;
+
+import butterknife.OnClick;
 
 /**
  * Created by zhao.qingyue on 2019/8/16.
- * 主页—任务Fragment
+ * 主页—笔记Fragment
  */
-
 public class NoteFragment extends BaseSupportFragment {
 
     public static NoteFragment newInstance() {
@@ -36,5 +42,17 @@ public class NoteFragment extends BaseSupportFragment {
     @Override
     protected void initData() {
 
+    }
+
+    @OnClick({R2.id.mc_picker, R2.id.mc_wallet })
+    public void onClick(View view) {
+        int id = view.getId();
+        if (id == R.id.mc_picker) {
+            // 选择器
+            ARouter.getInstance().build(ArouterPath.PATH_NOTE_PICKER).navigation();
+        } else if (id == R.id.mc_wallet) {
+            // 钱包
+            ToastUtils.showShortToast("该功能暂未实现");
+        }
     }
 }

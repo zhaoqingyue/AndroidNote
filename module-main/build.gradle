@@ -70,6 +70,4 @@ dependencies {
     annotationProcessor project(':arouter-compiler')
     api project(":lib-biz-common")
 
-//    api(name: 'fragmentation-1.1.9', ext: 'aar')
-//    api(name: 'fragmentation-swipeback-1.3.4', ext: 'aar')
 }

@@ -127,11 +127,13 @@ public class NationActivity extends BaseTopBarActivity implements BaseQuickAdapt
         NationCodeBean nationCode = mAreaCodes.get(position);
         String code = nationCode.getCode();
         String name = nationCode.getName();
+        LogUtils.e("ZQY", "name: " + name + ", code: " + code);
         if (code.equals("86")) {
             goToActivityForResult(ProvinceActivity.class, Constant.RESULT_DATA_TO_PROVINCE);
         } else {
             ToastUtils.showShortToast("选择" + name + ", " + code);
             UserInfoAPI.getInstance().updateArea(name);
+            finish();
         }
     }
 
@@ -151,7 +153,7 @@ public class NationActivity extends BaseTopBarActivity implements BaseQuickAdapt
             } else {
                 areaStr = "中国 " + province.getName() + " " + city.getName() + " " + area.getName();
             }
-            mCurLocation.setContent(areaStr);
+            mCurLocation.setTitle(areaStr);
             UserInfoAPI.getInstance().updateArea(areaStr);
             finish();
         }

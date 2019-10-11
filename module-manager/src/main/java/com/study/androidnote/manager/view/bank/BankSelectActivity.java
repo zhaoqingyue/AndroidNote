@@ -27,7 +27,7 @@ public class BankSelectActivity extends BaseTopBarActivity implements BaseQuickA
     RecyclerView mRecyclerView;
 
     @BindArray(R2.array.manager_bank_name)
-    String [] mBanks ;
+    String [] mBanks;
 
     private int [] mLogos = { R.mipmap.manager_bank_0, R.mipmap.manager_bank_1, R.mipmap.manager_bank_2, R.mipmap.manager_bank_3,
         R.mipmap.manager_bank_4, R.mipmap.manager_bank_5, R.mipmap.manager_bank_6, R.mipmap.manager_bank_7,

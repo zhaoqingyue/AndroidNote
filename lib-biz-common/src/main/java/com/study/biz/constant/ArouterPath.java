@@ -18,6 +18,10 @@ public class ArouterPath {
     // 首页——消息通知
     public static final String PATH_HOME_NOTICE = "/notice/NoticeActivity";
 
+    // 笔记——选择器
+    public static final String PATH_NOTE_PICKER = "/note/PickerActivity";
+
+
     // 管理——银行卡
     public static final String PATH_MANAGER_BANK = "/manager/BankActivity";
 
