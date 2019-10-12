@@ -15,12 +15,12 @@
         app:mc_hasContent="false"
         app:mc_hasDivider="true"/>
 
-    <!-- 钱包 -->
+    <!-- 监听网络变化 -->
     <com.study.commonlib.ui.view.MultiCard
-        android:id="@+id/mc_wallet"
+        android:id="@+id/mc_net"
         android:layout_width="match_parent"
         android:layout_height="@dimen/multiCard_height"
-        app:mc_title="@string/main_card_wallet"
+        app:mc_title="@string/main_note_net"
         app:mc_hasContent="false"
         app:mc_hasDivider="false"
         android:visibility="visible"/>

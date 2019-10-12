@@ -16,20 +16,21 @@
     <string name="note_picker_numeral_age">数字选择——年龄</string>
     <string name="note_picker_numeral_temperature">数字选择——温度</string>
     <string name="note_picker_constellation">星座选择</string>
+    <string name="note_picker_zodiac">生肖选择</string>
     <string name="note_picker_programming_language">编程语言选择</string>
     <string name="note_picker_plate">车牌选择</string>
     <string name="note_picker_address_province_city_county">地址选择——省 + 市 + 县</string>
     <string name="note_picker_address_province_city">地址选择——省 + 市</string>
     <string name="note_picker_address_city_county">地址选择——市 + 县</string>
-
     <string name="note_plate">车牌</string>
     <string name="note_nationality">民族</string>
-
     <string name="note_unit_year">年</string>
     <string name="note_unit_month">月</string>
     <string name="note_unit_day">日</string>
     <string name="note_unit_hour">时</string>
     <string name="note_unit_minute">分</string>
     <string name="note_unit_second">秒</string>
+
+    <string name="note_net_state">监听网络变化状态</string>
 
 </resources>

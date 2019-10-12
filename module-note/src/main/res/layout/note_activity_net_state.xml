@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <com.study.commonlib.ui.view.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tb_title="@string/note_net_state"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_state_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="#ccc"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/note_net_error"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="网络连接不可用"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_14"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="网络连接状态"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp_14"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -44,15 +44,16 @@ public class NoteFragment extends BaseSupportFragment {
 
     }
 
-    @OnClick({R2.id.mc_picker, R2.id.mc_wallet })
+    @OnClick({R2.id.mc_picker, R2.id.mc_net })
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.mc_picker) {
             // 选择器
             ARouter.getInstance().build(ArouterPath.PATH_NOTE_PICKER).navigation();
-        } else if (id == R.id.mc_wallet) {
-            // 钱包
-            ToastUtils.showShortToast("该功能暂未实现");
+        } else if (id == R.id.mc_net) {
+            // 监听网络变化
+            ARouter.getInstance().build(ArouterPath.PATH_NOTE_NET).navigation();
+//            ToastUtils.showShortToast("该功能暂未实现");
         }
     }
 }

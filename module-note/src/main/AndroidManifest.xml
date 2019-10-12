@@ -5,9 +5,9 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
-
         <activity android:name=".picker.PickerActivity" />
-        <activity android:name=".picker.EmbeddedActivity"/>
+        <activity android:name=".picker.EmbeddedActivity" />
+        <activity android:name=".net.NetStateActivity"></activity>
     </application>
 
 </manifest>

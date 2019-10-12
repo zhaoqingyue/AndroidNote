@@ -51,7 +51,9 @@ public class PickerActivity extends BaseTopBarActivity {
         }
     }
 
-    @OnClick( {R2.id.mc_embedded, R2.id.mc_single, R2.id.mc_nationality, R2.id.mc_year_month_day_time, R2.id.mc_year_month_day, R2.id.mc_year_month, R2.id.mc_month_day, R2.id.mc_time, R2.id.mc_numeral_height, R2.id.mc_numeral_weight, R2.id.mc_numeral_age, R2.id.mc_numeral_temperature, R2.id.mc_constellation, R2.id.mc_programming_language, R2.id.mc_plate, R2.id.mc_address_province_city_county, R2.id.mc_address_province_city, R2.id.mc_address_city_county} )
+    @OnClick( {R2.id.mc_embedded, R2.id.mc_single, R2.id.mc_nationality, R2.id.mc_year_month_day_time, R2.id.mc_year_month_day, R2.id.mc_year_month, R2.id.mc_month_day, R2.id.mc_time,
+            R2.id.mc_numeral_height, R2.id.mc_numeral_weight, R2.id.mc_numeral_age, R2.id.mc_numeral_temperature, R2.id.mc_zodiac, R2.id.mc_constellation, R2.id.mc_programming_language,
+            R2.id.mc_plate, R2.id.mc_address_province_city_county, R2.id.mc_address_province_city, R2.id.mc_address_city_county} )
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.mc_embedded) {
@@ -65,6 +67,18 @@ public class PickerActivity extends BaseTopBarActivity {
         } else if (id == R.id.mc_nationality) {
             // 民族选择
             nationalityPicker();
+
+        }  else if (id == R.id.mc_zodiac) {
+            // 生肖选择
+            zodiacPicker();
+
+        } else if (id == R.id.mc_constellation) {
+            // 星座选择
+            constellationPicker();
+
+        } else if (id == R.id.mc_programming_language) {
+            // 编程语言选择
+            programmingLanguagePicker();
 
         } else if (id == R.id.mc_year_month_day_time) {
             // 年月日时间选择
@@ -101,14 +115,6 @@ public class PickerActivity extends BaseTopBarActivity {
         } else if (id == R.id.mc_numeral_temperature) {
             // 数字选择——温度
             numeralTemperaturePicker();
-
-        } else if (id == R.id.mc_constellation) {
-            // 星座选择
-            constellationPicker();
-
-        } else if (id == R.id.mc_programming_language) {
-            // 编程语言选择
-            programmingLanguagePicker();
 
         } else if (id == R.id.mc_plate) {
             // 车牌选择
@@ -216,6 +222,148 @@ public class PickerActivity extends BaseTopBarActivity {
         picker.setItemWidth(200);
         picker.setBackgroundColor(getColor(R.color.main_dialog_bg));
         picker.setSelectedIndex(0);
+        picker.setOnItemPickListener(new OnItemPickListener<String>() {
+
+            @Override
+            public void onItemPicked(int index, String item) {
+                ToastUtils.showShortToast("index=" + index + ", item=" + item);
+            }
+        });
+        picker.show();
+    }
+
+    @BindArray( R2.array.note_zodiac )
+    String[] zodiacs;
+
+    /**
+     * 生肖选择
+     */
+    private void zodiacPicker() {
+        SinglePicker<String> picker = new SinglePicker<>(this, zodiacs);
+        picker.setCanLoop(false); // 不禁用循环
+        picker.setWheelModeEnable(false);
+        // 标题栏
+        picker.setTopBackgroundColor(0xFFEEEEEE);
+        picker.setTopHeight(50);
+        picker.setTopLineColor(getColor(R.color.main_divider));
+        picker.setTopLineHeight(1);
+        // 标题
+        picker.setTitleText(getString(R.string.note_picker_zodiac));
+        picker.setTitleTextColor(getColor(R.color.colorBlack));
+        picker.setTitleTextSize(mTextSize);
+        // 取消
+        picker.setCancelTextColor(getColor(R.color.btn_text_normal));
+        picker.setCancelTextSize(mTextSize);
+        // 确定
+        picker.setSubmitTextColor(getColor(R.color.btn_text_normal));
+        picker.setSubmitTextSize(mTextSize);
+        // 选中
+        picker.setSelectedTextColor(getColor(R.color.blue_0084FF));
+        picker.setUnSelectedTextColor(getColor(R.color.gray_9b9b9b));
+        // 选中线
+        LineConfig config = new LineConfig();
+        config.setColor(getColor(R.color.gray_9b9b9b));//线颜色
+        config.setAlpha(120);//线透明度
+        config.setRatio(1);//线比率
+        picker.setLineConfig(config);
+        picker.setItemWidth(200);
+        picker.setBackgroundColor(getColor(R.color.main_dialog_bg));
+//        picker.setSelectedItem(constellations[5]);
+        picker.setSelectedIndex(6);
+        picker.setOnItemPickListener(new OnItemPickListener<String>() {
+
+            @Override
+            public void onItemPicked(int index, String item) {
+                ToastUtils.showShortToast("index=" + index + ", item=" + item);
+            }
+        });
+        picker.show();
+    }
+
+    @BindArray( R2.array.note_constellation )
+    String[] constellations;
+
+    /**
+     * 星座选择
+     */
+    private void constellationPicker() {
+        SinglePicker<String> picker = new SinglePicker<>(this, constellations);
+        picker.setCanLoop(false); // 不禁用循环
+        picker.setWheelModeEnable(false);
+        // 标题栏
+        picker.setTopBackgroundColor(0xFFEEEEEE);
+        picker.setTopHeight(50);
+        picker.setTopLineColor(getColor(R.color.main_divider));
+        picker.setTopLineHeight(1);
+        // 标题
+        picker.setTitleText(getString(R.string.note_picker_constellation));
+        picker.setTitleTextColor(getColor(R.color.colorBlack));
+        picker.setTitleTextSize(mTextSize);
+        // 取消
+        picker.setCancelTextColor(getColor(R.color.btn_text_normal));
+        picker.setCancelTextSize(mTextSize);
+        // 确定
+        picker.setSubmitTextColor(getColor(R.color.btn_text_normal));
+        picker.setSubmitTextSize(mTextSize);
+        // 选中
+        picker.setSelectedTextColor(getColor(R.color.blue_0084FF));
+        picker.setUnSelectedTextColor(getColor(R.color.gray_9b9b9b));
+        // 选中线
+        LineConfig config = new LineConfig();
+        config.setColor(getColor(R.color.gray_9b9b9b));//线颜色
+        config.setAlpha(120);//线透明度
+        config.setRatio(1);//线比率
+        picker.setLineConfig(config);
+        picker.setItemWidth(200);
+        picker.setBackgroundColor(getColor(R.color.main_dialog_bg));
+//        picker.setSelectedItem(constellations[5]);
+        picker.setSelectedIndex(6);
+        picker.setOnItemPickListener(new OnItemPickListener<String>() {
+
+            @Override
+            public void onItemPicked(int index, String item) {
+                ToastUtils.showShortToast("index=" + index + ", item=" + item);
+            }
+        });
+        picker.show();
+    }
+
+    @BindArray( R2.array.note_programming_language )
+    String[] programmingLanguage;
+
+    /**
+     * 编程语言选择
+     */
+    private void programmingLanguagePicker() {
+        SinglePicker<String> picker = new SinglePicker<>(this, programmingLanguage);
+        picker.setCanLoop(false); // 不禁用循环
+        picker.setWheelModeEnable(false);
+        // 标题栏
+        picker.setTopHeight(50);
+        picker.setTopLineColor(getColor(R.color.main_divider));
+        picker.setTopLineHeight(1);
+        // 标题
+        picker.setTitleText(getString(R.string.note_picker_programming_language));
+        picker.setTitleTextColor(getColor(R.color.colorBlack));
+        picker.setTitleTextSize(mTextSize);
+        // 取消
+        picker.setCancelTextColor(getColor(R.color.btn_text_normal));
+        picker.setCancelTextSize(mTextSize);
+        // 确定
+        picker.setSubmitTextColor(getColor(R.color.btn_text_normal));
+        picker.setSubmitTextSize(mTextSize);
+        // 选中
+        picker.setSelectedTextColor(getColor(R.color.blue_0084FF));
+        picker.setUnSelectedTextColor(getColor(R.color.gray_9b9b9b));
+        // 选中线
+        LineConfig config = new LineConfig();
+        config.setColor(Color.RED);//线颜色
+        config.setAlpha(120);//线透明度
+        config.setRatio(1);//线比率
+        picker.setLineConfig(config);
+        picker.setItemWidth(200);
+        picker.setBackgroundColor(getColor(R.color.main_dialog_bg));
+        picker.setSelectedIndex(3);
         picker.setOnItemPickListener(new OnItemPickListener<String>() {
 
             @Override
@@ -509,100 +657,6 @@ public class PickerActivity extends BaseTopBarActivity {
             @Override
             public void onNumberPicked(int index, Number item) {
                 ToastUtils.showShortToast("index=" + index + ", item=" + item.doubleValue());
-            }
-        });
-        picker.show();
-    }
-
-    @BindArray( R2.array.note_constellation )
-    String[] constellations;
-
-    /**
-     * 星座选择
-     */
-    private void constellationPicker() {
-        SinglePicker<String> picker = new SinglePicker<>(this, constellations);
-        picker.setCanLoop(false); // 不禁用循环
-        picker.setWheelModeEnable(false);
-        // 标题栏
-        picker.setTopBackgroundColor(0xFFEEEEEE);
-        picker.setTopHeight(50);
-        picker.setTopLineColor(getColor(R.color.main_divider));
-        picker.setTopLineHeight(1);
-        // 标题
-        picker.setTitleText(getString(R.string.note_picker_constellation));
-        picker.setTitleTextColor(getColor(R.color.colorBlack));
-        picker.setTitleTextSize(mTextSize);
-        // 取消
-        picker.setCancelTextColor(getColor(R.color.btn_text_normal));
-        picker.setCancelTextSize(mTextSize);
-        // 确定
-        picker.setSubmitTextColor(getColor(R.color.btn_text_normal));
-        picker.setSubmitTextSize(mTextSize);
-        // 选中
-        picker.setSelectedTextColor(getColor(R.color.blue_0084FF));
-        picker.setUnSelectedTextColor(getColor(R.color.gray_9b9b9b));
-        // 选中线
-        LineConfig config = new LineConfig();
-        config.setColor(getColor(R.color.gray_9b9b9b));//线颜色
-        config.setAlpha(120);//线透明度
-        config.setRatio(1);//线比率
-        picker.setLineConfig(config);
-        picker.setItemWidth(200);
-        picker.setBackgroundColor(getColor(R.color.main_dialog_bg));
-//        picker.setSelectedItem(constellations[5]);
-        picker.setSelectedIndex(6);
-        picker.setOnItemPickListener(new OnItemPickListener<String>() {
-
-            @Override
-            public void onItemPicked(int index, String item) {
-                ToastUtils.showShortToast("index=" + index + ", item=" + item);
-            }
-        });
-        picker.show();
-    }
-
-    @BindArray( R2.array.note_programming_language )
-    String[] programmingLanguage;
-
-    /**
-     * 编程语言选择
-     */
-    private void programmingLanguagePicker() {
-        SinglePicker<String> picker = new SinglePicker<>(this, programmingLanguage);
-        picker.setCanLoop(false); // 不禁用循环
-        picker.setWheelModeEnable(false);
-        // 标题栏
-        picker.setTopHeight(50);
-        picker.setTopLineColor(getColor(R.color.main_divider));
-        picker.setTopLineHeight(1);
-        // 标题
-        picker.setTitleText(getString(R.string.note_picker_programming_language));
-        picker.setTitleTextColor(getColor(R.color.colorBlack));
-        picker.setTitleTextSize(mTextSize);
-        // 取消
-        picker.setCancelTextColor(getColor(R.color.btn_text_normal));
-        picker.setCancelTextSize(mTextSize);
-        // 确定
-        picker.setSubmitTextColor(getColor(R.color.btn_text_normal));
-        picker.setSubmitTextSize(mTextSize);
-        // 选中
-        picker.setSelectedTextColor(getColor(R.color.blue_0084FF));
-        picker.setUnSelectedTextColor(getColor(R.color.gray_9b9b9b));
-        // 选中线
-        LineConfig config = new LineConfig();
-        config.setColor(Color.RED);//线颜色
-        config.setAlpha(120);//线透明度
-        config.setRatio(1);//线比率
-        picker.setLineConfig(config);
-        picker.setItemWidth(200);
-        picker.setBackgroundColor(getColor(R.color.main_dialog_bg));
-        picker.setSelectedIndex(3);
-        picker.setOnItemPickListener(new OnItemPickListener<String>() {
-
-            @Override
-            public void onItemPicked(int index, String item) {
-                ToastUtils.showShortToast("index=" + index + ", item=" + item);
             }
         });
         picker.show();

@@ -42,7 +42,6 @@ public class NetworkUtils {
         NETWORK_NO
     }
 
-
     /**
      * 打开网络设置界面
      * <p>3.0以下打开设置界面</p>
@@ -191,10 +190,17 @@ public class NetworkUtils {
      * @return {@code true}: 连接<br>{@code false}: 未连接
      */
     public static boolean isWifiConnected() {
-        ConnectivityManager cm = (ConnectivityManager) Utils.getContext()
-                .getSystemService(Context.CONNECTIVITY_SERVICE);
-        return cm != null && cm.getActiveNetworkInfo() != null
-                && cm.getActiveNetworkInfo().getType() == ConnectivityManager.TYPE_WIFI;
+        ConnectivityManager cm = (ConnectivityManager) Utils.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm != null && cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().getType() == ConnectivityManager.TYPE_WIFI;
+    }
+
+    public static boolean isMobileConnected() {
+        ConnectivityManager mConnectivityManager = (ConnectivityManager) Utils.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo mMobileNetworkInfo = mConnectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        if (mMobileNetworkInfo != null) {
+            return mMobileNetworkInfo.isAvailable();
+        }
+        return false;
     }
 
     /**

@@ -60,6 +60,21 @@
         <item>基诺族</item>
     </string-array>
 
+    <string-array name="note_zodiac">
+        <item>鼠</item>
+        <item>牛</item>
+        <item>虎</item>
+        <item>兔</item>
+        <item>龙</item>
+        <item>蛇</item>
+        <item>马</item>
+        <item>羊</item>
+        <item>猴</item>
+        <item>鸡</item>
+        <item>狗</item>
+        <item>猪</item>
+    </string-array>
+
     <string-array name="note_constellation">
         <item>水瓶座</item>
         <item>双鱼座</item>

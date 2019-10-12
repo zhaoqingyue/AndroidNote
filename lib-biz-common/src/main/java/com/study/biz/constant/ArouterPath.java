@@ -21,6 +21,9 @@ public class ArouterPath {
     // 笔记——选择器
     public static final String PATH_NOTE_PICKER = "/note/PickerActivity";
 
+    // 笔记——网络变化
+    public static final String PATH_NOTE_NET = "/note/NetActivity";
+
 
     // 管理——银行卡
     public static final String PATH_MANAGER_BANK = "/manager/BankActivity";
