@@ -5,27 +5,28 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
-
-        <activity android:name=".view.SplashActivity"
-                  android:theme="@style/SplashTheme">
+        <activity
+            android:name=".view.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- <activity android:name=".view.SplashActivity"
-                android:theme="@style/SplashTheme"/> -->
         <activity
-            android:name=".view.StartImageActivity"
-            android:theme="@style/SplashTheme"/>
-
+            android:name=".view.StartActivity"
+            android:theme="@style/SplashTheme" />
         <activity
             android:name=".view.StartVideoActivity"
-            android:theme="@style/SplashTheme"/>
-
+            android:theme="@style/SplashTheme" />
         <activity
             android:name=".view.GuideActivity"
+            android:theme="@style/SplashTheme" />
+
+        <activity
+            android:name=".view.GuideVideoActivity"
             android:theme="@style/SplashTheme"/>
 
     </application>

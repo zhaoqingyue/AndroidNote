@@ -54,6 +54,48 @@ public class SpManager {
     }
 
     /**
+     * 启动视频页是否打开
+     */
+    public static boolean isStartVideoOpen() {
+        return SPUtils.getInstance().getBoolean(AppConstant.OPEN_START_VIDEO, false);
+    }
+
+    /**
+     * 设置打开启动视频页
+     */
+    public static void setStartVideoOpen(boolean startVideoOpen) {
+        SPUtils.getInstance().put(AppConstant.OPEN_START_VIDEO, startVideoOpen);
+    }
+
+    /**
+     * 引导页是否打开
+     */
+    public static boolean isGuideOpen() {
+        return SPUtils.getInstance().getBoolean(AppConstant.OPEN_GUIDE, false);
+    }
+
+    /**
+     * 设置打开引导页
+     */
+    public static void setGuideOpen(boolean guideOpen) {
+        SPUtils.getInstance().put(AppConstant.OPEN_GUIDE, guideOpen);
+    }
+
+    /**
+     * 引导视频页是否打开
+     */
+    public static boolean isGuideVideoOpen() {
+        return SPUtils.getInstance().getBoolean(AppConstant.OPEN_GUIDE_VIDEO, false);
+    }
+
+    /**
+     * 设置打开引导视频页
+     */
+    public static void setGuideVideoOpen(boolean guideVideoOpen) {
+        SPUtils.getInstance().put(AppConstant.OPEN_GUIDE_VIDEO, guideVideoOpen);
+    }
+
+    /**
      * 是否已经登录
      */
     public static boolean isLogin() {

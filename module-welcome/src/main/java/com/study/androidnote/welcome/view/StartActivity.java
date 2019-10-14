@@ -19,7 +19,7 @@ import butterknife.OnClick;
 /**
  * 启动页——图片
  */
-public class StartImageActivity extends BaseActivity {
+public class StartActivity extends BaseActivity {
 
     private static final int COUNT_DOWN = 3;
 
@@ -30,7 +30,7 @@ public class StartImageActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.welcome_activity_start_image;
+        return R.layout.welcome_activity_start;
     }
 
     @Override
@@ -55,12 +55,19 @@ public class StartImageActivity extends BaseActivity {
 
     protected void onJump() {
         if (SpManager.isFirstOpen()) {
+            // 第一次打开
             SpManager.setFirstOpen(false);
-            goToActivity(GuideActivity.class);
+            if (SpManager.isGuideVideoOpen()) {
+                goToActivity(GuideVideoActivity.class);
+            } else {
+                goToActivity(GuideActivity.class);
+            }
         } else {
-            boolean needVideo = true;
-            if (needVideo) {
-                goToActivity(StartVideoActivity.class);
+            // 非第一次打开
+            if (SpManager.isGuideVideoOpen()) {
+                goToActivity(GuideVideoActivity.class);
+            } else if (SpManager.isGuideOpen()) {
+                goToActivity(GuideActivity.class);
             } else {
                 JumpManager.endOfWelcome();
             }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_guide_video"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.study.androidnote.welcome.view.custom.ExtendedViewPager
+        android:id="@+id/vp_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:overScrollMode="ifContentScrolls"/>
+
+    <TextView
+        android:id="@+id/guide_jump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/welcome_shape_skip_bg"
+        android:padding="@dimen/dp_8"
+        android:text="@string/welcome_skip_guide"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_14" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/ll_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tv_enter"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_45"
+            android:paddingLeft="@dimen/dp_30"
+            android:paddingRight="@dimen/dp_30"
+            android:background="@drawable/welcome_shape_btn_guide"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/welcome_next"
+            android:textColor="@color/welcome_stroke_color"
+            android:textSize="@dimen/sp_18"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

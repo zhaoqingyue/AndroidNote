@@ -12,6 +12,7 @@ import com.study.androidnote.welcome.R;
 import com.study.androidnote.welcome.R2;
 import com.study.androidnote.welcome.view.custom.FullScreenVideoView;
 import com.study.biz.manager.JumpManager;
+import com.study.biz.manager.SpManager;
 import com.study.commonlib.base.activity.BaseActivity;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -45,7 +46,7 @@ public class StartVideoActivity extends BaseActivity {
     private void initVideo() {
 //        String videoUrl = "";
 //        videoView.setVideoURI(Uri.parse(videoUrl));
-        String uri = "android.resource://" + getPackageName() + "/" + R.raw.herologo;
+        String uri = "android.resource://" + getPackageName() + "/" + R.raw.welcome_guide2;
         videoView.setVideoURI(Uri.parse(uri));
         videoView.start();
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -86,7 +87,24 @@ public class StartVideoActivity extends BaseActivity {
     }
 
     protected void onJump() {
-        JumpManager.endOfWelcome();
+        if (SpManager.isFirstOpen()) {
+            // 第一次打开
+            SpManager.setFirstOpen(false);
+            if (SpManager.isGuideVideoOpen()) {
+                goToActivity(GuideVideoActivity.class);
+            } else {
+                goToActivity(GuideActivity.class);
+            }
+        } else {
+            // 非第一次打开
+            if (SpManager.isGuideVideoOpen()) {
+                goToActivity(GuideVideoActivity.class);
+            } else if (SpManager.isGuideOpen()) {
+                goToActivity(GuideActivity.class);
+            } else {
+                JumpManager.endOfWelcome();
+            }
+        }
         finish();
     }
 

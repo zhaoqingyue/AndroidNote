@@ -10,6 +10,12 @@ public class AppConstant {
 
     public static final String FIRST_OPEN = "FirstOpen"; // 第一次打开
 
+    public static final String OPEN_START_VIDEO = "OpenStartVideo"; // 开启启动视频页
+
+    public static final String OPEN_GUIDE = "OpenGuide"; // 开启引导页
+
+    public static final String OPEN_GUIDE_VIDEO = "OpenGuideVideo"; // 开启引导视频页
+
     public static final String OPEN_GESTURE_PWD = "OpenGesturePwd"; // 开启手势密码
 
     public static final String ALREADY_LOGIN = "AlreadyLogin"; // 已经登录

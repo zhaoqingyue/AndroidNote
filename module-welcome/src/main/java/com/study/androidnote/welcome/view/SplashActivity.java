@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import com.study.androidnote.welcome.R;
 import com.study.androidnote.welcome.R2;
 import com.study.biz.manager.SettingManager;
+import com.study.biz.manager.SpManager;
 import com.study.commonlib.base.activity.BaseActivity;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
@@ -57,7 +58,11 @@ public class SplashActivity extends BaseActivity {
 
     private void jumpToNext() {
         if (isPermissionRequestFinish) {
-            goToActivity(StartImageActivity.class);
+            if (SpManager.isStartVideoOpen()) {
+                goToActivity(StartVideoActivity.class);
+            } else {
+                goToActivity(StartActivity.class);
+            }
             finish();
         } else {
             mHandler.sendEmptyMessageDelayed(0, 1500);

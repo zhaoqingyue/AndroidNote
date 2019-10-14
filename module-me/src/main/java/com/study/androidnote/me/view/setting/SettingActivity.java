@@ -36,11 +36,17 @@ import butterknife.OnClick;
 @Route(path = ArouterPath.PATH_ME_SETTING)
 public class SettingActivity extends BaseTopBarActivity {
 
-    @BindView(R2.id.switch_open_gesture_pwd)
-    Switch mOpenGesturePwd;
+    @BindView(R2.id.switch_open_start_video)
+    Switch mOpenStartVideo;
 
     @BindView(R2.id.switch_open_guide)
     Switch mOpenGuide;
+
+    @BindView(R2.id.switch_open_guide_video)
+    Switch mOpenGuideVideo;
+
+    @BindView(R2.id.switch_open_gesture_pwd)
+    Switch mOpenGesturePwd;
 
     @BindView(R2.id.switch_night_mode)
     Switch mNightMode;
@@ -55,8 +61,10 @@ public class SettingActivity extends BaseTopBarActivity {
 
     @Override
     protected void initData(Bundle saveInstanceState) {
+        mOpenStartVideo.setChecked(SpManager.isStartVideoOpen());
+        mOpenGuide.setChecked(SpManager.isGuideOpen());
+        mOpenGuideVideo.setChecked(SpManager.isGuideVideoOpen());
         mOpenGesturePwd.setChecked(SpManager.isOpenGesturePwd());
-        mOpenGuide.setChecked(SpManager.isFirstOpen());
         mNightMode.setChecked(SpManager.isNightMode());
         mClearCache.setContent(FileUtils.getTotalCacheSize(this));
     }
@@ -139,13 +147,31 @@ public class SettingActivity extends BaseTopBarActivity {
         }
     }
 
-    @OnCheckedChanged({R2.id.switch_open_gesture_pwd, R2.id.switch_open_guide, R2.id.switch_night_mode})
+    @OnCheckedChanged({R2.id.switch_open_start_video, R2.id.switch_open_guide, R2.id.switch_open_guide_video, R2.id.switch_open_gesture_pwd, R2.id.switch_night_mode})
     public void onCheckChanged(CompoundButton view, boolean isChecked) {
         int id = view.getId();
-        if (id == R.id.switch_open_gesture_pwd) {
-            SpManager.setOpenGesturePwd(isChecked);
+        if (id == R.id.switch_open_start_video) {
+            // 视频启动页
+            SpManager.setStartVideoOpen(isChecked);
+
         } else if (id == R.id.switch_open_guide) {
-            SpManager.setFirstOpen(isChecked);
+            // 引导页
+            SpManager.setGuideOpen(isChecked);
+            SpManager.setGuideVideoOpen(!isChecked);
+            if (isChecked) {
+                SpManager.setFirstOpen(isChecked);
+            }
+
+        } else if (id == R.id.switch_open_guide_video) {
+            // 视频引导页
+            SpManager.setGuideOpen(!isChecked);
+            SpManager.setGuideVideoOpen(isChecked);
+            if (isChecked) {
+                SpManager.setFirstOpen(isChecked);
+            }
+
+        } else if (id == R.id.switch_open_gesture_pwd) {
+            SpManager.setOpenGesturePwd(isChecked);
         } else if (id == R.id.switch_night_mode) {
             SpManager.setNightMode(isChecked);
         }
