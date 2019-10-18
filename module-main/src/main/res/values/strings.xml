@@ -10,7 +10,7 @@
 
     <string name="main_note_picker">选择器</string>
     <string name="main_note_net">监听网络变化</string>
-
+    <string name="main_note_string_click">字符点击</string>
 
 
     <string name="main_card_setting">设置</string>

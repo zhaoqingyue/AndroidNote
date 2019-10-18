@@ -157,22 +157,26 @@ public class SettingActivity extends BaseTopBarActivity {
         } else if (id == R.id.switch_open_guide) {
             // 引导页
             SpManager.setGuideOpen(isChecked);
-            SpManager.setGuideVideoOpen(!isChecked);
             if (isChecked) {
                 SpManager.setFirstOpen(isChecked);
+                if (SpManager.isGuideVideoOpen()) {
+                    SpManager.setGuideVideoOpen(!isChecked);
+                }
             }
-
         } else if (id == R.id.switch_open_guide_video) {
             // 视频引导页
-            SpManager.setGuideOpen(!isChecked);
             SpManager.setGuideVideoOpen(isChecked);
             if (isChecked) {
                 SpManager.setFirstOpen(isChecked);
+                if (SpManager.isGuideOpen()) {
+                    SpManager.setGuideOpen(!isChecked);
+                }
             }
-
         } else if (id == R.id.switch_open_gesture_pwd) {
+            // 手势密码
             SpManager.setOpenGesturePwd(isChecked);
         } else if (id == R.id.switch_night_mode) {
+            // 夜间模式
             SpManager.setNightMode(isChecked);
         }
     }

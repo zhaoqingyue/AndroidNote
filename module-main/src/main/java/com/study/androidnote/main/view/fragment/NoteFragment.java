@@ -41,10 +41,10 @@ public class NoteFragment extends BaseSupportFragment {
 
     @Override
     protected void initData() {
-
+//        ToastUtils.showShortToast("该功能暂未实现");
     }
 
-    @OnClick({R2.id.mc_picker, R2.id.mc_net })
+    @OnClick({R2.id.mc_picker, R2.id.mc_net, R2.id.mc_string_click })
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.mc_picker) {
@@ -53,7 +53,9 @@ public class NoteFragment extends BaseSupportFragment {
         } else if (id == R.id.mc_net) {
             // 监听网络变化
             ARouter.getInstance().build(ArouterPath.PATH_NOTE_NET).navigation();
-//            ToastUtils.showShortToast("该功能暂未实现");
+        } else if (id == R.id.mc_string_click) {
+            // 字符点击
+            ARouter.getInstance().build(ArouterPath.PATH_NOTE_STRING_CLICK).navigation();
         }
     }
 }

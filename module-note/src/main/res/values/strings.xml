@@ -32,5 +32,6 @@
     <string name="note_unit_second">秒</string>
 
     <string name="note_net_state">监听网络变化状态</string>
+    <string name="note_string_click">字符点击</string>
 
 </resources>

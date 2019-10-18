@@ -22,6 +22,15 @@
         android:layout_height="@dimen/multiCard_height"
         app:mc_title="@string/main_note_net"
         app:mc_hasContent="false"
+        app:mc_hasDivider="true"/>
+
+    <!-- 字符点击 -->
+    <com.study.commonlib.ui.view.MultiCard
+        android:id="@+id/mc_string_click"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multiCard_height"
+        app:mc_title="@string/main_note_string_click"
+        app:mc_hasContent="false"
         app:mc_hasDivider="false"
         android:visibility="visible"/>
 
